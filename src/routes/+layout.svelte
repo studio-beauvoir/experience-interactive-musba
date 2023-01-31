@@ -1,5 +1,6 @@
 <script>
-	import '../app.css';
+    import '../app.css';
 </script>
-
-<slot />
+<div class="relative h-screen md:mx-auto md:w-auto md:aspect-phone bg-white">
+    <slot/>
+</div>
