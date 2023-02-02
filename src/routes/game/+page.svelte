@@ -1,6 +1,7 @@
 <script lang="ts">
     import {selectedSuspects} from "$lib/stores/selectedSuspects";
     import SuspectsSelection from "$lib/components/screens/SuspectsSelection.svelte";
+    import {goto} from "$app/navigation";
 
     let painting = 0;
 
@@ -29,6 +30,10 @@
         });
 
         painting++;
+
+        if (painting >= paintingsSuspects.length) {
+            goto('/game/end')
+        }
     }
 </script>
 
