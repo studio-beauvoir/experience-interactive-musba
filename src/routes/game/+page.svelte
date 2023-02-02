@@ -35,6 +35,8 @@
         },
     ];
 
+    selectedSuspects.set([]);
+
     function handleSuspectSelection(event) {
         selectedSuspects.update(function (s) {
             s.push(event.detail.suspect)
