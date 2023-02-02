@@ -15,7 +15,7 @@
 
 <section class="bg-red">
     <section class="w-full aspect-square relative overflow-auto">
-        <img class="mx-auto h-full w-auto max-w-none" src="{painting.image}">
+        <img alt="{painting.name}" class="mx-auto h-full w-auto max-w-none" src="{painting.image}">
     </section>
     <article>
         <h2 class="text-2xl">Qui est le suspect?</h2>
