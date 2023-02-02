@@ -1,5 +1,6 @@
 <script lang="ts">
     import Button from "$lib/components/Button.svelte";
+    import {goto} from "$app/navigation";
     import {createEventDispatcher} from 'svelte';
 
     export let painting;
@@ -8,10 +9,12 @@
 
     const dispatch = createEventDispatcher();
 
-    function dispatchSuspectSelected(suspect) {
+    function dispatchSuspectSelected() {
         dispatch('suspect-selected', {
-            suspect
+            suspect: inspectingSuspect
         });
+
+        inspectingSuspect = null;
     }
 
     function inspectSuspect(suspect: string) {
@@ -21,7 +24,9 @@
 
 <section class="bg-red">
     {#if inspectingSuspect}
-        <div>suspect {inspectingSuspect}</div>
+        <div>{inspectingSuspect.text}</div>
+        <!-- <div>{inspectingSuspect.button}</div> -->
+        <Button handleClick={dispatchSuspectSelected}>Confirmer</Button>
     {:else}
         <section class="w-full aspect-square relative overflow-auto">
             <img alt="{painting.name}" class="mx-auto h-full w-auto max-w-none" src="{painting.image}">
@@ -31,7 +36,7 @@
         </article>
         <section class="flex flex-col">
             {#each painting.suspects as suspect}
-                <Button handleClick={()=>inspectSuspect(suspect)}>{ suspect }</Button>
+                <Button handleClick={()=>inspectSuspect(suspect)}>{ suspect.name }</Button>
             {/each}
         </section>
     {/if}

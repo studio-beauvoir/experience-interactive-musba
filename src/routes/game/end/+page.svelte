@@ -7,7 +7,7 @@
     <p>Selon vous, les suspects sont</p>
     <ol class="list-decimal">
         {#each $selectedSuspects as suspect}
-            <li>{ suspect}</li>
+            <li>{ suspect.name}</li>
         {/each}
     </ol>
     <a class="underline" href="/">Revenir à l'accueil</a>
