@@ -5,9 +5,13 @@
     function startIntro() {
         goto('/game/intro')
     }
+    function goToCredits() {
+        goto('/credits')
+    }
 </script>
 
 <div class="flex flex-col items-center justify-center h-full">
     <h1 class="text-pink-500 font-bold text-3xl">Too well stolen</h1>
     <Button handleClick={startIntro}>Commencer</Button>
+    <Button handleClick={goToCredits}>Crédits</Button>
 </div>
