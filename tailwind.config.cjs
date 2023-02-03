@@ -7,7 +7,8 @@ module.exports = {
     theme: {
         extend: {
             aspectRatio: {
-                'phone': '9 / 16'
+                'phone': '9 / 16',
+                'painting': '4 / 5'
             }
         },
         fontFamily: {
