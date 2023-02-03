@@ -1,4 +1,4 @@
-import {comics} from "$db/comics";
+import {comics} from "$db/collections/comics";
 
 export async function load(): Promise<object> {
     const data = await comics.find({}, {
