@@ -4,7 +4,7 @@
     export let data: PageData;
 
 </script>
-<h1>Select a car</h1>
+<h1>Statistiques</h1>
 <ul>
     {#each data.comics as comic}
         <li>

@@ -1,5 +1,22 @@
 <script lang="ts">
     import {selectedSuspects} from "$lib/stores/selectedSuspects";
+
+    async function doPost() {
+        const res = await fetch('/api/stats', {
+            method: 'POST',
+            body: JSON.stringify({
+                selectedSuspects: $selectedSuspects.map(suspect => suspect.id)
+            }),
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+
+        const json = await res.json()
+        const result = JSON.stringify(json)
+    }
+
+    doPost()
 </script>
 
 <div class="flex flex-col items-center justify-center h-full">
