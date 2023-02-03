@@ -13,6 +13,8 @@
 <div class="flex flex-col items-center justify-center h-full bg-black">
     <h1 class="text-yellow text-h2">Too well stolen</h1>
     <img class="m-8" src="" alt="">
-    <Button handleClick={startIntro}>Jouer</Button>
-    <Button handleClick={goToCredits}>Crédits</Button>
+    <div class="flex flex-col cloumn gap-10">
+        <Button handleClick={startIntro}>Jouer</Button>
+        <Button handleClick={goToCredits}>Crédits</Button>
+    </div>
 </div>
