@@ -10,8 +10,12 @@
     }
 </script>
 
-<div class="flex flex-col items-center justify-center h-full">
-    <h1 class="text-pink-500 font-bold text-3xl">Too well stolen</h1>
-    <Button handleClick={startIntro}>Commencer</Button>
-    <Button handleClick={goToCredits}>Crédits</Button>
+<div class="flex flex-col items-center justify-center h-full bg-black">
+    <h1 class="text-yellow text-h2">Too well</h1>
+    <h1 class="text-yellow text-h1">Stolen</h1>
+    <img class="m-8" src="" alt="">
+    <div class="flex flex-col cloumn gap-10">
+        <Button handleClick={startIntro}>Jouer</Button>
+        <Button handleClick={goToCredits}>Crédits</Button>
+    </div>
 </div>

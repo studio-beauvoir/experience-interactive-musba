@@ -7,8 +7,8 @@
     }
 </script>
 
-<div class="flex flex-col items-center justify-center h-full">
-    <img src="https://d2lkryo36aywim.cloudfront.net/eyJidWNrZXQiOiJvcGFjLXByb2QtbWVkaWEiLCJrZXkiOiJib3JkZWF1eFwvb3diYTAyXC85YzQwZWU2Yy0xMWY4LTRlNGItODYxNC1lODVlNzRkYmVkNTEuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2NTAsImhlaWdodCI6NjUwLCJmaXQiOiJpbnNpZGUifX19" alt="Sculture nommée La figure au bord de l'eau, du sculteur Joseph Rivière">
-    <p class="flex text-center">Excuse-moi ? <br> J’aurais besoin d’un petit coup de pouce... <br>Une personne malveillante vient de voler ma serviette et même si la nudité ne me déplaît, j’aimerais bien la retrouver. <br>Il me semble l’avoir vu partir par là !</p>
+<div class="flex flex-col items-center justify-center h-full bg-black">
+    <h1 class="text-yellow text-h1">Too well stolen</h1>
+    <p class="flex text-center">Pour profiter pleinement de l’expérience, l’idéal est de se trouver au Musée des Beaux Arts de Bordeaux. <br><br> Et plus précisément dans la salle “Les années 1910-1940 : du cubisme au retour à l’ordre”. <br><br> N’hésitez pas à y explorer les différentes œuvres et à rester attentifs à leurs personnages. Leurs répliques ne seront pas vos seuls indices...</p>
     <Button handleClick={startGame}>Continuer</Button>
 </div>
