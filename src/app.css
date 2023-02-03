@@ -29,7 +29,6 @@
         @apply relative;
     }
 
-    
     .decoration::after {
         content:"";
         @apply block absolute inset-0 border-2 border-yellow
@@ -38,5 +37,19 @@
     .decoration::before {
         content:"";
         @apply block absolute inset-0 border-2 border-brown translate-x-1 translate-y-1
+    }
+
+    .decoration-rounded {
+        @apply relative;
+    }
+
+    .decoration-rounded::after {
+        content:"";
+        @apply rounded-full block absolute inset-0 border border-yellow
+    }
+
+    .decoration-rounded::before {
+        content:"";
+        @apply rounded-full block absolute inset-0 border border-brown translate-x-0.5 translate-y-0.5
     }
 }
