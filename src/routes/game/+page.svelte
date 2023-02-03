@@ -3,7 +3,7 @@
     import PaintingLevel from "$lib/components/PaintingLevel.svelte";
     import {goto} from "$app/navigation";
 
-    let painting = 0;
+    let painting = 2;
 
     const paintings = [
         {
@@ -16,7 +16,7 @@
                     text: 'Heu.. .J’aurais bien eu besoin d’essuyer mon erreur avec la serviette après avoir été dérangé par l’archer',
                     position: {
                         x: 14,
-                        y: 57
+                        y: 52
                     },
                 },
                 {
@@ -25,7 +25,7 @@
                     text: 'Hein ? Je n’ai absolument rien à voir avec ça, mon chien est paniqué après avoir vu ses deux autres chiens là-bas\n',
                     position: {
                         x: 52,
-                        y: 60
+                        y: 54
                     },
                 },
                 {
@@ -34,7 +34,7 @@
                     text: 'Pfff.. .Elle m’énerve celle-là avec sa serviette... Ce n’est pas moi mais bon, ça ne lui ferait pas de mal...',
                     position: {
                         x: 85,
-                        y: 33
+                        y: 29
                     },
                 },
             ]
@@ -49,7 +49,7 @@
                     text: 'Pardon ? Une serviette ? Je suis trop occupé à me maintenir en forme. Mais regardez peut-être là où pointe mon arc.',
                     position: {
                         x: 25,
-                        y: 30
+                        y: 25
                     },
                 },
                 {
@@ -58,7 +58,7 @@
                     text: 'Hein ?! Moi voleuse ? Vous m’avez bien regardé ?! Loin de moi cette idée, je n’ai rien à me reprocher.',
                     position: {
                         x: 53,
-                        y: 40
+                        y: 35
                     },
                 },
                 {
@@ -82,7 +82,7 @@
                     text: 'Quoi ? Une serviette ? Non merci, j’ai ma tunique. La personne là-bas m’a l’air d’avoir froid.',
                     position: {
                         x: 23,
-                        y: 35
+                        y: 30
                     },
                 },
                 {
@@ -91,7 +91,7 @@
                     text: 'Hehe ! Écoute moi bien, les guerriers ne portent pas de serviettes, mais des toges, IDIOT, va regarder là-bas si j’y suis.',
                     position: {
                         x: 57,
-                        y: 53
+                        y: 47
                     },
                 },
                 {
@@ -100,7 +100,7 @@
                     text: 'Ah ! Je crois l’avoir entendu souffler par là. Elle a peut-être été emportée par le vent. Allez-y !',
                     position: {
                         x: 70,
-                        y: 85
+                        y: 78
                     },
                 },
             ]
