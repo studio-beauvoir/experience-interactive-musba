@@ -6,26 +6,24 @@
     }
 </script>
 
-<!-- <div class="flex flex-col items-center justify-center h-full bg-black">
-    <h1 class="text-yellow text-h1">Too well stolen</h1>
-    <p class="flex text-center">Pour profiter pleinement de l’expérience, l’idéal est de se trouver au Musée des Beaux Arts de Bordeaux. <br><br> Et plus précisément dans la salle “Les années 1910-1940 : du cubisme au retour à l’ordre”. <br><br> N’hésitez pas à y explorer les différentes œuvres et à rester attentifs à leurs personnages. Leurs répliques ne seront pas vos seuls indices...</p>
-    <Button handleClick={startGame}>Continuer</Button>
-</div> -->
+<section class="flex flex-col items-center justify-center h-screen bg-black overflow-hidden">
+    <section class="relative flex-grow w-full overflow-hidden">
+        <img alt="Sculture vue de derrière nommée Femme nue au bord de l'eau"
+             class="absolute inset-0"
+             src="/images/femme-nue-derriere.png">
+    </section>
 
-<div class="flex flex-col items-center justify-center h-full bg-black">
-    <div class="w-full h-16 z-10 bg-black absolute top-0">
+    <section class="relative h-44 w-full p-6 border-t border-yellow">
+        <img class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
+             src="/images/figures/statue.jpg">
 
-    </div>
-    <img alt="Sculture vue de derrière nommée Femme nue au bord de l'eau" class="h-full w-full z-0"
-         src="/images/femme-nue-derriere.png">
-    <div class="w-full h-40 z-10 bg-black absolute bottom-0 p-6">
-        <p class="text-p text-white flex-grow">Une personne malveillante vient de voler ma serviette...</p>
-        <div class="flex h-16 items-end flex-shrink">
-            <button class="flex ml-auto flex-row align-center items-center gap-3" on:click={startGame}>
+        <article class="flex flex-col h-full">
+            <p class="text-p text-white flex-grow mr-16">Une personne malveillante vient de voler ma serviette...</p>
+
+            <button class="flex mt-auto ml-auto flex-row align-center items-center gap-3" on:click={startGame}>
                 <span class="text-p h-full align-center text-white justify-self-start">Continuer</span>
                 <span class="decoration-rounded w-8 h-8 rounded-full text-white p-1">&#x2192</span>
             </button>
-        </div>
-
-    </div>
-</div>
+        </article>
+    </section>
+</section>
