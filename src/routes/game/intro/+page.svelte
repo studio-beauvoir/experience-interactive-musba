@@ -19,11 +19,13 @@
     </div>
     <img src="/images/femme-nue-derriere.png" class="h-full w-full z-0" alt="Sculture vue de derrière nommée Femme nue au bord de l'eau">
     <div class="w-full h-40 z-10 bg-black absolute bottom-0 p-6">
-        <p class="text-p text-white">Une personne malveillante vient de voler ma serviette...</p>
-        <button class="flex ml-auto h-12 flex-row items-center gap-4">
-            <p class="text-p text-white justify-self-start">Continuer</p>
-            <div class="decoration-rounded w-8 h-8 rounded-full text-white ">&#x2192</div>
-        </button>
+        <p class="text-p text-white flex-grow">Une personne malveillante vient de voler ma serviette...</p>
+        <div class="flex h-16 items-end flex-shrink">
+            <button on:click={startGame} class="flex ml-auto flex-row align-center items-center gap-3">
+                <p class="text-p h-full align-center text-white justify-self-start">Continuer</p>
+                <div class="decoration-rounded w-8 h-8 rounded-full text-white p-1">&#x2192</div>
+            </button>
+        </div>
         
     </div>
 </div>
