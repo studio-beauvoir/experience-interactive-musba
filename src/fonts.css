@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "Saol";
+    src: url("/fonts/saol-display-regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SfPro";
+    src: url("/fonts/sf-pro-display-light-italic.otf");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "SfPro";
+    src: url("/fonts/sf-pro-display-regular.otf");
+    font-weight: 400;
+    font-style: normal;
+}

@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Button from "$lib/components/Button.svelte";
     import {goto} from "$app/navigation";
 
     function startGame() {
@@ -7,8 +6,24 @@
     }
 </script>
 
-<div class="flex flex-col items-center justify-center h-full">
-    <img src="https://d2lkryo36aywim.cloudfront.net/eyJidWNrZXQiOiJvcGFjLXByb2QtbWVkaWEiLCJrZXkiOiJib3JkZWF1eFwvb3diYTAyXC85YzQwZWU2Yy0xMWY4LTRlNGItODYxNC1lODVlNzRkYmVkNTEuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2NTAsImhlaWdodCI6NjUwLCJmaXQiOiJpbnNpZGUifX19" alt="Sculture nommée La figure au bord de l'eau, du sculteur Joseph Rivière">
-    <p class="flex text-center">Excuse-moi ? <br> J’aurais besoin d’un petit coup de pouce... <br>Une personne malveillante vient de voler ma serviette et même si la nudité ne me déplaît, j’aimerais bien la retrouver. <br>Il me semble l’avoir vu partir par là !</p>
-    <Button handleClick={startGame}>Continuer</Button>
-</div>
+<section class="flex flex-col items-center justify-center h-screen bg-black overflow-hidden">
+    <section class="relative flex-grow w-full overflow-hidden">
+        <img alt="Sculture vue de derrière nommée Femme nue au bord de l'eau"
+             class="absolute inset-0"
+             src="/images/femme-nue-derriere.png">
+    </section>
+
+    <section class="relative h-44 w-full p-6 border-t border-yellow">
+        <img class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
+             src="/images/figures/statue.jpg">
+
+        <article class="flex flex-col h-full">
+            <p class="text-p text-white flex-grow mr-16">Une personne malveillante vient de voler ma serviette...</p>
+
+            <button class="flex mt-auto ml-auto flex-row align-center items-center gap-3" on:click={startGame}>
+                <span class="text-p h-full align-center text-white justify-self-start">Continuer</span>
+                <span class="decoration-rounded w-8 h-8 rounded-full text-white p-1">&#x2192</span>
+            </button>
+        </article>
+    </section>
+</section>

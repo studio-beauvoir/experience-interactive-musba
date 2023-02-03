@@ -1,8 +1,34 @@
 <script lang="ts">
+    import Button from "$lib/components/Button.svelte";
     import {selectedSuspects} from "$lib/stores/selectedSuspects";
+    import {goto} from "$app/navigation";
+
+    function backToHome() {
+        goto('../../')
+    }
+    function credits() {
+        goto('../../credits')
+    }
+
+    async function doPost() {
+        const res = await fetch('/api/stats', {
+            method: 'POST',
+            body: JSON.stringify({
+                selectedSuspects: $selectedSuspects.map(suspect => suspect.id)
+            }),
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+
+        const json = await res.json()
+        const result = JSON.stringify(json)
+    }
+
+    doPost()
 </script>
 
-<div class="flex flex-col items-center justify-center h-full">
+<div class="flex flex-col items-center justify-center h-full bg-black">
     <h1 class="text-pink-500 font-bold text-3xl">Vous avez fini !</h1>
     <p>Selon vous, les suspects sont</p>
     <ol class="list-decimal">
@@ -10,5 +36,6 @@
             <li>{ suspect.name }</li>
         {/each}
     </ol>
-    <a class="underline" href="/">Revenir à l'accueil</a>
+    <Button handleClick={backToHome}>Rejouer</Button>
+    <Button handleClick={credits}>Crédits</Button>
 </div>

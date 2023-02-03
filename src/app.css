@@ -1,3 +1,55 @@
+@import "fonts.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .text-h1 {
+        @apply font-display text-4xl font-normal
+    }
+
+    .text-h2 {
+        @apply text-2xl font-normal
+    }
+
+    .text-cta {
+        @apply font-display text-xl font-normal
+    }
+
+    .text-p {
+        @apply text-base font-normal
+    }
+
+    .text-label {
+        @apply text-base font-light italic
+    }
+
+    .decoration {
+        @apply relative;
+    }
+
+    .decoration::after {
+        content:"";
+        @apply block absolute inset-0 border-2 border-yellow
+    }
+
+    .decoration::before {
+        content:"";
+        @apply block absolute inset-0 border-2 border-brown translate-x-1 translate-y-1
+    }
+
+    .decoration-rounded {
+        @apply relative;
+    }
+
+    .decoration-rounded::after {
+        content:"";
+        @apply rounded-full block absolute inset-0 border border-yellow
+    }
+
+    .decoration-rounded::before {
+        content:"";
+        @apply rounded-full block absolute inset-0 border border-brown translate-x-0.5 translate-y-0.5
+    }
+}
