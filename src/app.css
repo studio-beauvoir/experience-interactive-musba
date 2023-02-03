@@ -1,21 +1,27 @@
+@import "fonts.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
     .text-h1 {
-        @apply text-4xl font-normal
+        @apply font-display text-4xl font-normal
     }
+
     .text-h2 {
         @apply text-2xl font-normal
     }
-    .cta {
-        @apply text-xl font-normal
+
+    .text-cta {
+        @apply font-display text-xl font-normal
     }
-    .p {
+
+    .text-p {
         @apply text-base font-normal
     }
-    .label {
+
+    .text-label {
         @apply text-base font-light italic
     }
 }
