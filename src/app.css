@@ -24,4 +24,19 @@
     .text-label {
         @apply text-base font-light italic
     }
+
+    .decoration {
+        @apply relative;
+    }
+
+    
+    .decoration::after {
+        content:"";
+        @apply block absolute inset-0 border-2 border-yellow
+    }
+
+    .decoration::before {
+        content:"";
+        @apply block absolute inset-0 border-2 border-brown translate-x-1 translate-y-1
+    }
 }
