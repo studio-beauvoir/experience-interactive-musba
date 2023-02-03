@@ -51,9 +51,10 @@
         {#if inspectingSuspect}
             <article class="py-4">
                 <p>{inspectingSuspect.text}</p>
-                <button on:click={dispatchSuspectSelected} class="flex flex-row gap-2 items-center">
-                    <span>Confirmer</span>
-                    <span class="decoration rounded-full">></span>
+                <button on:click={dispatchSuspectSelected}
+                        class="flex ml-auto flex-row align-center items-center gap-3">
+                    <span class="text-p h-full align-center text-white justify-self-start">Continuer</span>
+                    <span class="decoration-rounded w-8 h-8 rounded-full text-white p-1">&#x2192</span>
                 </button>
             </article>
         {:else}
