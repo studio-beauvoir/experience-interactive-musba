@@ -7,7 +7,7 @@
     }
 </script>
 
-<div class="flex flex-col items-center justify-center h-full">
+<div class="flex flex-col items-center justify-center h-full bg-black">
     <h1 class="text-h1 text-yellow">Crédits</h1>
     <p class="flex text-center">Coquard-Misono Leïly<br>Proust Arthaud<br>Wegera Quentin<br>Nago Jason<br>Lust Maxime</p>
     <Button handleClick={backToHome}>Retour</Button>

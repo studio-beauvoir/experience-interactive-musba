@@ -11,7 +11,7 @@
     }
 </script>
 
-<div class="flex flex-col items-center justify-center h-full">
+<div class="flex flex-col items-center justify-center h-full bg-black">
     <h1 class="text-pink-500 font-bold text-3xl">Vous avez fini !</h1>
     <p>Selon vous, les suspects sont</p>
     <ol class="list-decimal">
