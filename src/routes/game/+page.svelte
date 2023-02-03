@@ -3,7 +3,7 @@
     import PaintingLevel from "$lib/components/PaintingLevel.svelte";
     import {goto} from "$app/navigation";
 
-    let painting = 2;
+    let painting = 0;
 
     const paintings = [
         {
