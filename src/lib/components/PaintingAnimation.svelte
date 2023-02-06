@@ -15,6 +15,7 @@
             loop="{true}"
             controls="{false}"
             renderer="svg"
+            controlsLayout="{[]}"
             background="transparent"
             height="{document.body.offsetWidth*widthInPercent/100}"
             width="{document.body.offsetWidth*widthInPercent/100}"

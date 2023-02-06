@@ -30,17 +30,18 @@
 
 <section class="flex flex-col h-full">
     <section class="relative w-full flex-grow overflow-hidden">
-        <section class="absolute bottom-0 h-min w-full">
-            <img alt="{painting.name}" class="relative bottom-0 h-auto w-full object-bottom origin-bottom-left"
+        <section class="absolute bottom-0 h-min w-full origin-bottom-left"
+                 style="{inspectingSuspectStyle}">
+            <img alt="{painting.name}" class="relative bottom-0 h-auto w-full object-bottom "
                  src="{painting.image}"
-                 style="{inspectingSuspectStyle}"
             >
-            {#if !inspectingSuspect}
-                {#each painting.suspects as suspect}
-                    <PaintingAnimation position={suspect.face} file="/lotties/{suspect.id}.json"/>
+
+            {#each painting.suspects as suspect}
+                <PaintingAnimation position={suspect.face} file="/lotties/{suspect.id}.json"/>
+                {#if !inspectingSuspect}
                     <SuspectButton suspect={suspect} handleClick={()=>inspectSuspect(suspect)}/>
-                {/each}
-            {/if}
+                {/if}
+            {/each}
         </section>
         {#if inspectingSuspect}
             <button on:click={cancelSuspectInspection}
