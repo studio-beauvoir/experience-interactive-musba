@@ -10,7 +10,12 @@ export const paintings = readable([
                 name: '3',
                 type: 'witness',
                 text: 'Heu.. .J’aurais bien eu besoin d’essuyer mon erreur avec la serviette après avoir été dérangé par l’archer',
-                position: {
+                button: {
+                    rightSide: false,
+                    x: 25,
+                    y: 58
+                },
+                face: {
                     x: 14,
                     y: 52
                 },
@@ -20,7 +25,12 @@ export const paintings = readable([
                 name: '2',
                 type: 'innocent',
                 text: 'Hein ? Je n’ai absolument rien à voir avec ça, mon chien est paniqué après avoir vu les deux autres chiens en face',
-                position: {
+                button: {
+                    rightSide: false,
+                    x: 65,
+                    y: 60
+                },
+                face: {
                     x: 52,
                     y: 54
                 },
@@ -30,7 +40,12 @@ export const paintings = readable([
                 name: '1',
                 type: 'accomplice',
                 text: 'Pfff.. .Elle m’énerve celle-là avec sa serviette... Ce n’est pas moi mais bon, ça ne lui ferait pas de mal...',
-                position: {
+                button: {
+                    rightSide: true,
+                    x: 73,
+                    y: 37
+                },
+                face: {
                     x: 85,
                     y: 29
                 },
@@ -46,7 +61,12 @@ export const paintings = readable([
                 name: '1',
                 type: 'witness',
                 text: 'Pardon ? Une serviette ? Je suis trop occupé à me maintenir en forme. Mais regardez peut-être là où pointe mon arc.',
-                position: {
+                button: {
+                    rightSide: true,
+                    x: 13,
+                    y: 31
+                },
+                face: {
                     x: 25,
                     y: 25
                 },
@@ -56,7 +76,12 @@ export const paintings = readable([
                 name: '2',
                 type: 'accomplice',
                 text: 'Hein ?! Moi voleuse ? Vous m’avez bien regardé ?! Loin de moi cette idée, je n’ai rien à me reprocher.',
-                position: {
+                button: {
+                    rightSide: true,
+                    x: 40,
+                    y: 40
+                },
+                face: {
                     x: 53,
                     y: 35
                 },
@@ -66,7 +91,12 @@ export const paintings = readable([
                 name: '3',
                 type: 'innocent',
                 text: 'Wouaf. je n’ai rien vu. Je n’ai d’yeux que pour mon maître moi. Il est beau mon maître hein. ',
-                position: {
+                button: {
+                    rightSide: false,
+                    x: 86,
+                    y: 26
+                },
+                face: {
                     x: 77,
                     y: 20
                 },
@@ -82,9 +112,14 @@ export const paintings = readable([
                 name: '3',
                 type: 'witness',
                 text: 'Quoi ? Une serviette ? Non merci, j’ai ma tunique. La personne là-bas m’a l’air d’avoir froid.',
-                position: {
+                button: {
+                    rightSide: false,
+                    x: 35,
+                    y: 38
+                },
+                face: {
                     x: 23,
-                    y: 30
+                    y: 32
                 },
             },
             {
@@ -92,9 +127,14 @@ export const paintings = readable([
                 name: '2',
                 type: 'innocent',
                 text: 'Hehe ! Écoute moi bien, les guerriers ne portent pas de serviettes, mais des toges, IDIOT, va regarder là-bas si j’y suis.',
-                position: {
+                button: {
+                    rightSide: true,
+                    x: 47,
+                    y: 55
+                },
+                face: {
                     x: 57,
-                    y: 47
+                    y: 48
                 },
             },
             {
@@ -102,7 +142,12 @@ export const paintings = readable([
                 name: '1',
                 type: 'accomplice',
                 text: 'Ah ! Je crois l’avoir entendu souffler par là. Elle a peut-être été emportée par le vent. Allez-y !',
-                position: {
+                button: {
+                    rightSide: true,
+                    x: 57,
+                    y: 82
+                },
+                face: {
                     x: 70,
                     y: 78
                 },
