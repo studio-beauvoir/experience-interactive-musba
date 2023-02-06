@@ -2,6 +2,6 @@
     export let handleClick;
 </script>
 
-<button class="decoration w-24 h-12 text-white" on:click={handleClick}>
+<button class="decoration text-cta px-10 py-4 text-white" on:click={handleClick}>
     <slot></slot>
 </button>
