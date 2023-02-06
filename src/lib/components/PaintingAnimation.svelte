@@ -6,7 +6,6 @@
 
     const widthInPercent = 28;
 
-    console.log(document.body.offsetWidth*widthInPercent/100)
 </script>
 
 <div class="absolute translate-y-1/2 -translate-x-1/2 pointer-events-none" style="left: {position.x}%; bottom: {position.y}%;">
