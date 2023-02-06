@@ -4,7 +4,7 @@
     import PaintingLevel from "$lib/components/PaintingLevel.svelte";
     import {goto} from "$app/navigation";
 
-    let painting = 0;
+    let painting = 2;
 
     selectedSuspects.set([]);
 

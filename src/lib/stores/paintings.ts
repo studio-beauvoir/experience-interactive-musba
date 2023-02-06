@@ -13,10 +13,10 @@ export const paintings = readable([
                 button: {
                     rightSide: false,
                     x: 25,
-                    y: 58
+                    y: 60
                 },
                 face: {
-                    x: 14,
+                    x: 12,
                     y: 52
                 },
             },
@@ -31,7 +31,7 @@ export const paintings = readable([
                     y: 60
                 },
                 face: {
-                    x: 52,
+                    x: 51,
                     y: 54
                 },
             },
@@ -43,11 +43,11 @@ export const paintings = readable([
                 button: {
                     rightSide: true,
                     x: 73,
-                    y: 37
+                    y: 38
                 },
                 face: {
-                    x: 85,
-                    y: 29
+                    x: 86,
+                    y: 30
                 },
             },
         ]
@@ -64,11 +64,11 @@ export const paintings = readable([
                 button: {
                     rightSide: true,
                     x: 13,
-                    y: 31
+                    y: 35
                 },
                 face: {
-                    x: 25,
-                    y: 25
+                    x: 24,
+                    y: 27
                 },
             },
             {
@@ -79,10 +79,10 @@ export const paintings = readable([
                 button: {
                     rightSide: true,
                     x: 40,
-                    y: 40
+                    y: 43
                 },
                 face: {
-                    x: 53,
+                    x: 51,
                     y: 35
                 },
             },
@@ -94,11 +94,11 @@ export const paintings = readable([
                 button: {
                     rightSide: false,
                     x: 86,
-                    y: 26
+                    y: 30
                 },
                 face: {
-                    x: 77,
-                    y: 20
+                    x: 76,
+                    y: 21
                 },
             },
         ]
@@ -114,11 +114,11 @@ export const paintings = readable([
                 text: 'Quoi ? Une serviette ? Non merci, j’ai ma tunique. La personne là-bas m’a l’air d’avoir froid.',
                 button: {
                     rightSide: false,
-                    x: 35,
-                    y: 38
+                    x: 36,
+                    y: 39
                 },
                 face: {
-                    x: 23,
+                    x: 19,
                     y: 32
                 },
             },
@@ -133,8 +133,8 @@ export const paintings = readable([
                     y: 55
                 },
                 face: {
-                    x: 57,
-                    y: 48
+                    x: 55,
+                    y: 47.5
                 },
             },
             {
@@ -148,8 +148,8 @@ export const paintings = readable([
                     y: 82
                 },
                 face: {
-                    x: 70,
-                    y: 78
+                    x: 69,
+                    y: 77
                 },
             },
         ]

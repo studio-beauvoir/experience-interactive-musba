@@ -1,6 +1,7 @@
 <script lang="ts">
     import {createEventDispatcher} from 'svelte';
     import SuspectButton from "$lib/components/SuspectButton.svelte";
+    import PaintingAnimation from "$lib/components/PaintingAnimation.svelte";
 
     export let painting;
 
@@ -36,6 +37,7 @@
             >
             {#if !inspectingSuspect}
                 {#each painting.suspects as suspect}
+                    <PaintingAnimation position={suspect.face} file="/lotties/{suspect.id}.json"/>
                     <SuspectButton suspect={suspect} handleClick={()=>inspectSuspect(suspect)}/>
                 {/each}
             {/if}
