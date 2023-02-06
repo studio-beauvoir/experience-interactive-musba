@@ -50,18 +50,18 @@
     <section class="relative h-44 w-full p-6 border-t border-yellow">
         {#if inspectingSuspect}
             <img class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
-                 src="/images/figures/{inspectingSuspect.id}.jpg">
+                 src="/images/figures/{inspectingSuspect.id}.jpg" alt=" ">
             <article class="flex flex-col h-full">
                 <p class="mr-16">{inspectingSuspect.text}</p>
-                <button on:click={dispatchSuspectSelected}
-                        class="flex mt-auto ml-auto flex-row align-center items-center gap-3">
-                    <span class="text-p h-full align-center text-white justify-self-start">Continuer</span>
-                    <span class="decoration-rounded w-8 h-8 rounded-full text-white p-1">&#x2192</span>
+                <button class="text-white flex mt-auto ml-auto flex-row align-center items-center gap-3"
+                        on:click={dispatchSuspectSelected}>
+                    <span class="text-p">Continuer</span>
+                    <span class="rounded-full decoration-rounded w-8 h-8 p-1">&#x2192</span>
                 </button>
             </article>
         {:else}
             <img class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
-                 src="/images/figures/statue.jpg">
+                 src="/images/figures/statue.jpg" alt=" ">
             <article class="flex flex-col h-full">
                 <p class="text-p mr-16">Je me demande qui c’est ... vous auriez une idée ?</p>
                 <p class="text-label text-yellow">Interrogez un suspect en cliquant dessus</p>
