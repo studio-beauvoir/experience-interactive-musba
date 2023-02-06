@@ -8,7 +8,7 @@
 
     const dispatch = createEventDispatcher();
 
-    $:inspectingSuspectStyle = inspectingSuspect ? `transform: scale(4) translate(${13 - inspectingSuspect.position.x}%, ${-13 + inspectingSuspect.position.y}%);` : ''
+    $:inspectingSuspectStyle = inspectingSuspect ? `transform: scale(4) translate(${13 - inspectingSuspect.face.x}%, ${-13 + inspectingSuspect.face.y}%);` : ''
 
     function dispatchSuspectSelected() {
         dispatch('suspect-selected', {
