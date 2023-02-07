@@ -1,8 +1,10 @@
 <script>
     import Button from "../lib/components/Button.svelte";
     import {goto} from "$app/navigation";
+    import {toggleFullScreen} from "$lib/stores/fullscreen";
 
     function startInfos() {
+        toggleFullScreen();
         goto('/game/infos')
     }
 
