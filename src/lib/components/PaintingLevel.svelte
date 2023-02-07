@@ -2,7 +2,11 @@
     import {createEventDispatcher} from 'svelte';
     import SuspectButton from "$lib/components/SuspectButton.svelte";
     import PaintingAnimation from "$lib/components/PaintingAnimation.svelte";
+    import Button from "$lib/components/Button.svelte";
+    import TextButton from "$lib/components/TextButton.svelte";
+
     import {fade} from 'svelte/transition';
+    import {ArrowLeft} from "radix-icons-svelte";
 
     export let painting;
 
@@ -81,25 +85,26 @@
             {/if}
         </section>
         {#if inspectingSuspect}
-            <button on:click={cancelSuspectInspection}
-                    class="absolute text-cta px-4 py-2 decoration top-6 left-4 bg-black/20">
-                Changer de coupable
-            </button>
+            <TextButton handleClick={cancelSuspectInspection}
+                        classList="absolute bottom-4 left-6">
+                <span class="rounded-full decoration-rounded p-2 w-8 h-8 ">
+                    <ArrowLeft class="h-full w-full"/>
+                </span>
+                <span class="text-cta">Changer de suspect</span>
+            </TextButton>
         {/if}
     </section>
-    <section class="relative h-44 w-full p-6 border-t border-yellow">
-        {#if inspectingSuspect}
+    {#if inspectingSuspect}
+        <section class="relative h-56 w-full p-6 border-t border-yellow">
             <img class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
                  src="/images/figures/{inspectingSuspect.id}.jpg" alt=" ">
-            <article class="flex flex-col h-full">
+            <article class="flex flex-col justify-between h-full">
                 <p class="mr-16">{inspectingSuspect.text}</p>
-                <button class="text-white flex mt-auto ml-auto flex-row align-center items-center gap-3"
-                        on:click={dispatchSuspectSelected}>
-                    <span class="text-p">Continuer</span>
-                    <span class="rounded-full decoration-rounded w-8 h-8 p-1">&#x2192</span>
-                </button>
+                <Button handleClick={dispatchSuspectSelected}>Accuser ce suspect</Button>
             </article>
-        {:else}
+        </section>
+    {:else}
+        <section class="relative h-44 w-full p-6 border-t border-yellow">
             <img class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
                  src="/images/figures/statue.jpg" alt=" ">
             {#if introductionDone}
@@ -117,6 +122,6 @@
                     </button>
                 </article>
             {/if}
-        {/if}
-    </section>
+        </section>
+    {/if}
 </section>
