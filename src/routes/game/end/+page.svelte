@@ -1,17 +1,12 @@
 <script lang="ts">
-    import Button from "$lib/components/Button.svelte";
     import {goto} from "$app/navigation";
-
-    // function goToResult() {
-    //     goto('result')
-    // }
 
     let dialogsIndex = 0;
 
-    function nextDialogOrGoToResult () {
-        dialogsIndex ++;
-
-        if ( dialogsIndex === (dialogs.length) ) {
+    function nextDialogOrGoToResult() {
+        if (dialogsIndex + 1 < dialogs.length) {
+            dialogsIndex++;
+        } else {
             goto('result')
         }
     }
