@@ -69,8 +69,8 @@
     <div class="-z-10 absolute bg-brown h-px w-[200vw] origin-center bottom-44 right-16 rotate-[32deg]"></div>
 
     <article class="flex flex-col px-6">
-        <h2 class="text-h2">Ooooh...</h2>
-        <h1 class="text-h1 ml-10">Bravo!</h1>
+        <h2 class="text-h2">Mystère</h2>
+        <h1 class="text-h1 ml-10">Résolu !</h1>
     </article>
 
     <p class="text-p text-center px-6">Vous avez eu une piste<br> bien intéressante !</p>
@@ -107,7 +107,7 @@
         {/each}
     </ol>
 
-    <section class="flex w-full justify-between px-6">
+    <section class="flex w-full justify-between px-10">
         <Button handleClick={goToCredits}>Crédits</Button>
         <Button handleClick={goBackToHome}>Rejouer</Button>
     </section>
