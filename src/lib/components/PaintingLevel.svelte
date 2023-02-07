@@ -65,8 +65,8 @@
         {:else}
             <img class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
                  src="/images/figures/statue.jpg" alt=" ">
-            <article class="flex flex-col h-full">
-                <p class="text-p mr-16">Je me demande qui c’est ... vous auriez une idée ?</p>
+            <article class="flex flex-col gap-4 h-full">
+                <p class="text-p mr-16">{painting.statueDialog}</p>
                 <p class="text-label text-yellow">Interrogez un suspect en cliquant dessus</p>
             </article>
         {/if}
