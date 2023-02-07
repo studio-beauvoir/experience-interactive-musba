@@ -68,6 +68,7 @@
     <div class="-z-10 absolute bg-brown h-px w-[200vw] origin-center bottom-60 -rotate-12"></div>
     <div class="-z-10 absolute bg-brown h-px w-[200vw] origin-center bottom-44 right-16 rotate-[32deg]"></div>
 
+    <img class="absolute z-0 top-0 right-0" src="/assets/lines-svg.svg" alt="">
     <article class="flex flex-col px-6">
         <h2 class="text-h2">Mystère</h2>
         <h1 class="text-h1 ml-10">Résolu !</h1>
