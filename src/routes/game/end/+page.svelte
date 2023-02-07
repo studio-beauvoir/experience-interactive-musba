@@ -1,115 +1,48 @@
 <script lang="ts">
     import Button from "$lib/components/Button.svelte";
-    import {selectedSuspects} from "$lib/stores/selectedSuspects";
-    import {parcours} from "$lib/stores/parcours";
     import {goto} from "$app/navigation";
 
-    if (!$selectedSuspects.length) {
-        goto('/');
-    }
+    // function goToResult() {
+    //     goto('result')
+    // }
 
-    function getParcoursFromSuspectsSelected() {
-        const parcoursId = $selectedSuspects.map(suspect => suspect.id).join('_');
-        return $parcours[parcoursId];
-        // const alphabet = "abcdefghijklmnopqrstuvwxyz&";
+    let dialogsIndex = 0;
 
-        // let txt = "";
-        // let n = 0
-        // for (let i = 1; i <= 3; i++) {
-        //     for (let j = 1; j <= 3; j++) {
-        //         for (let k = 1; k <= 3; k++) {
-        //             txt += `"1-${i}_2-${j}_3-${k}": "${alphabet[n]}",\n`
-        //             n++;
-        //         }
-        //     }
-        // }
-        // console.log(txt)
-    }
+    function nextDialogOrGoToResult () {
+        dialogsIndex ++;
 
-    getParcoursFromSuspectsSelected()
-
-    function getTraducedSuspectType(suspect) {
-        const trad = {
-            innocent: "Innocent",
-            witness: "Témoin",
-            accomplice: "Complice"
+        if ( dialogsIndex === (dialogs.length) ) {
+            goto('result')
         }
-
-        return trad[suspect.type];
     }
 
-    function goBackToHome() {
-        goto('/')
-    }
-
-    function goToCredits() {
-        goto('/credits')
-    }
-
-    async function saveResultsToDatabase() {
-        await fetch('/api/stats', {
-            method: 'POST',
-            body: JSON.stringify({
-                selectedSuspects: $selectedSuspects.map(suspect => suspect.id)
-            }),
-            headers: {
-                'content-type': 'application/json'
-            }
-        })
-    }
-
-    saveResultsToDatabase()
+    const dialogs = [
+        "Oh non ! Vous m’avez retrouvé ! Et bien oui, c’est moi qui ai volé la serviette ! Mes complices ne m’ont même pas couverte ! Pfff, ils n’ont aucune compassion pour moi...",
+        "Et puis c’est elle là aussi à me tourner le dos constamment et à se trémousser au beau milieu de la salle !",
+        "Qu’elle la garde sa serviette de gourgandine ! Je n’en ai plus besoin de toute façon !"
+    ]
 </script>
 
-<section
-        class="z-0 relative flex flex-col items-center justify-center h-full bg-black text-yellow gap-10 overflow-hidden">
-    <div class="-z-10 absolute bg-brown h-px w-[200vw] origin-center top-32 left-16 rotate-[32deg]"></div>
-    <div class="-z-10 absolute bg-brown h-px w-[200vw] origin-center top-44 left-16 rotate-[32deg]"></div>
-    <div class="-z-10 absolute bg-brown h-px w-[200vw] origin-center bottom-60 -rotate-12"></div>
-    <div class="-z-10 absolute bg-brown h-px w-[200vw] origin-center bottom-44 right-16 rotate-[32deg]"></div>
-
-    <article class="flex flex-col px-6">
-        <h2 class="text-h2">Ooooh...</h2>
-        <h1 class="text-h1 ml-10">Bravo!</h1>
-    </article>
-
-    <p class="text-p text-center px-6">Vous avez eu une piste<br> bien intéressante !</p>
-
-    <article class="w-full flex gap-6 items-center">
-        <section class="flex flex-col gap-2 w-full">
-            <div class="bg-brown h-px"></div>
-            <div class="bg-brown h-px mr-3"></div>
-            <div class="bg-brown h-px"></div>
-        </section>
-
-        <section class="text-center">
-            <p class="text-label">Parcours</p>
-            <p class="text-h1 uppercase">{getParcoursFromSuspectsSelected()}</p>
-        </section>
-
-        <section class="flex flex-col gap-2 w-full">
-            <div class="bg-brown h-px"></div>
-            <div class="bg-brown h-px ml-3"></div>
-            <div class="bg-brown h-px"></div>
-        </section>
-    </article>
-
-    <ol class="flex gap-4 justify-between w-full px-6">
-        {#each $selectedSuspects as suspect}
-            <li class="flex flex-col gap-2 items-center">
-                <img alt=" "
-                     class="aspect-square border border-yellow"
-                     src="/images/figures/{suspect.id}.jpg">
-                <span class="text-label text-white">
-                    {getTraducedSuspectType(suspect)}
-                </span>
-            </li>
-        {/each}
-    </ol>
-
-    <section class="flex w-full justify-between px-6">
-        <Button handleClick={goToCredits}>Crédits</Button>
-        <Button handleClick={goBackToHome}>Rejouer</Button>
+<section class="flex flex-col items-center justify-center h-screen bg-black overflow-hidden">
+    <section class="relative flex-grow w-full overflow-hidden">
+        <img alt="Sculpture vue de derrière nommée Femme nue au bord de l'eau"
+             class="absolute w-full h-full object-cover"
+             src="/images/femme-nue-derriere.png">
     </section>
 
+    <section class="relative h-44 w-full p-6 border-t border-yellow">
+        <img alt=" "
+             class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
+             src="/images/figures/statue.jpg">
+
+        <article class="flex flex-col h-full">
+            <p class="text-p text-white flex-grow mr-16">{dialogs[dialogsIndex]}</p>
+
+            <button class="text-white flex mt-auto ml-auto flex-row align-center items-center gap-3"
+                    on:click={nextDialogOrGoToResult}>
+                <span class="text-p">Continuer</span>
+                <span class="rounded-full decoration-rounded w-8 h-8 p-1">&#x2192</span>
+            </button>
+        </article>
+    </section>
 </section>
