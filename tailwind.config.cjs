@@ -17,6 +17,7 @@ module.exports = {
         },
         colors: {
             transparent: 'transparent',
+            'semi-transparent': 'rgb(0 0 0 / 59%)',
             current: 'currentColor',
             black: '#262626',
             yellow: '#FFD976',
