@@ -71,7 +71,7 @@
     <img class="absolute z-0 top-0 right-0" src="/assets/lines-svg.svg" alt="">
     <article class="flex flex-col px-6 z-10">
         <h2 class="text-h2">Mystère</h2>
-        <h1 class="text-h1 ml-10">Résolu !</h1>
+        <h1 class="text-display ml-10">Résolu !</h1>
     </article>
 
     <p class="text-p text-center px-6">Vous avez eu une piste<br> bien intéressante !</p>
