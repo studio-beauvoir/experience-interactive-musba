@@ -138,8 +138,8 @@ export const paintings = readable([
                 text: 'Hehe ! Écoute moi bien, les guerriers ne portent pas de serviettes, mais des toges, IDIOT, va regarder là-bas si j’y suis.',
                 button: {
                     rightSide: true,
-                    x: 47,
-                    y: 55
+                    x: 44,
+                    y: 54
                 },
                 face: {
                     x: 55,
@@ -150,15 +150,15 @@ export const paintings = readable([
                 id: '3-1',
                 name: '1',
                 type: 'accomplice',
-                text: 'Ah ! Je crois l’avoir entendu souffler par là. Elle a peut-être été emportée par le vent. Allez-y !',
+                text: 'Chèvre : Quelle servièèètttte ? Je l’aurai volée avec mes cornes et donnée à un autre tableau pour m’innocenter ? C’est trop bêêêêttteeee.',
                 button: {
-                    rightSide: true,
-                    x: 57,
-                    y: 82
+                    rightSide: false,
+                    x: 90,
+                    y: 50
                 },
                 face: {
-                    x: 69,
-                    y: 77
+                    x: 74.5,
+                    y: 42
                 },
             },
         ]
