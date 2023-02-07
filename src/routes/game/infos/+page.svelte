@@ -1,0 +1,15 @@
+<script lang="ts">
+    import Button from "$lib/components/Button.svelte";
+    import {goto} from "$app/navigation";
+
+    function startIntro() {
+        goto('intro')
+    }
+</script>
+
+<section class="flex flex-col items-center justify-center h-screen bg-black overflow-hidden px-14">
+    <h1 class="text-yellow text-h2">Bon à</h1>
+    <h1 class="text-yellow text-h1">Savoir</h1>
+    <p class="text-label text-yellow text-center my-16">Pour profiter pleinement de l’expérience, l’idéal est de se trouver au Musée des Beaux Arts de Bordeaux. <br><br> Et plus précisément dans la salle “Les années 1910-1940 : du cubisme au retour à l’ordre”. <br><br> N’hésitez pas à y explorer les différentes œuvres et à rester attentifs à leurs personnages. Leurs répliques ne seront pas vos seuls indices...</p>
+    <Button handleClick={startIntro}>Continuer</Button>
+</section>
