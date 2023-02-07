@@ -4,6 +4,7 @@ export const paintings = readable([
     {
         name: 'Hommage à Vuillard',
         image: '/images/painting-1.png',
+        statueDialog: 'Je me demande qui c’est... Vous auriez une idée ?',
         suspects: [
             {
                 id: '1-3',
@@ -55,6 +56,7 @@ export const paintings = readable([
     {
         name: 'L\'archer',
         image: '/images/painting-2.png',
+        statueDialog: 'Le prochain suspect devrait être ici. Une idée de qui ça pourrait être ?',
         suspects: [
             {
                 id: '2-1',
@@ -106,6 +108,7 @@ export const paintings = readable([
     {
         name: 'La gloire de Bordeaux',
         image: '/images/painting-3.png',
+        statueDialog: 'Bon, on devrait bientôt trouver notre coupable. Il faut continuer les investigations !',
         suspects: [
             {
                 id: '3-3',
