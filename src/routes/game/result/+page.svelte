@@ -68,7 +68,8 @@
     <div class="-z-10 absolute bg-brown h-px w-[200vw] origin-center bottom-60 -rotate-12"></div>
     <div class="-z-10 absolute bg-brown h-px w-[200vw] origin-center bottom-44 right-16 rotate-[32deg]"></div>
 
-    <article class="flex flex-col px-6">
+    <img class="absolute z-0 top-0 right-0" src="/assets/lines-svg.svg" alt="">
+    <article class="flex flex-col px-6 z-10">
         <h2 class="text-h2">Mystère</h2>
         <h1 class="text-h1 ml-10">Résolu !</h1>
     </article>
@@ -107,9 +108,9 @@
         {/each}
     </ol>
 
-    <section class="flex w-full justify-between px-10">
-        <Button handleClick={goToCredits}>Crédits</Button>
-        <Button handleClick={goBackToHome}>Rejouer</Button>
+    <section class="flex w-full justify-center gap-6 px-6">
+        <Button classList="w-full" handleClick={goToCredits}>Crédits</Button>
+        <Button classList="w-full" handleClick={goBackToHome}>Rejouer</Button>
     </section>
 
 </section>
