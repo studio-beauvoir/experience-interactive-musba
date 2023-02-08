@@ -23,7 +23,7 @@
 <div class="relative h-full">
     <slot/>
 
-    <section class="absolute top-4 right-4">
+    <section class="fixed top-4 right-4">
         <button class="text-yellow bg-black border border-yellow rounded-full p-2"
                 on:click={toggleFullScreen}>
             {#if $isFullscreen}

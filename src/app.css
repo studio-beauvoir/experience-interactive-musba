@@ -5,8 +5,16 @@
 @tailwind utilities;
 
 @layer components {
+    .text-drop-capital {
+        @apply font-display text-9xl
+    }
+
     .text-display {
         @apply font-display text-6xl font-normal
+    }
+
+    .text-soft-display {
+        @apply text-3xl font-normal
     }
 
     .text-h1 {
@@ -14,7 +22,7 @@
     }
 
     .text-h2 {
-        @apply text-2xl font-normal
+        @apply text-xl font-normal
     }
 
     .text-cta {
