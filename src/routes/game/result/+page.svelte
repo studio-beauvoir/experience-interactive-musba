@@ -13,7 +13,7 @@
         $paintings[2].suspects[0],
     ])
 
-    let tabs = [
+    const tabs = [
         {
             id: 'parcours',
             label: 'Parcours'
@@ -28,7 +28,16 @@
         },
     ];
 
+    let laureates = {
+        win: '&',
+        highest: '?',
+        lowest: '?'
+    }
+    
     let tabIndexSelected = 1;
+
+    // saveResultsToDatabase()
+    getStatsFromDatabase();
 
     function handleTabChange(event) {
         tabIndexSelected = tabs.findIndex(tab => tab.id === event.detail.tab.id);
@@ -38,8 +47,6 @@
         const parcoursId = $selectedSuspects.map(suspect => suspect.id).join('_');
         return $parcours[parcoursId];
     }
-
-    getParcoursFromSuspectsSelected()
 
     function getTraducedSuspectType(suspect) {
         const trad = {
@@ -63,7 +70,25 @@
         })
     }
 
-    // saveResultsToDatabase()
+
+    async function getStatsFromDatabase() {
+        const data = await fetch('/api/stats', {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+
+        const jsonData = await data.json();
+
+        jsonData.sort((a, b) => a.total - b.total)
+
+        const lowestId = jsonData[0]._id.selectedSuspects.join('_');
+        const highestID = jsonData[jsonData.length - 1]._id.selectedSuspects.join('_');
+
+        laureates.highest = $parcours[highestID];
+        laureates.lowest = $parcours[lowestId];
+    }
 </script>
 
 <section class="z-0 relative min-h-full bg-black text-yellow">
@@ -87,7 +112,7 @@
         {#if tabs[tabIndexSelected].id === 'path'}
             <PathTab/>
         {:else if tabs[tabIndexSelected].id === 'top3'}
-            <Top3Tab/>
+            <Top3Tab laureates={laureates}/>
         {/if}
 
         <BottomActions/>
