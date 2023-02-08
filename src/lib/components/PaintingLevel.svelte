@@ -120,7 +120,7 @@
             </article>
         </section>
     {:else}
-        <section class="relative h-44 w-full p-6 border-t border-yellow">
+        <section class="relative h-40 w-full p-6 border-t border-yellow">
             <img class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
                  src="/images/figures/statue.jpg" alt=" ">
             {#if isShowingIntroduction}
