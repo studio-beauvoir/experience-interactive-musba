@@ -35,7 +35,7 @@
         lowest: '?'
     }
 
-    let tabIndexSelected = 0;
+    let tabIndexSelected = 1;
 
     // saveResultsToDatabase()
     getStatsFromDatabase();
