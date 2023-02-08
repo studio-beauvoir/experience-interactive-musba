@@ -7,6 +7,7 @@
 
     import {fade} from 'svelte/transition';
     import {ArrowLeft} from "radix-icons-svelte";
+	import SuspectTimeline from '$lib/components/SuspectTimeline.svelte';
 
     export let painting;
 
@@ -84,6 +85,11 @@
                 </article>
             {/if}
         </section>
+
+        {#if introductionDone}
+            <SuspectTimeline />
+        {/if}
+        
         {#if inspectingSuspect}
             <TextButton handleClick={cancelSuspectInspection}
                         classList="absolute bottom-4 left-6">
