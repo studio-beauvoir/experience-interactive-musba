@@ -49,7 +49,7 @@
 
     function dispatchSuspectAccused() {
         dispatch('suspect-selected', {
-            suspect: inspectingSuspect
+            suspect: accusedSuspect
         });
 
         resetLevel();
