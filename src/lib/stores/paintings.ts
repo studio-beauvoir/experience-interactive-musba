@@ -3,7 +3,10 @@ import {readable} from "svelte/store";
 export const paintings = readable([
     {
         name: 'Hommage à Vuillard',
+        date: '1943',
+        author: 'Willem VAN HASSELT ',
         image: '/images/painting-1.png',
+        statueDialog: 'Je me demande qui c’est... Vous auriez une idée ?',
         suspects: [
             {
                 id: '1-3',
@@ -13,10 +16,10 @@ export const paintings = readable([
                 button: {
                     rightSide: false,
                     x: 25,
-                    y: 58
+                    y: 60
                 },
                 face: {
-                    x: 14,
+                    x: 12,
                     y: 52
                 },
             },
@@ -31,7 +34,7 @@ export const paintings = readable([
                     y: 60
                 },
                 face: {
-                    x: 52,
+                    x: 51,
                     y: 54
                 },
             },
@@ -43,18 +46,21 @@ export const paintings = readable([
                 button: {
                     rightSide: true,
                     x: 73,
-                    y: 37
+                    y: 38
                 },
                 face: {
-                    x: 85,
-                    y: 29
+                    x: 86,
+                    y: 30
                 },
             },
         ]
     },
     {
         name: 'L\'archer',
+        date: '1917',
+        author: 'Jean DUPAS',
         image: '/images/painting-2.png',
+        statueDialog: 'Le prochain suspect devrait être ici. Une idée de qui ça pourrait être ?',
         suspects: [
             {
                 id: '2-1',
@@ -64,11 +70,11 @@ export const paintings = readable([
                 button: {
                     rightSide: true,
                     x: 13,
-                    y: 31
+                    y: 35
                 },
                 face: {
-                    x: 25,
-                    y: 25
+                    x: 24,
+                    y: 27
                 },
             },
             {
@@ -79,10 +85,10 @@ export const paintings = readable([
                 button: {
                     rightSide: true,
                     x: 40,
-                    y: 40
+                    y: 43
                 },
                 face: {
-                    x: 53,
+                    x: 51,
                     y: 35
                 },
             },
@@ -94,18 +100,21 @@ export const paintings = readable([
                 button: {
                     rightSide: false,
                     x: 86,
-                    y: 26
+                    y: 30
                 },
                 face: {
-                    x: 77,
-                    y: 20
+                    x: 76,
+                    y: 21
                 },
             },
         ]
     },
     {
         name: 'La gloire de Bordeaux',
+        date: '1937',
+        author: 'Jean DUPAS',
         image: '/images/painting-3.png',
+        statueDialog: 'Bon, on devrait bientôt trouver notre coupable. Il faut continuer les investigations !',
         suspects: [
             {
                 id: '3-3',
@@ -114,11 +123,11 @@ export const paintings = readable([
                 text: 'Quoi ? Une serviette ? Non merci, j’ai ma tunique. La personne là-bas m’a l’air d’avoir froid.',
                 button: {
                     rightSide: false,
-                    x: 35,
-                    y: 38
+                    x: 36,
+                    y: 39
                 },
                 face: {
-                    x: 23,
+                    x: 19,
                     y: 32
                 },
             },
@@ -129,27 +138,27 @@ export const paintings = readable([
                 text: 'Hehe ! Écoute moi bien, les guerriers ne portent pas de serviettes, mais des toges, IDIOT, va regarder là-bas si j’y suis.',
                 button: {
                     rightSide: true,
-                    x: 47,
-                    y: 55
+                    x: 44,
+                    y: 54
                 },
                 face: {
-                    x: 57,
-                    y: 48
+                    x: 55,
+                    y: 47.5
                 },
             },
             {
                 id: '3-1',
                 name: '1',
                 type: 'accomplice',
-                text: 'Ah ! Je crois l’avoir entendu souffler par là. Elle a peut-être été emportée par le vent. Allez-y !',
+                text: 'Chèvre : Quelle servièèètttte ? Je l’aurai volée avec mes cornes et donnée à un autre tableau pour m’innocenter ? C’est trop bêêêêttteeee.',
                 button: {
-                    rightSide: true,
-                    x: 57,
-                    y: 82
+                    rightSide: false,
+                    x: 90,
+                    y: 50
                 },
                 face: {
-                    x: 70,
-                    y: 78
+                    x: 74.5,
+                    y: 42
                 },
             },
         ]

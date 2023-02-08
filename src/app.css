@@ -5,6 +5,10 @@
 @tailwind utilities;
 
 @layer components {
+    .text-display {
+        @apply font-display text-6xl font-normal
+    }
+
     .text-h1 {
         @apply font-display text-4xl font-normal
     }
@@ -26,7 +30,7 @@
     }
 
     .decoration {
-        @apply relative bg-black/50;
+        @apply relative;
     }
 
 
@@ -46,7 +50,7 @@
     }
 
     .decoration-rounded {
-        @apply relative bg-black/50;
+        @apply relative;
     }
 
     .decoration-rounded::after {

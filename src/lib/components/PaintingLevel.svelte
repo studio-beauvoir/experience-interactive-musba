@@ -1,8 +1,18 @@
 <script lang="ts">
     import {createEventDispatcher} from 'svelte';
     import SuspectButton from "$lib/components/SuspectButton.svelte";
+    import PaintingAnimation from "$lib/components/PaintingAnimation.svelte";
+    import Button from "$lib/components/Button.svelte";
+    import TextButton from "$lib/components/TextButton.svelte";
+
+    import {fade} from 'svelte/transition';
+    import {ArrowLeft} from "radix-icons-svelte";
 
     export let painting;
+
+    const transitionDuration = 500;
+
+    let introductionDone = false;
 
     let inspectingSuspect = null;
 
@@ -15,7 +25,12 @@
             suspect: inspectingSuspect
         });
 
+        introductionDone = false;
         inspectingSuspect = null;
+    }
+
+    function endIntroduction() {
+        introductionDone = true;
     }
 
     function inspectSuspect(suspect: string) {
@@ -29,43 +44,84 @@
 
 <section class="flex flex-col h-full">
     <section class="relative w-full flex-grow overflow-hidden">
-        <section class="absolute bottom-0 h-min w-full">
-            <img alt="{painting.name}" class="relative bottom-0 h-auto w-full object-bottom origin-bottom-left"
+        <section class="absolute bottom-0 h-min w-full origin-bottom-left"
+                 style="{inspectingSuspectStyle}">
+            <img alt="{painting.name}" class="relative bottom-0 h-auto w-full object-bottom "
                  src="{painting.image}"
-                 style="{inspectingSuspectStyle}"
             >
-            {#if !inspectingSuspect}
-                {#each painting.suspects as suspect}
-                    <SuspectButton suspect={suspect} handleClick={()=>inspectSuspect(suspect)}/>
-                {/each}
+
+            {#if introductionDone}
+                <div transition:fade={{ delay: transitionDuration*1.2, duration: transitionDuration }}>
+                    {#each painting.suspects as suspect}
+                        <PaintingAnimation position={suspect.face} file="/lotties/{suspect.id}.json"/>
+                        {#if !inspectingSuspect}
+                            <SuspectButton suspect={suspect} handleClick={()=>inspectSuspect(suspect)}/>
+                        {/if}
+                    {/each}
+                </div>
+            {:else}
+                <article transition:fade={{ duration: transitionDuration }}
+                         class="absolute inset-0 bg-semi-transparent flex flex-col gap-2 justify-center items-center">
+                    <section class="w-full flex gap-6 items-center">
+                        <section class="flex flex-col gap-2 w-full">
+                            <div class="bg-white h-px"></div>
+                            <div class="bg-white h-px mr-3"></div>
+                            <div class="bg-white h-px"></div>
+                        </section>
+
+                        <section class="text-center">
+                            <h1 class="text-h1 italic">{painting.name}</h1>
+                        </section>
+
+                        <section class="flex flex-col gap-2 w-full">
+                            <div class="bg-white h-px"></div>
+                            <div class="bg-white h-px ml-3"></div>
+                            <div class="bg-white h-px"></div>
+                        </section>
+                    </section>
+
+                    <p class="text-p">{painting.author}, {painting.date}</p>
+                </article>
             {/if}
         </section>
         {#if inspectingSuspect}
-            <button on:click={cancelSuspectInspection}
-                    class="absolute text-cta px-4 py-2 decoration top-6 left-4 bg-black/20">
-                Changer de coupable
-            </button>
+            <TextButton handleClick={cancelSuspectInspection}
+                        classList="absolute bottom-4 left-6">
+                <span class="rounded-full decoration-rounded p-2 w-8 h-8 ">
+                    <ArrowLeft class="h-full w-full"/>
+                </span>
+                <span class="text-cta">Changer de suspect</span>
+            </TextButton>
         {/if}
     </section>
-    <section class="relative h-44 w-full p-6 border-t border-yellow">
-        {#if inspectingSuspect}
+    {#if inspectingSuspect}
+        <section class="relative h-56 w-full p-6 border-t border-yellow">
             <img class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
                  src="/images/figures/{inspectingSuspect.id}.jpg" alt=" ">
-            <article class="flex flex-col h-full">
+            <article class="flex flex-col justify-between h-full">
                 <p class="mr-16">{inspectingSuspect.text}</p>
-                <button class="text-white flex mt-auto ml-auto flex-row align-center items-center gap-3"
-                        on:click={dispatchSuspectSelected}>
-                    <span class="text-p">Continuer</span>
-                    <span class="rounded-full decoration-rounded w-8 h-8 p-1">&#x2192</span>
-                </button>
+                <Button handleClick={dispatchSuspectSelected}>Accuser ce suspect</Button>
             </article>
-        {:else}
+        </section>
+    {:else}
+        <section class="relative h-44 w-full p-6 border-t border-yellow">
             <img class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
                  src="/images/figures/statue.jpg" alt=" ">
-            <article class="flex flex-col h-full">
-                <p class="text-p mr-16">Je me demande qui c’est ... vous auriez une idée ?</p>
-                <p class="text-label text-yellow">Interrogez un suspect en cliquant dessus</p>
-            </article>
-        {/if}
-    </section>
+            {#if introductionDone}
+                <article class="flex flex-col gap-4 h-full">
+                    <p class="text-p mr-16">{painting.statueDialog}</p>
+                    <p class="text-label text-yellow">Interrogez un suspect en cliquant dessus</p>
+                </article>
+            {:else}
+                <article class="flex flex-col gap-4 h-full">
+                    <p class="text-p mr-16">Il me semble l’avoir vu partir par là !</p>
+                    <button class="text-white flex mt-auto ml-auto flex-row align-center items-center gap-3"
+                            on:click={endIntroduction}>
+                        <span class="text-p">Continuer</span>
+                        <span class="rounded-full decoration-rounded w-8 h-8 p-1">&#x2192</span>
+                    </button>
+                </article>
+            {/if}
+        </section>
+    {/if}
 </section>
