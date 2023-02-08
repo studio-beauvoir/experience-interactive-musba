@@ -1,5 +1,6 @@
 <script lang="ts">
     import {goto} from "$app/navigation";
+    import SuspectTimeline from '$lib/components/SuspectTimeline.svelte';
 
     let dialogsIndex = 0;
 
@@ -24,6 +25,8 @@
         <img alt="Sculpture vue de derrière nommée Femme nue au bord de l'eau"
              class="absolute w-full h-full object-cover"
              src="/images/painting-end.png">
+
+        <SuspectTimeline/>
     </section>
 
     <section class="relative h-44 w-full p-6 border-t border-yellow">

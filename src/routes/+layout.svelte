@@ -11,8 +11,11 @@
         <link href="{painting.image}" rel="prefetch"/>
         {#each painting.suspects as suspect}
             <link href="/images/figures/{suspect.id}.jpg" rel="prefetch"/>
+            <link href="/comics/{suspect.id}.png" rel="prefetch"/>
         {/each}
     {/each}
+    <link href="/comics/start.png" rel="prefetch"/>
+    <link href="/comics/end.png" rel="prefetch"/>
     <link href="/images/femme-nue-derriere.png" rel="prefetch"/>
     <link href="/images/painting-end.png" rel="prefetch"/>
 </svelte:head>
@@ -20,7 +23,7 @@
 <div class="relative h-full">
     <slot/>
 
-    <section class="absolute top-4 right-4">
+    <section class="fixed top-4 right-4">
         <button class="text-yellow bg-black border border-yellow rounded-full p-2"
                 on:click={toggleFullScreen}>
             {#if $isFullscreen}

@@ -9,24 +9,23 @@ export const POST = (async ({ request }) => {
         return json(false)
     }
 
-    // for(let o=1; o<=100;o++) {
-    //     for(let i=1; i<=3;i++) {
-    //         for(let j=1; j<=3;j++) {
-    //             for (let k = 1; k <= 3; k++) {
-    //                 stats.insertOne({
-    //                     selectedSuspects: [
-    //                         '1-'+i,
-    //                         '2-'+j,
-    //                         '3-'+k,
-    //                     ]
-    //                 })
-    //             }
-    //         }
-    //     }
-    // }
     stats.insertOne({
         selectedSuspects: jsonData.selectedSuspects
     })
 
     return json(true);
+}) satisfies RequestHandler;
+
+export const GET = (async ({ request }) => {
+    const data = await stats.find().toArray();
+
+    const statsCounts: Array<object> = await stats.aggregate([
+        {
+            $group: {
+                _id: {selectedSuspects: "$selectedSuspects"},
+                total: {$sum: 1},
+            }
+        }
+    ]).toArray();
+    return json(statsCounts);
 }) satisfies RequestHandler;
