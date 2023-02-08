@@ -5,6 +5,7 @@
     import BottomActions from "$lib/components/Result/BottomActions.svelte";
     import PathTab from "$lib/components/Result/PathTab.svelte";
     import Tabs from "$lib/components/Result/Tabs.svelte";
+    import Top3Tab from "$lib/components/Result/Top3Tab.svelte";
 
     selectedSuspects.set([
         $paintings[0].suspects[0],
@@ -85,6 +86,8 @@
 
         {#if tabs[tabIndexSelected].id === 'path'}
             <PathTab/>
+        {:else if tabs[tabIndexSelected].id === 'top3'}
+            <Top3Tab/>
         {/if}
 
         <BottomActions/>
