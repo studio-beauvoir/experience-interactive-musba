@@ -17,7 +17,7 @@
     <img class="absolute h-full w-full z-0" src="/assets/triangle-svg.svg" alt="">
     <h1 class="text-yellow text-h2 z-10">Too well</h1>
     <h1 class="text-yellow text-display z-10">Stolen</h1>
-    <img alt="" class="m-8" src="">
+    <img alt="" class="m-8 px-10 py-4 z-10" src="/images/home-page-image.png">
     <div class="flex flex-col gap-10">
         <Button handleClick={startInfos}>Jouer</Button>
         <Button handleClick={goToCredits}>Crédits</Button>
