@@ -1,18 +1,16 @@
 <script lang="ts">
     import {selectedSuspects} from "$lib/stores/selectedSuspects";
     import {parcours} from "$lib/stores/parcours";
-    import {paintings} from "$lib/stores/paintings";
     import BottomActions from "$lib/components/Result/BottomActions.svelte";
     import PathTab from "$lib/components/Result/PathTab.svelte";
     import Tabs from "$lib/components/Result/Tabs.svelte";
     import Top3Tab from "$lib/components/Result/Top3Tab.svelte";
     import ParcoursTab from "$lib/components/Result/ParcoursTab.svelte";
+    import {goto} from "$app/navigation";
 
-    selectedSuspects.set([
-        $paintings[0].suspects[0],
-        $paintings[1].suspects[0],
-        $paintings[2].suspects[0],
-    ])
+    if (!$selectedSuspects.length) {
+        goto('/');
+    }
 
     const tabs = [
         {
