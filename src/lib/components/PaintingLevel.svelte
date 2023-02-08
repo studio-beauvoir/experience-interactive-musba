@@ -98,7 +98,8 @@
         {#if isShowingIntroduction}
             <PaintingIntroduction painting={painting} transitionDuration={transitionDuration}/>
         {:else if isShowingFeedback}
-            <PaintingFeedback accusedSuspect={accusedSuspect} transitionDuration={transitionDuration}/>
+            <PaintingFeedback painting={painting} accusedSuspect={accusedSuspect}
+                              transitionDuration={transitionDuration}/>
         {:else if inspectingSuspect}
             <TextButton handleClick={cancelSuspectInspection}
                         classList="absolute bottom-4 left-6">
