@@ -2,6 +2,7 @@ import {readable} from "svelte/store";
 
 export const paintings = readable([
     {
+        step: 1,
         name: 'Hommage à Vuillard',
         date: '1943',
         author: 'Willem VAN HASSELT ',
@@ -59,6 +60,7 @@ export const paintings = readable([
         ]
     },
     {
+        step: 2,
         name: 'L\'archer',
         date: '1917',
         author: 'Jean DUPAS',
@@ -116,6 +118,7 @@ export const paintings = readable([
         ]
     },
     {
+        step: 3,
         name: 'La gloire de Bordeaux',
         date: '1937',
         author: 'Jean DUPAS',
