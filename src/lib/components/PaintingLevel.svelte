@@ -6,9 +6,10 @@
     import TextButton from "$lib/components/TextButton.svelte";
     import PaintingFeedback from "$lib/components/PaintingFeedback.svelte";
     import PaintingIntroduction from "$lib/components/PaintingIntroduction.svelte";
-
+    import {selectedSuspects} from "$lib/stores/selectedSuspects";
     import {fade} from 'svelte/transition';
     import {ArrowLeft} from "radix-icons-svelte";
+    import SuspectTimeline from '$lib/components/SuspectTimeline.svelte';
 
     export let painting;
 
@@ -33,6 +34,12 @@
 
     function accuseSuspect() {
         accusedSuspect = {...inspectingSuspect};
+
+        selectedSuspects.update(function (s) {
+            s.push(accusedSuspect)
+            return s;
+        });
+
         inspectingSuspect = null;
         isShowingFeedback = true;
     }
@@ -48,9 +55,7 @@
     }
 
     function dispatchSuspectAccused() {
-        dispatch('suspect-selected', {
-            suspect: accusedSuspect
-        });
+        dispatch('level-end');
 
         resetLevel();
     }
@@ -86,6 +91,10 @@
                 </div>
             {/if}
         </section>
+        {#if !isShowingIntroduction}
+            <SuspectTimeline/>
+        {/if}
+
         {#if isShowingIntroduction}
             <PaintingIntroduction painting={painting} transitionDuration={transitionDuration}/>
         {:else if isShowingFeedback}

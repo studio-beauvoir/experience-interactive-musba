@@ -8,12 +8,7 @@
 
     selectedSuspects.set([]);
 
-    function handleSuspectSelection(event) {
-        selectedSuspects.update(function (s) {
-            s.push(event.detail.suspect)
-            return s;
-        });
-
+    function handleLevelEnd(event) {
         painting++;
 
         if (painting >= $paintings.length) {
@@ -24,6 +19,6 @@
 
 <section class="bg-black h-full text-white">
     {#if painting < $paintings.length}
-        <PaintingLevel on:suspect-selected={handleSuspectSelection} painting={$paintings[painting]}/>
+        <PaintingLevel on:level-end={handleLevelEnd} painting={$paintings[painting]}/>
     {/if}
 </section>
