@@ -4,11 +4,11 @@
     import PaintingAnimation from "$lib/components/PaintingAnimation.svelte";
     import Button from "$lib/components/Button.svelte";
     import TextButton from "$lib/components/TextButton.svelte";
+    import PaintingFeedback from "$lib/components/PaintingFeedback.svelte";
+    import PaintingIntroduction from "$lib/components/PaintingIntroduction.svelte";
 
     import {fade} from 'svelte/transition';
     import {ArrowLeft} from "radix-icons-svelte";
-    import PaintingIntroduction from "$lib/components/PaintingIntroduction.svelte";
-    import PaintingFeedback from "$lib/components/PaintingFeedback.svelte";
 
     export let painting;
 
@@ -75,11 +75,7 @@
             <img alt="{painting.name}" class="relative bottom-0 h-auto w-full object-bottom "
                  src="{painting.image}"
             >
-            {#if isShowingIntroduction}
-                <PaintingIntroduction painting={painting} transitionDuration={transitionDuration}/>
-            {:else if isShowingFeedback}
-                <PaintingFeedback accusedSuspect={accusedSuspect} transitionDuration={transitionDuration}/>
-            {:else}
+            {#if !isShowingIntroduction && !isShowingFeedback}
                 <div transition:fade={{ delay: transitionDuration*1.2, duration: transitionDuration }}>
                     {#each painting.suspects as suspect}
                         <PaintingAnimation position={suspect.face} file="/lotties/{suspect.id}.json"/>
@@ -90,7 +86,11 @@
                 </div>
             {/if}
         </section>
-        {#if inspectingSuspect}
+        {#if isShowingIntroduction}
+            <PaintingIntroduction painting={painting} transitionDuration={transitionDuration}/>
+        {:else if isShowingFeedback}
+            <PaintingFeedback accusedSuspect={accusedSuspect} transitionDuration={transitionDuration}/>
+        {:else if inspectingSuspect}
             <TextButton handleClick={cancelSuspectInspection}
                         classList="absolute bottom-4 left-6">
                 <span class="rounded-full decoration-rounded p-2 w-8 h-8 ">
