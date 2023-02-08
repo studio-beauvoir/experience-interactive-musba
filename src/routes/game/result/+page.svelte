@@ -14,12 +14,12 @@
 
     let tabs = [
         {
-            id: 'path',
-            label: 'Piste'
-        },
-        {
             id: 'parcours',
             label: 'Parcours'
+        },
+        {
+            id: 'path',
+            label: 'Piste'
         },
         {
             id: 'top3',
@@ -27,10 +27,10 @@
         },
     ];
 
-    let tabIndexSelected = 0;
+    let tabIndexSelected = 1;
 
-    function handleTabChange(newTabId) {
-        tabIndexSelected = tabs.findIndex(tab => tab.id === newTabId);
+    function handleTabChange(event) {
+        tabIndexSelected = tabs.findIndex(tab => tab.id === event.detail.tab.id);
     }
 
     function getParcoursFromSuspectsSelected() {
@@ -76,7 +76,7 @@
         </article>
 
         <div class="relative w-full pt-24">
-            <Tabs onTabChange={handleTabChange} tabIndexSelected={tabIndexSelected} tabs={tabs}/>
+            <Tabs on:tab-change={handleTabChange} tabIndexSelected={tabIndexSelected} tabs={tabs}/>
         </div>
     </section>
 
