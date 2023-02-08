@@ -6,6 +6,7 @@
     import PathTab from "$lib/components/Result/PathTab.svelte";
     import Tabs from "$lib/components/Result/Tabs.svelte";
     import Top3Tab from "$lib/components/Result/Top3Tab.svelte";
+    import ParcoursTab from "$lib/components/Result/ParcoursTab.svelte";
 
     selectedSuspects.set([
         $paintings[0].suspects[0],
@@ -33,8 +34,8 @@
         highest: '?',
         lowest: '?'
     }
-    
-    let tabIndexSelected = 1;
+
+    let tabIndexSelected = 0;
 
     // saveResultsToDatabase()
     getStatsFromDatabase();
@@ -113,6 +114,8 @@
             <PathTab/>
         {:else if tabs[tabIndexSelected].id === 'top3'}
             <Top3Tab laureates={laureates}/>
+        {:else if tabs[tabIndexSelected].id === 'parcours'}
+            <ParcoursTab/>
         {/if}
 
         <BottomActions/>

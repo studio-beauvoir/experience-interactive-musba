@@ -5,6 +5,10 @@
 @tailwind utilities;
 
 @layer components {
+    .text-drop-capital {
+        @apply font-display text-9xl
+    }
+
     .text-display {
         @apply font-display text-6xl font-normal
     }
