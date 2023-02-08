@@ -11,9 +11,7 @@ export async function load(): Promise<object> {
             }
         }
     ]).toArray();
-
-    console.log(structuredClone(statsCounts))
-
+    
     return {
         statsCounts: structuredClone(statsCounts)
     };
