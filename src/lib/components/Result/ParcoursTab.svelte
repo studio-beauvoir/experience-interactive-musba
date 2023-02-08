@@ -45,7 +45,7 @@
             </article>
 
             <article>
-                <h3>La bande dessinée de ce parcours</h3>
+                <h2 class="text-h2 mb-4">La bande dessinée de ce parcours</h2>
                 <ComicsStrip suspects={showingParcours.suspects}/>
             </article>
         </section>

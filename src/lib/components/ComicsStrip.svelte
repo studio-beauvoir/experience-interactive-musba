@@ -4,7 +4,7 @@
     export let suspects;
 </script>
 
-<section class="flex flex-col gap-16 justify-between w-full px-6">
+<section class="flex flex-col gap-16 justify-between w-full">
     <ComicStrip filename="start" title="La fameuse serviette disparue"/>
     {#each suspects as suspect}
         <ComicStrip filename={suspect.id} title={suspect.comicTitle}/>

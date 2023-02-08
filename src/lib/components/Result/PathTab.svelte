@@ -3,4 +3,6 @@
     import {selectedSuspects} from "$lib/stores/selectedSuspects";
 </script>
 
-<ComicsStrip suspects={$selectedSuspects}/>
+<div class="px-6">
+    <ComicsStrip suspects={$selectedSuspects}/>
+</div>
