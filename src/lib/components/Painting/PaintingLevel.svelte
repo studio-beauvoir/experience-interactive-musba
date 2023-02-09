@@ -24,7 +24,7 @@
 
     const dispatch = createEventDispatcher();
 
-    $:inspectingSuspectStyle = inspectingSuspect ? `transform: scale(4) translate(${13 - inspectingSuspect.face.x}%, ${-13 + inspectingSuspect.face.y}%);` : ''
+    $:inspectingSuspectStyle = inspectingSuspect ? `transform: scale(4) translate(${11 - inspectingSuspect.face.x}%, ${-10 + inspectingSuspect.face.y}%);` : ''
 
     function resetLevel() {
         isShowingIntroduction = true;
@@ -135,7 +135,7 @@
                  src="/images/figures/statue.jpg" alt=" ">
             {#if isShowingIntroduction}
                 <article class="flex flex-col gap-4 h-full">
-                    <p class="text-p mr-16">Il me semble l’avoir vu partir par là&nbsp;!</p>
+                    <p class="text-p mr-16">Il me semble l’avoir vue partir par là&nbsp;!</p>
                     <button class="text-white flex mt-auto ml-auto flex-row align-center items-center gap-3"
                             on:click={hideIntroduction}>
                         <span class="text-p">Continuer</span>
