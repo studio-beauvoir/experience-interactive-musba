@@ -1,5 +1,5 @@
 <script>
-    import Button from "$lib/components/Button/Button.svelte";
+    import PrimaryButton from "$lib/components/Button/PrimaryButton.svelte";
     import {goto} from "$app/navigation";
 
     function startInfos() {
@@ -19,7 +19,7 @@
         <img alt="" class="h-auto" src="/images/home-page-image.png">
     </div>
     <div class="flex flex-col gap-10">
-        <Button handleClick={startInfos}>Jouer</Button>
-        <Button handleClick={goToCredits}>Crédits</Button>
+        <PrimaryButton handleClick={startInfos}>Jouer</PrimaryButton>
+        <PrimaryButton handleClick={goToCredits}>Crédits</PrimaryButton>
     </div>
 </div>

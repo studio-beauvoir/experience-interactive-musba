@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Button from "$lib/components/Button/Button.svelte";
+    import PrimaryButton from "../../../lib/components/Button/PrimaryButton.svelte";
     import {goto} from "$app/navigation";
 
     function startIntro() {
@@ -15,5 +15,5 @@
         trouver dans la salle “Les années 1910-1940 : du cubisme au retour à l’ordre”. <br><br> N’hésitez pas à y
         explorer les différentes œuvres et à rester attentifs à leurs personnages. Leurs répliques ne seront pas vos
         seuls indices...</p>
-    <Button handleClick={startIntro}>Continuer</Button>
+    <PrimaryButton handleClick={startIntro}>Continuer</PrimaryButton>
 </section>

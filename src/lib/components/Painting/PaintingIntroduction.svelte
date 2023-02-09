@@ -7,7 +7,7 @@
 
 </script>
 
-<article class="absolute inset-0 bg-semi-transparent flex flex-col gap-2 justify-center items-center"
+<article class="absolute inset-0 bg-semi-transparent flex flex-col gap-2 justify-center items-center text-white"
          transition:fade={{ duration: transitionDuration }}>
     <section class="w-full flex gap-6 items-center">
         <section class="flex flex-col gap-2 w-full">
