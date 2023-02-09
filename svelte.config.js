@@ -10,7 +10,7 @@ const config = {
     kit: {
         adapter: adapter(),
         alias: {
-            $db: './src/db'
+            $db: './src/db',
         }
     }
 };
