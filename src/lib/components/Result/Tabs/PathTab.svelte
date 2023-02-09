@@ -1,5 +1,5 @@
 <script>
-    import ComicsStrip from "$lib/components/ComicsStrip.svelte";
+    import ComicsStrip from "$lib/components/Comic/ComicsStrip.svelte";
     import {selectedSuspects} from "$lib/stores/selectedSuspects";
     import FeedBack from "$lib/components/Result/FeedBack.svelte";
 </script>

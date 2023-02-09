@@ -1,6 +1,6 @@
 <script lang="ts">
     import {goto} from "$app/navigation";
-    import SuspectTimeline from '$lib/components/SuspectsTimeline.svelte';
+    import SuspectTimeline from '$lib/components/Suspect/SuspectsTimeline.svelte';
     import {selectedSuspects} from "$lib/stores/selectedSuspects";
 
     let dialogsIndex = 0;

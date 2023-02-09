@@ -1,8 +1,8 @@
 <script>
     import {parcours} from "$lib/stores/parcours.ts";
     import {paintings} from "$lib/stores/paintings.ts";
-    import SecondaryButton from "$lib/components/SecondaryButton.svelte";
-    import ComicsStrip from "$lib/components/ComicsStrip.svelte";
+    import SecondaryButton from "$lib/components/Button/SecondaryButton.svelte";
+    import ComicsStrip from "$lib/components/Comic/ComicsStrip.svelte";
     import Top3Section from "$lib/components/Result/Top3Section.svelte";
 
     export let laureates;

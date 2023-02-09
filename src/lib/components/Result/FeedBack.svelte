@@ -1,6 +1,6 @@
 <script>
     import {parcours} from "$lib/stores/parcours";
-    import SuspectsTimeline from "$lib/components/SuspectsTimeline.svelte";
+    import SuspectsTimeline from "$lib/components/Suspect/SuspectsTimeline.svelte";
 
     export let suspects;
 
