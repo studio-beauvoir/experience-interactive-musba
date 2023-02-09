@@ -54,7 +54,7 @@
     {:else}
         <Top3Section laureates={laureates}/>
 
-        <div class="bg-brown h-px"></div>
+        <div class="bg-brown h-px -mx-6"></div>
 
         <section class="flex flex-col gap-4">
             <h2 class="text-h1">Découvrez tout !</h2>

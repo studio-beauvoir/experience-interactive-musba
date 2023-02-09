@@ -7,10 +7,10 @@
     $: accompliceFoundCount = suspects.filter(suspect => suspect.type === 'accomplice').length
 
     const accompliceCountSentences = {
-        0: "mais vous n'avez trouvé aucun complice.",
-        1: "mais vous n'avez trouvé qu'un des 3 complices.",
-        2: "mais il vous manque un des 3 complice.",
-        3: "et vous avez trouvé les 3 complices !"
+        0: "Bravo ! Vous avez trouvé la serviette ainsi que les trois complices ! L’affaire est officiellement classée !",
+        1: "Vous avez trouvé la serviette mais seulement avec un seul des trois complices.",
+        2: "Vous avez trouvé la serviette mais seulement avec deux des trois complices.",
+        3: "Dommage, vous avez trouvé la serviette sans aucun des trois complices. On ignore comment elle a été volée..."
     };
 
     function getParcoursFromSuspectsSelected() {
@@ -19,12 +19,12 @@
     }
 </script>
 <div class="flex flex-col gap-4">
-    <p class="text-p text-yellow text-center">
-        Vous avez trouvé la serviette volée {accompliceCountSentences[accompliceFoundCount]}
+    <p class="text-p text-white text-center">
+        {accompliceCountSentences[accompliceFoundCount]}
     </p>
 
-    <SuspectsTimeline suspects={suspects}/>
+    <SuspectsTimeline detailed={true} suspects={suspects}/>
 
-    <p class="text-p text-yellow text-center">Vous avez fait ces choix et réalisé la piste <span
+    <p class="text-p text-white text-center">Vous avez fait ces choix et réalisé la piste <span
             class="uppercase ">{getParcoursFromSuspectsSelected()}</span></p>
 </div>
