@@ -12,7 +12,7 @@ export const paintings = readable([
                 id: '1-3',
                 name: '3',
                 type: 'witness',
-                text: 'Heu.. .J’aurais bien eu besoin d’essuyer mon erreur avec la serviette après avoir été dérangé par l’archer',
+                text: 'Heu.. .J’aurais bien eu besoin d’essuyer mon erreur avec la serviette après avoir été dérangé par l’archer.',
                 comicTitle: 'L’artiste surpris qui en cassa même ses ustensiles. Impensable ! mais pourtant vrai.',
                 button: {
                     rightSide: false,
@@ -28,7 +28,7 @@ export const paintings = readable([
                 id: '1-2',
                 name: '2',
                 type: 'innocent',
-                text: 'Hein ? Je n’ai absolument rien à voir avec ça, mon chien est paniqué après avoir vu les deux autres chiens en face',
+                text: 'Hein ? Je n’ai absolument rien à voir avec ça, mon chien est paniqué après avoir vu les deux autres chiens en face.',
                 comicTitle: 'Le monsieur et son tout petit mini minou chien tout choupi ♡',
                 button: {
                     rightSide: false,
@@ -45,7 +45,7 @@ export const paintings = readable([
                 name: '1',
                 type: 'accomplice',
                 text: 'Pfff.. .Elle m’énerve celle-là avec sa serviette... Ce n’est pas moi mais bon, ça ne lui ferait pas de mal...',
-                comicTitle: 'Le barbu à la chaise indiscrète',
+                comicTitle: 'Le barbu à la chaise indiscrète.',
                 button: {
                     rightSide: true,
                     x: 73,
@@ -70,7 +70,7 @@ export const paintings = readable([
                 name: '1',
                 type: 'witness',
                 text: 'Pardon ? Une serviette ? Je suis trop occupé à me maintenir en forme. Mais regardez peut-être là où pointe mon arc.',
-                comicTitle: 'L’homme, tout sauf narcissique',
+                comicTitle: 'L’homme, tout sauf narcissique.',
                 button: {
                     rightSide: true,
                     x: 13,
@@ -86,7 +86,7 @@ export const paintings = readable([
                 name: '2',
                 type: 'accomplice',
                 text: 'Hein ?! Moi voleuse ? Vous m’avez bien regardé ?! Loin de moi cette idée, je n’ai rien à me reprocher.',
-                comicTitle: 'La cachette de la serviette',
+                comicTitle: 'La cachette de la serviette.',
                 button: {
                     rightSide: true,
                     x: 40,
@@ -102,7 +102,7 @@ export const paintings = readable([
                 name: '3',
                 type: 'innocent',
                 text: 'Wouaf. je n’ai rien vu. Je n’ai d’yeux que pour mon maître moi. Il est beau mon maître hein. ',
-                comicTitle: 'Le canidé ciblé',
+                comicTitle: 'Le canidé ciblé.',
                 button: {
                     rightSide: false,
                     x: 86,
@@ -143,7 +143,7 @@ export const paintings = readable([
                 name: '2',
                 type: 'innocent',
                 text: 'Hehe ! Écoute moi bien, les guerriers ne portent pas de serviettes, mais des toges, IDIOT, va regarder là-bas si j’y suis.',
-                comicTitle: 'Un chasseur sachant chasser sait chasser sans son reflet',
+                comicTitle: 'Un chasseur sachant chasser sait chasser sans son reflet.',
                 button: {
                     rightSide: true,
                     x: 44,
@@ -159,7 +159,7 @@ export const paintings = readable([
                 name: '1',
                 type: 'accomplice',
                 text: 'Quelle servièèètttte ? Je l’aurais volée avec mes cornes et donnée à un autre tableau pour m’innocenter ? C’est trop bêêêêttteeee.',
-                comicTitle: 'La chèvre qui brise les murs, et même le 4ème',
+                comicTitle: 'La chèvre qui brise les murs, et même le 4ème.',
                 button: {
                     rightSide: false,
                     x: 90,
