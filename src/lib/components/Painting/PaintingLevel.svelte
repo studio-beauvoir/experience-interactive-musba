@@ -1,15 +1,15 @@
 <script lang="ts">
     import {createEventDispatcher} from 'svelte';
-    import SuspectButton from "../Suspect/SuspectButton.svelte";
-    import SuspectEmotion from "../Suspect/SuspectEmotion.svelte";
-    import Button from "../Button/Button.svelte";
-    import TextButton from "../Button/TextButton.svelte";
-    import PaintingFeedback from "./PaintingFeedback.svelte";
-    import PaintingIntroduction from "./PaintingIntroduction.svelte";
-    import {selectedSuspects} from "../../stores/selectedSuspects";
+    import SuspectButton from "$lib/components/Suspect/SuspectButton.svelte";
+    import SuspectEmotion from "$lib/components/Suspect/SuspectEmotion.svelte";
+    import PrimaryButton from "../Button/PrimaryButton.svelte";
+    import TextButton from "$lib/components/Button/TextButton.svelte";
+    import PaintingFeedback from "$lib/components/Painting/PaintingFeedback.svelte";
+    import PaintingIntroduction from "$lib/components/Painting/PaintingIntroduction.svelte";
+    import {selectedSuspects} from "$lib/stores/selectedSuspects";
     import {fade} from 'svelte/transition';
     import {Reset} from "radix-icons-svelte";
-    import SuspectsTimeline from "../Suspect/SuspectsTimeline.svelte";
+    import SuspectsTimeline from "$lib/components/Suspect/SuspectsTimeline.svelte";
 
     export let painting;
 
@@ -125,14 +125,14 @@
                             <Reset class="h-full w-full"/>
                         </span>
                     </TextButton>
-                    <Button handleClick={accuseSuspect}>Accuser ce suspect</Button>
+                    <PrimaryButton handleClick={accuseSuspect}>Accuser ce suspect</PrimaryButton>
                 </div>
             </article>
         </section>
     {:else}
         <section class="relative h-40 w-full p-6 border-t border-yellow">
             <img class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
-                 src="/images/figures/statue.jpg" alt=" ">
+                 src="/images/figures/statue.jpg" alt="Figure au bord de l'eau">
             {#if isShowingIntroduction}
                 <article class="flex flex-col gap-4 h-full">
                     <p class="text-p mr-16">Il me semble l’avoir vue partir par là&nbsp;!</p>
