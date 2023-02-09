@@ -54,7 +54,24 @@
         return text[accusedSuspect.type];
     }
 
+    let audioValidation = new Audio("/audio/soundEffect/Button-Click-Validation.mp3");
+    let audioReverse = new Audio("/audio/soundEffect/Button-Click-Reverse.mp3");
+    let audioPainting = new Audio("/audio/soundEffect/FeedBack-Fin-de-tableau.mp3");
+
+    function audioValidationButton() {
+        audioValidation.play();
+    }
+
+    function audioReverseButton() {
+        audioReverse.play();
+    }
+
+    function audioPaintingButton() {
+        audioPainting.play();
+    }
+
     function dispatchSuspectAccused() {
+        audioPaintingButton();
         dispatch('level-end');
 
         resetLevel();
@@ -91,6 +108,7 @@
                 </div>
             {/if}
         </section>
+
         {#if !isShowingIntroduction}
             <SuspectTimeline/>
         {/if}

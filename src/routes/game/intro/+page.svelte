@@ -1,15 +1,8 @@
 <script lang="ts">
     import {goto} from "$app/navigation";
 
-    let audio = new Audio("/audio/soundEffect/Button-Click-Validation.mp3");
-
-    function audioButton() {
-        audio.play;
-    }
-
     function startGame() {
         goto('/game')
-        audioButton()
     }
 </script>
 
