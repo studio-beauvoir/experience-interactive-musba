@@ -109,8 +109,8 @@
     </ol>
 
     <section class="flex w-full justify-center gap-6 px-6">
-        <Button classList="w-full" handleClick={goToCredits}>Crédits</Button>
-        <Button classList="w-full" handleClick={goBackToHome}>Rejouer</Button>
+        <Button classList="w-full" handleClick={goToCredits} soundId={"validation"}>Crédits</Button>
+        <Button classList="w-full" handleClick={goBackToHome} soundId={"validation"}>Rejouer</Button>
     </section>
 
 </section>

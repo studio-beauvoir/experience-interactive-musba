@@ -1,16 +1,23 @@
 <script lang="ts">
     import {goto} from "$app/navigation";
 
+    let audio = new Audio("/audio/soundEffect/Button-Click-Validation.mp3");
+
+    function audioButton() {
+        audio.play;
+    }
+
     function startGame() {
         goto('/game')
+        audioButton()
     }
 </script>
 
 <section class="flex flex-col items-center justify-center h-screen bg-black overflow-hidden">
     <section class="relative flex-grow w-full overflow-hidden">
         <img alt="Sculpture vue de derrière nommée Femme nue au bord de l'eau"
-             class="absolute w-full h-full object-cover"
-             src="/images/femme-nue-derriere.png">
+                class="absolute w-full h-full object-cover"
+                src="/images/femme-nue-derriere.png">
     </section>
 
     <section class="relative h-44 w-full p-6 border-t border-yellow">

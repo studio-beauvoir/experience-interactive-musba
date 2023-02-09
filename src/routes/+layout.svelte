@@ -3,6 +3,22 @@
     import {ExitFullScreen, Move} from "radix-icons-svelte";
     import {isFullscreen, toggleFullScreen} from "$lib/stores/fullscreen";
     import {paintings} from "$lib/stores/paintings";
+
+    let audioGame = new Audio("/audio/Quantum_Jazz_-_Intro.mp3");
+    
+    function playGameSound() {
+        audioGame.play();
+    }
+
+    playGameSound();
+
+    function toggleMusic() {
+        if (!audioGame.paused) {
+            audioGame.pause();
+        } else {
+            audioGame.play();
+        }
+    }
 </script>
 
 <svelte:head>
@@ -28,6 +44,17 @@
             {:else}
                 <Move class="h-5 w-5 rotate-45"/>
             {/if}
+        </button>
+    </section>
+    <section class="absolute top-16 right-4">
+        <button class="text-yellow bg-black border border-yellow rounded-full p-2"
+                on:click={toggleMusic}>
+                <img class="h-5 w-5" src="/assets/sound.svg" alt="">
+            <!-- {#if audioGame.paused}
+                <img class="h-5 w-5" src="/assets/noSound.svg" alt="">
+            {:else}
+                <img class="h-5 w-5" src="/assets/sound.svg" alt="">
+            {/if} -->
         </button>
     </section>
 </div>

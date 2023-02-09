@@ -158,7 +158,7 @@ export const paintings = readable([
                 id: '3-1',
                 name: '1',
                 type: 'accomplice',
-                text: 'Chèvre : Quelle servièèètttte ? Je l’aurai volée avec mes cornes et donnée à un autre tableau pour m’innocenter ? C’est trop bêêêêttteeee.',
+                text: 'Quelle servièèètttte ? Je l’aurais volée avec mes cornes et donnée à un autre tableau pour m’innocenter ? C’est trop bêêêêttteeee.',
                 comicTitle: 'La chèvre qui brise les murs, et même le 4ème',
                 button: {
                     rightSide: false,

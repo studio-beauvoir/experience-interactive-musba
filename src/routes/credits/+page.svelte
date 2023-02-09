@@ -19,5 +19,5 @@
         <img src="/images/logo-mmi-bordeaux.png" alt="Logotype de la fillière MMI de l'IUT Bordeaux Montaigne">
         <img src="/images/logo-musba-bordeaux.png" alt="Logotype du Musée des Beaux-Arts de Bordeaux">
     </div>
-    <Button handleClick={backToHome}>Retour</Button>
+    <Button handleClick={backToHome} soundId={"reverse"}>Retour</Button>
 </div>
