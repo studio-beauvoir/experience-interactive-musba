@@ -12,7 +12,7 @@
     <div class="bg-brown h-px -mx-6"></div>
 
     <div class="flex flex-col gap-10">
-        <h1 class="text-h1 mx-auto">Votre BD</h1>
+        <h1 class="text-h1 text-yellow mx-auto">Votre BD</h1>
         <ComicsStrip suspects={$selectedSuspects}/>
     </div>
 </section>
