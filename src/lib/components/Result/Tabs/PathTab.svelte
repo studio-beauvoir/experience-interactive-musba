@@ -1,19 +1,15 @@
 <script>
     import ComicsStrip from "$lib/components/ComicsStrip.svelte";
     import {selectedSuspects} from "$lib/stores/selectedSuspects";
-    import {parcours} from "$lib/stores/parcours.ts";
-
-    function getParcoursFromSuspectsSelected() {
-        const parcoursId = $selectedSuspects.map(suspect => suspect.id).join('_');
-        return $parcours[parcoursId];
-    }
+    import FeedBack from "$lib/components/Result/FeedBack.svelte";
 </script>
 
 <section class="flex flex-col gap-16 px-6">
-    <div>
-        <p class="text-p text-yellow text-center">Vous avez eu une piste bien intéressante.</p>
-        <p class="text-p text-yellow text-center">Vous avez réalisé le parcours <span
-                class="uppercase ">{getParcoursFromSuspectsSelected()}</span></p>
+    <img alt="" class="absolute -z-10 top-30 right-0" src="/assets/triangle-solo-1.svg">
+
+    <FeedBack suspects={$selectedSuspects}/>
+    <div class="flex flex-col gap-4">
+        <h1 class="text-h1 mx-auto ">Votre BD</h1>
+        <ComicsStrip suspects={$selectedSuspects}/>
     </div>
-    <ComicsStrip suspects={$selectedSuspects}/>
 </section>

@@ -15,7 +15,7 @@
     }
 </script>
 
-<section class="bg-black overflow-hidden">
+<section class="sticky z-10 top-0 w-full bg-black py-4 border-b border-yellow bg-black overflow-hidden">
     <div class="-mx-4 grid grid-cols-2 items-center">
         {#each tabs as tab}
             <TabButton on:tab-change tab={tab} selected={tab.id === tabSelected.id}/>

@@ -10,7 +10,7 @@
     import {paintings} from "$lib/stores/paintings";
 
     selectedSuspects.set([
-        $paintings[0].suspects[0],
+        $paintings[0].suspects[2],
         $paintings[1].suspects[0],
         $paintings[2].suspects[0],
     ])
@@ -104,13 +104,9 @@
         </article>
     </section>
 
-    <div class="sticky z-10 top-0 w-full bg-black py-4 border-b border-yellow">
-        <Tabs on:tab-change={handleTabChange} tabIndexSelected={tabIndexSelected} tabs={tabs}/>
-    </div>
+    <Tabs on:tab-change={handleTabChange} tabIndexSelected={tabIndexSelected} tabs={tabs}/>
 
     <section class="relative pt-16 pb-16 flex flex-col gap-16 items-center justify-center">
-        <img alt="" class="absolute -z-10 top-30 right-0" src="/assets/triangle-solo-1.svg">
-
         {#if tabs[tabIndexSelected].id === 'path'}
             <PathTab/>
         {:else if tabs[tabIndexSelected].id === 'parcours'}

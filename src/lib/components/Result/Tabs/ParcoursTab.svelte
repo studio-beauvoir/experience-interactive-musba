@@ -38,7 +38,6 @@
                         <section class="w-full flex gap-2">
                             {#each showingParcours.suspects as suspect}
                                 <div>
-
                                     <img class="w-full" src="/images/figures/{suspect.id}.jpg"/>
                                 </div>
                             {/each}
@@ -55,10 +54,17 @@
     {:else}
         <Top3Section laureates={laureates}/>
 
-        <p class="text-p">
-            Voici tous les parcours existants de l’expérience interactive Too Well Stolen.
-            27 chemins y sont disponibles.
-        </p>
+        <div class="bg-brown h-px"></div>
+
+        <section class="flex flex-col gap-4">
+            <h2 class="text-h1">Découvrez tout !</h2>
+
+            <p class="text-label">
+                Voici tous les parcours existants de l’expérience interactive Too Well Stolen.
+                27 chemins y sont disponibles.
+            </p>
+        </section>
+
         <section class="grid grid-cols-3 gap-12 text-yellow">
             {#each Object.entries($parcours) as [parcoursId, parcoursLetter], i}
                 <button class="relative flex items-center justify-center"
