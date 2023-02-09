@@ -15,5 +15,5 @@
         trouver dans la salle “Les années 1910-1940 : du cubisme au retour à l’ordre”. <br><br> N’hésitez pas à y
         explorer les différentes œuvres et à rester attentifs à leurs personnages. Leurs répliques ne seront pas vos
         seuls indices...</p>
-    <PrimaryButton handleClick={startIntro}>Continuer</PrimaryButton>
+    <PrimaryButton handleClick={startIntro}>C'est compris !</PrimaryButton>
 </section>

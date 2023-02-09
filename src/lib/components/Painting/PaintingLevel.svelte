@@ -10,6 +10,7 @@
     import {fade} from 'svelte/transition';
     import {Reset} from "radix-icons-svelte";
     import SuspectsTimeline from "$lib/components/Suspect/SuspectsTimeline.svelte";
+    import DialogButton from "$lib/components/Button/DialogButton.svelte";
 
     export let painting;
 
@@ -136,20 +137,14 @@
             {#if isShowingIntroduction}
                 <article class="flex flex-col gap-4 h-full">
                     <p class="text-p mr-16">Il me semble l’avoir vue partir par là&nbsp;!</p>
-                    <button class="text-white flex mt-auto ml-auto flex-row align-center items-center gap-3"
-                            on:click={hideIntroduction}>
-                        <span class="text-p">Continuer</span>
-                        <span class="rounded-full decoration-rounded w-8 h-8 p-1">&#x2192</span>
-                    </button>
+
+                    <DialogButton handleClick={hideIntroduction}>Inspecter le tableau</DialogButton>
                 </article>
             {:else if isShowingFeedback}
                 <article class="flex flex-col gap-4 h-full">
                     <p class="text-p mr-16">{getFeebackText()}</p>
-                    <button class="text-white flex mt-auto ml-auto flex-row align-center items-center gap-3"
-                            on:click={dispatchSuspectAccused}>
-                        <span class="text-p">Continuer</span>
-                        <span class="rounded-full decoration-rounded w-8 h-8 p-1">&#x2192</span>
-                    </button>
+
+                    <DialogButton handleClick={dispatchSuspectAccused}>Tableau suivant</DialogButton>
                 </article>
             {:else}
                 <article class="flex flex-col gap-4 h-full">

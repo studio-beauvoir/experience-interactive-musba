@@ -3,7 +3,7 @@
     export let classList;
 </script>
 
-<button class="flex mt-auto ml-auto flex-row align-center items-center gap-3 {classList}"
+<button class="flex mt-auto ml-auto flex-row align-center items-center gap-3 text-white {classList}"
         on:click={handleClick}>
     <span class="text-p">
         <slot></slot>

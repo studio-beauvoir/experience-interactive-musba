@@ -1,5 +1,6 @@
 <script lang="ts">
     import {goto} from "$app/navigation";
+    import DialogButton from "$lib/components/Button/DialogButton.svelte";
 
     function startGame() {
         goto('/game')
@@ -21,11 +22,7 @@
         <article class="flex flex-col h-full">
             <p class="text-p text-white flex-grow mr-16">Une personne malveillante vient de voler ma serviette...</p>
 
-            <button class="text-white flex mt-auto ml-auto flex-row align-center items-center gap-3"
-                    on:click={startGame}>
-                <span class="text-p">Continuer</span>
-                <span class="rounded-full decoration-rounded w-8 h-8 p-1">&#x2192</span>
-            </button>
+            <DialogButton handleClick={startGame}>Continuer</DialogButton>
         </article>
     </section>
 </section>
