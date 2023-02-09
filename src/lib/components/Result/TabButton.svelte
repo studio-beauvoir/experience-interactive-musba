@@ -13,16 +13,18 @@
     }
 </script>
 
-<div class="relative h-12 flex items-center">
+<div class="relative flex items-center bg-black">
     {#if selected}
-    <span class="w-full  absolute z-10 bg-black p-1 rounded-full aspect-square border border-yellow">
-        <span class="flex whitespace-nowrap text-center items-center justify-center text-h2 px-2 w-full rounded-full aspect-square border border-yellow">
-            {tab.label}
+        <span class="w-full bg-yellow border border-yellow text-black p-1">
+            <span class="flex whitespace-nowrap text-center items-center justify-center text-h2 p-2 w-full border border-black">
+                {tab.label}
+            </span>
         </span>
-    </span>
     {:else }
-        <button class="w-full" on:click={dispatchTabChange}>
-            {tab.label}
+        <button class="w-full border border-yellow p-1" on:click={dispatchTabChange}>
+            <span class="flex whitespace-nowrap text-center items-center justify-center text-h2 p-2 w-full border border-yellow">
+                {tab.label}
+            </span>
         </button>
     {/if}
 </div>

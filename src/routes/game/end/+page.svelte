@@ -1,6 +1,7 @@
 <script lang="ts">
     import {goto} from "$app/navigation";
-    import SuspectTimeline from '$lib/components/SuspectTimeline.svelte';
+    import SuspectTimeline from '$lib/components/SuspectsTimeline.svelte';
+    import {selectedSuspects} from "$lib/stores/selectedSuspects";
 
     let dialogsIndex = 0;
 
@@ -26,7 +27,9 @@
              class="absolute w-full h-full object-cover"
              src="/images/painting-end.png">
 
-        <SuspectTimeline/>
+        <div class="absolute z-10 w-full left-0 top-4">
+            <SuspectTimeline suspects={$selectedSuspects}/>
+        </div>
     </section>
 
     <section class="relative h-44 w-full p-6 border-t border-yellow">

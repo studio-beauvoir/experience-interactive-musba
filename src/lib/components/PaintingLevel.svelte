@@ -9,7 +9,7 @@
     import {selectedSuspects} from "$lib/stores/selectedSuspects";
     import {fade} from 'svelte/transition';
     import {Reset} from "radix-icons-svelte";
-    import SuspectTimeline from '$lib/components/SuspectTimeline.svelte';
+    import SuspectsTimeline from "$lib/components/SuspectsTimeline.svelte";
 
     export let painting;
 
@@ -91,8 +91,10 @@
                 </div>
             {/if}
         </section>
-        {#if !isShowingIntroduction}
-            <SuspectTimeline/>
+        {#if !isShowingIntroduction && $selectedSuspects.length}
+            <div class="absolute z-10 w-full left-0 top-4">
+                <SuspectsTimeline suspects="{$selectedSuspects}"/>
+            </div>
         {/if}
 
         {#if isShowingIntroduction}
@@ -100,14 +102,14 @@
         {:else if isShowingFeedback}
             <PaintingFeedback painting={painting} accusedSuspect={accusedSuspect}
                               transitionDuration={transitionDuration}/>
-        <!-- {:else if inspectingSuspect}
-            <TextButton handleClick={cancelSuspectInspection}
-                        classList="absolute bottom-4 left-6">
-                <span class="rounded-full decoration-rounded p-2 w-8 h-8 ">
-                    <ArrowLeft class="h-full w-full"/>
-                </span>
-                <span class="text-cta">Changer de suspect</span>
-            </TextButton> -->
+            <!-- {:else if inspectingSuspect}
+                <TextButton handleClick={cancelSuspectInspection}
+                            classList="absolute bottom-4 left-6">
+                    <span class="rounded-full decoration-rounded p-2 w-8 h-8 ">
+                        <ArrowLeft class="h-full w-full"/>
+                    </span>
+                    <span class="text-cta">Changer de suspect</span>
+                </TextButton> -->
         {/if}
     </section>
     {#if inspectingSuspect}
@@ -118,7 +120,7 @@
                 <p class="mr-16">{inspectingSuspect.text}</p>
                 <div class="flex w-full justify-around">
                     <TextButton handleClick={cancelSuspectInspection}
-                        classList="bottom-4 left-6">
+                                classList="bottom-4 left-6">
                         <span class="rounded-full decoration-rounded p-2 w-10 h-10 ">
                             <Reset class="h-full w-full"/>
                         </span>

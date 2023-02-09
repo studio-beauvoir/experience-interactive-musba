@@ -1,0 +1,15 @@
+<script>
+    import ComicsStrip from "$lib/components/ComicsStrip.svelte";
+    import {selectedSuspects} from "$lib/stores/selectedSuspects";
+    import FeedBack from "$lib/components/Result/FeedBack.svelte";
+</script>
+
+<section class="flex flex-col gap-16 px-6">
+    <img alt="" class="absolute -z-10 top-30 right-0" src="/assets/triangle-solo-1.svg">
+
+    <FeedBack suspects={$selectedSuspects}/>
+    <div class="flex flex-col gap-4">
+        <h1 class="text-h1 mx-auto ">Votre BD</h1>
+        <ComicsStrip suspects={$selectedSuspects}/>
+    </div>
+</section>

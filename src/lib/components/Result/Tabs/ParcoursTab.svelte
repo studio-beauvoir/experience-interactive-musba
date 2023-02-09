@@ -3,6 +3,10 @@
     import {paintings} from "$lib/stores/paintings.ts";
     import SecondaryButton from "$lib/components/SecondaryButton.svelte";
     import ComicsStrip from "$lib/components/ComicsStrip.svelte";
+    import Top3Section from "$lib/components/Result/Top3Section.svelte";
+
+    export let laureates;
+
 
     let showingParcours = null;
 
@@ -13,8 +17,7 @@
             letter: $parcours[parcoursId],
             suspects: $paintings.map((painting, index) => painting.suspects.find(suspect => suspect.id === suspectsIds[index]))
         }
-
-        console.log(showingParcours)
+        document.documentElement.scrollTo(0, 0);
     }
 
     function backToAllParcours() {
@@ -35,7 +38,6 @@
                         <section class="w-full flex gap-2">
                             {#each showingParcours.suspects as suspect}
                                 <div>
-
                                     <img class="w-full" src="/images/figures/{suspect.id}.jpg"/>
                                 </div>
                             {/each}
@@ -50,15 +52,24 @@
             </article>
         </section>
     {:else}
-        <p class="text-p">
-            Voici tous les parcours existants de l’expérience interactive Too Well Stolen.
-            27 chemins y sont disponibles.
-        </p>
-        <section class="grid grid-cols-2 gap-12 text-yellow">
-            {#each Object.entries($parcours) as [parcoursId, parcoursLetter]}
+        <Top3Section laureates={laureates}/>
+
+        <div class="bg-brown h-px"></div>
+
+        <section class="flex flex-col gap-4">
+            <h2 class="text-h1">Découvrez tout !</h2>
+
+            <p class="text-label">
+                Voici tous les parcours existants de l’expérience interactive Too Well Stolen.
+                27 chemins y sont disponibles.
+            </p>
+        </section>
+
+        <section class="grid grid-cols-3 gap-12 text-yellow">
+            {#each Object.entries($parcours) as [parcoursId, parcoursLetter], i}
                 <button class="relative flex items-center justify-center"
                         on:click={()=>showParcours(parcoursId)}>
-                    <img class="absolute -z-10" src="/assets/triangle-parcours.svg" alt="parcours"/>
+                    <img class="animation-triangle absolute -z-10" src="/assets/triangle-parcours.svg" alt="parcours" style="animation-delay: 0.{Math.round(Math.random()*10)}s"/>
                     <span class="text-drop-capital uppercase">{parcoursLetter}</span>
                 </button>
             {/each}
