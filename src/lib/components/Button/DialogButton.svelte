@@ -1,12 +1,16 @@
 <script>
+    import {ArrowRight} from "radix-icons-svelte";
+
     export let handleClick;
     export let classList;
 </script>
 
-<button class="flex mt-auto ml-auto flex-row align-center items-center gap-3 {classList}"
+<button class="flex mt-auto ml-auto flex-row align-center items-center gap-3 text-white {classList}"
         on:click={handleClick}>
-    <span class="text-p">
+    <span class="text-label-2 text-yellow">
         <slot></slot>
     </span>
-    <span class="rounded-full decoration-rounded w-8 h-8 p-1">&#x2192</span>
+    <span class="rounded-full decoration-rounded w-8 h-8 p-1.5 flex justify-center items-center">
+        <ArrowRight class="h-full w-full"/>
+    </span>
 </button>

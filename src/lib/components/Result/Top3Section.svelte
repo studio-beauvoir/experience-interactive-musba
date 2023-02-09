@@ -4,13 +4,9 @@
 
 <section class="flex flex-col gap-16 justify-between w-full text-white">
     <article class="grid grid-cols-3 gap-4 items-center">
-        <p class="col-span-2 text-label">
+        <p class="col-span-2 text-p">
             Le parcours <span class="uppercase">{laureates.win}</span> est considéré comme le meilleur parcours car il
-            est
-            composé des 3
-            complices
-            de la
-            voleuse !
+            est composé des 3 complices de la voleuse !
         </p>
         <div class="relative">
             <p class="text-display uppercase absolute -top-3 left-1/2 -translate-x-1/2">{laureates.win}</p>

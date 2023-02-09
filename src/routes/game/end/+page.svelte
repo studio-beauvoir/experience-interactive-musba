@@ -11,7 +11,7 @@
     const transitionDuration = 500;
     let isShowingIntroduction = true;
 
-    $: endDialogsReached = dialogsIndex + 1 >= dialogs.length;
+    $: endDialogsReached = dialogsIndex >= dialogs.length;
 
     const painting = {
         name: 'La femme nue',
@@ -55,7 +55,7 @@
         {/if}
     </section>
 
-    <section class="relative h-40 w-full p-6 border-t border-yellow text-white">
+    <section class="relative h-44 w-full p-6 border-t border-yellow text-white">
         {#if isShowingIntroduction}
             <img alt="Figure au bord de l'eau"
                  class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
@@ -66,6 +66,16 @@
 
                 <DialogButton handleClick={hideIntroduction}>Continuer</DialogButton>
             </article>
+        {:else if endDialogsReached}
+            <img alt="Figure au bord de l'eau"
+                 class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
+                 src="/images/figures/statue.jpg">
+
+            <article class="flex flex-col gap-4 h-full">
+                <p class="text-p mr-16">Merci de votre aide inspecteur, j'ai retrouvé ma serviette grâce à vous !</p>
+
+                <PrimaryButton handleClick={goToResult}>Fin de l'enquête</PrimaryButton>
+            </article>
         {:else}
             <img alt="La femme nue"
                  class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
@@ -74,11 +84,7 @@
             <article class="flex flex-col gap-4 h-full">
                 <p class="text-p text-white flex-grow mr-16">{dialogs[dialogsIndex]}</p>
 
-                {#if endDialogsReached}
-                    <PrimaryButton handleClick={goToResult}>Finir le jeu</PrimaryButton>
-                {:else}
-                    <DialogButton handleClick={nextDialog}>Continuer</DialogButton>
-                {/if}
+                <DialogButton handleClick={nextDialog}>Continuer</DialogButton>
             </article>
         {/if}
     </section>

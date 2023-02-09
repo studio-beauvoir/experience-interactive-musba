@@ -54,13 +54,15 @@
     {:else}
         <Top3Section laureates={laureates}/>
 
-        <div class="bg-brown h-px"></div>
+        <div class="bg-brown h-px -mx-6"></div>
 
         <section class="flex flex-col gap-4">
-            <h2 class="text-h1">Découvrez tout !</h2>
+            <h2 class="text-h1 text-yellow">Découvrez tout !</h2>
 
-            <p class="text-label">
+            <p class="text-p text-white">
                 Voici tous les parcours existants de l’expérience interactive Too Well Stolen.
+            </p>
+            <p class="text-p text-white">
                 27 chemins y sont disponibles.
             </p>
         </section>
