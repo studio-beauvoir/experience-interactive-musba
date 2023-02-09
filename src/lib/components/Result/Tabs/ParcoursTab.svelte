@@ -3,6 +3,10 @@
     import {paintings} from "$lib/stores/paintings.ts";
     import SecondaryButton from "$lib/components/SecondaryButton.svelte";
     import ComicsStrip from "$lib/components/ComicsStrip.svelte";
+    import Top3Section from "$lib/components/Result/Top3Section.svelte";
+
+    export let laureates;
+
 
     let showingParcours = null;
 
@@ -13,12 +17,12 @@
             letter: $parcours[parcoursId],
             suspects: $paintings.map((painting, index) => painting.suspects.find(suspect => suspect.id === suspectsIds[index]))
         }
-
-        console.log(showingParcours)
+        document.documentElement.scrollTo(0, 0);
     }
 
     function backToAllParcours() {
         showingParcours = null;
+        document.documentElement.scrollTo(0, 0);
     }
 </script>
 
@@ -50,6 +54,8 @@
             </article>
         </section>
     {:else}
+        <Top3Section laureates={laureates}/>
+
         <p class="text-p">
             Voici tous les parcours existants de l’expérience interactive Too Well Stolen.
             27 chemins y sont disponibles.

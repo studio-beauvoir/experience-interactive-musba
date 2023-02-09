@@ -2,7 +2,7 @@
     export let laureates;
 </script>
 
-<section class="flex flex-col gap-16 justify-between w-full px-6 text-white">
+<section class="flex flex-col gap-16 justify-between w-full text-white">
     <article class="grid grid-cols-3 gap-4 items-center">
         <p class="col-span-2 text-label">
             Le parcours <span class="uppercase">{laureates.win}</span> est considéré comme le meilleur parcours car il

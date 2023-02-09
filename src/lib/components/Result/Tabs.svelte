@@ -15,10 +15,10 @@
     }
 </script>
 
-<section class="absolute w-full translate-y-1/2 bottom-0 bg-black border-y border-yellow py-1">
-    <nav class="grid grid-cols-3 items-center border-y border-yellow px-6">
+<section class="bg-black overflow-hidden">
+    <div class="-mx-4 grid grid-cols-2 items-center">
         {#each tabs as tab}
             <TabButton on:tab-change tab={tab} selected={tab.id === tabSelected.id}/>
         {/each}
-    </nav>
+    </div>
 </section>
