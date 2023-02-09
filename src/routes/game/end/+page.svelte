@@ -20,7 +20,7 @@
     ]
 </script>
 
-<section class="flex flex-col items-center justify-center h-screen bg-black overflow-hidden">
+<section class="flex flex-col items-center justify-center h-full bg-black overflow-hidden">
     <section class="relative flex-grow w-full overflow-hidden">
         <img alt="Sculpture vue de derrière nommée Femme nue au bord de l'eau"
              class="absolute w-full h-full object-cover"
