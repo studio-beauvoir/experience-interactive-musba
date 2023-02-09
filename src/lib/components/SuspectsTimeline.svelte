@@ -2,7 +2,7 @@
     export let suspects;
 </script>
 
-<section class="pointer-events-none absolute z-10 flex items-center w-full justify-center top-4">
+<section class="pointer-events-none flex items-center w-full justify-center">
     <article class="h-10 w-10 bg-black border-2 border-yellow rounded-full">
         {#if suspects[0]}
             <img alt=" "

@@ -92,7 +92,9 @@
             {/if}
         </section>
         {#if !isShowingIntroduction && $selectedSuspects.length}
-            <SuspectsTimeline suspects="{$selectedSuspects}"/>
+            <div class="absolute z-10 w-full left-0 top-4">
+                <SuspectsTimeline suspects="{$selectedSuspects}"/>
+            </div>
         {/if}
 
         {#if isShowingIntroduction}
