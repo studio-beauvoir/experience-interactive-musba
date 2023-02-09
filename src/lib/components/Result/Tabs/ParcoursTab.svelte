@@ -60,11 +60,11 @@
             Voici tous les parcours existants de l’expérience interactive Too Well Stolen.
             27 chemins y sont disponibles.
         </p>
-        <section class="grid grid-cols-2 gap-12 text-yellow">
-            {#each Object.entries($parcours) as [parcoursId, parcoursLetter]}
+        <section class="grid grid-cols-3 gap-12 text-yellow">
+            {#each Object.entries($parcours) as [parcoursId, parcoursLetter], i}
                 <button class="relative flex items-center justify-center"
                         on:click={()=>showParcours(parcoursId)}>
-                    <img class="absolute -z-10" src="/assets/triangle-parcours.svg" alt="parcours"/>
+                    <img class="animation-triangle absolute -z-10" src="/assets/triangle-parcours.svg" alt="parcours" style="animation-delay: 0.{Math.round(Math.random()*10)}s"/>
                     <span class="text-drop-capital uppercase">{parcoursLetter}</span>
                 </button>
             {/each}
