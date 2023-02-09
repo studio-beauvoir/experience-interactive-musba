@@ -43,7 +43,11 @@
     }
 
     .text-label {
-        @apply text-base font-light italic
+        @apply text-sm font-light italic
+    }
+
+    .text-label-2 {
+        @apply text-base font-light italic uppercase
     }
 
     .decoration {
