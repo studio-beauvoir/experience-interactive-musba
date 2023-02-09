@@ -2,7 +2,7 @@
     import {createEventDispatcher} from 'svelte';
     import SuspectButton from "$lib/components/Suspect/SuspectButton.svelte";
     import SuspectEmotion from "$lib/components/Suspect/SuspectEmotion.svelte";
-    import PrimaryButton from "../Button/PrimaryButton.svelte";
+    import PrimaryButton from "$lib/components/Button/PrimaryButton.svelte";
     import TextButton from "$lib/components/Button/TextButton.svelte";
     import PaintingFeedback from "$lib/components/Painting/PaintingFeedback.svelte";
     import PaintingIntroduction from "$lib/components/Painting/PaintingIntroduction.svelte";
