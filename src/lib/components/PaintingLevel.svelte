@@ -46,9 +46,9 @@
 
     function getFeebackText() {
         const text = {
-            innocent: "Rien à voir, c'est un innocent !",
+            innocent: "Rien à voir, c'est un innocent !",
             witness: "Mh, presque, ce témoin a vu le complice.",
-            accomplice: "Bien joué, c'est un complice !",
+            accomplice: "Bien joué, c'est un complice !",
         }
 
         return text[accusedSuspect.type];
@@ -135,7 +135,7 @@
                  src="/images/figures/statue.jpg" alt=" ">
             {#if isShowingIntroduction}
                 <article class="flex flex-col gap-4 h-full">
-                    <p class="text-p mr-16">Il me semble l’avoir vu partir par là !</p>
+                    <p class="text-p mr-16">Il me semble l’avoir vu partir par là&nbsp;!</p>
                     <button class="text-white flex mt-auto ml-auto flex-row align-center items-center gap-3"
                             on:click={hideIntroduction}>
                         <span class="text-p">Continuer</span>
@@ -154,7 +154,7 @@
             {:else}
                 <article class="flex flex-col gap-4 h-full">
                     <p class="text-p mr-16">{painting.statueDialog}</p>
-                    <p class="text-label text-yellow">Interrogez un suspect en cliquant dessus</p>
+                    <p class="text-label text-yellow">Interrogez un suspect en cliquant dessus.</p>
                 </article>
             {/if}
         </section>
