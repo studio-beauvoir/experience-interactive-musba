@@ -16,7 +16,7 @@
     <h1 class="text-yellow text-h2 z-10">Too well</h1>
     <h1 class="text-yellow text-display z-10">Stolen</h1>
     <div class="z-10 m-8 px-10 py-4">
-        <img alt="" class="h-auto" src="/images/home-page-image.png">
+        <img alt="" class="h-auto" src="/images/home-page-image.webp">
     </div>
     <div class="flex flex-col gap-10">
         <PrimaryButton handleClick={startInfos}>Jouer</PrimaryButton>

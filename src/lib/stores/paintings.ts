@@ -6,7 +6,7 @@ export const paintings = readable([
         name: 'Hommage à Vuillard',
         date: '1943',
         author: 'Willem VAN HASSELT ',
-        image: '/images/painting-1.png',
+        image: '/images/painting-1.webp',
         statueDialog: 'Je me demande qui c’est... Vous auriez une idée ?',
         suspects: [
             {
@@ -64,7 +64,7 @@ export const paintings = readable([
         name: 'L\'archer',
         date: '1917',
         author: 'Jean DUPAS',
-        image: '/images/painting-2.png',
+        image: '/images/painting-2.webp',
         statueDialog: 'Le prochain suspect devrait être ici. Une idée de qui ça pourrait être ?',
         suspects: [
             {
@@ -122,7 +122,7 @@ export const paintings = readable([
         name: 'La gloire de Bordeaux',
         date: '1937',
         author: 'Jean DUPAS',
-        image: '/images/painting-3.png',
+        image: '/images/painting-3.webp',
         statueDialog: 'Bon, on devrait bientôt trouver notre coupable. Il faut continuer les investigations !',
         suspects: [
             {
