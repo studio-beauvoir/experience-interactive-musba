@@ -43,7 +43,6 @@
 
     function handleTabChange(event) {
         tabIndexSelected = tabs.findIndex(tab => tab.id === event.detail.tab.id);
-        document.documentElement.scrollTo(0, 0);
     }
 
     function getParcoursFromSuspectsSelected() {
@@ -96,16 +95,18 @@
 
 <section class="z-0 relative min-h-full bg-black text-yellow">
 
-    <section class="sticky z-10 top-0 w-full bg-black">
+    <section>
         <img alt="" class="absolute -z-10 top-0 right-0" src="/assets/lines-svg.svg">
 
-        <article class="flex flex-col pt-12 pb-12 px-6 items-center">
+        <article class="flex flex-col pt-12 pb-8 px-6 items-center">
             <h2 class="text-soft-display mr-28">Mystère</h2>
             <h1 class="text-display">Résolu !</h1>
         </article>
-
-        <Tabs on:tab-change={handleTabChange} tabIndexSelected={tabIndexSelected} tabs={tabs}/>
     </section>
+
+    <div class="sticky z-10 top-0 w-full bg-black py-4 border-b border-yellow">
+        <Tabs on:tab-change={handleTabChange} tabIndexSelected={tabIndexSelected} tabs={tabs}/>
+    </div>
 
     <section class="relative pt-16 pb-16 flex flex-col gap-16 items-center justify-center">
         <img alt="" class="absolute -z-10 top-30 right-0" src="/assets/triangle-solo-1.svg">

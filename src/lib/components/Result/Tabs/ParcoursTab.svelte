@@ -22,7 +22,6 @@
 
     function backToAllParcours() {
         showingParcours = null;
-        document.documentElement.scrollTo(0, 0);
     }
 </script>
 
