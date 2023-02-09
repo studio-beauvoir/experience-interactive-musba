@@ -1,15 +1,15 @@
 <script lang="ts">
     import {createEventDispatcher} from 'svelte';
-    import SuspectButton from "$lib/components/SuspectButton.svelte";
-    import PaintingAnimation from "$lib/components/PaintingAnimation.svelte";
-    import Button from "$lib/components/Button.svelte";
-    import TextButton from "$lib/components/TextButton.svelte";
-    import PaintingFeedback from "$lib/components/PaintingFeedback.svelte";
-    import PaintingIntroduction from "$lib/components/PaintingIntroduction.svelte";
-    import {selectedSuspects} from "$lib/stores/selectedSuspects";
+    import SuspectButton from "../Suspect/SuspectButton.svelte";
+    import SuspectEmotion from "../Suspect/SuspectEmotion.svelte";
+    import Button from "../Button/Button.svelte";
+    import TextButton from "../Button/TextButton.svelte";
+    import PaintingFeedback from "./PaintingFeedback.svelte";
+    import PaintingIntroduction from "./PaintingIntroduction.svelte";
+    import {selectedSuspects} from "../../stores/selectedSuspects";
     import {fade} from 'svelte/transition';
     import {Reset} from "radix-icons-svelte";
-    import SuspectsTimeline from "$lib/components/SuspectsTimeline.svelte";
+    import SuspectsTimeline from "../Suspect/SuspectsTimeline.svelte";
 
     export let painting;
 
@@ -83,7 +83,7 @@
             {#if !isShowingIntroduction && !isShowingFeedback}
                 <div transition:fade={{ delay: transitionDuration*1.2, duration: transitionDuration }}>
                     {#each painting.suspects as suspect}
-                        <PaintingAnimation position={suspect.face} file="/lotties/{suspect.id}.json"/>
+                        <SuspectEmotion position={suspect.face} file="/lotties/{suspect.id}.json"/>
                         {#if !inspectingSuspect}
                             <SuspectButton suspect={suspect} handleClick={()=>inspectSuspect(suspect)}/>
                         {/if}

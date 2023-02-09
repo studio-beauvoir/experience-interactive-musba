@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Button from "$lib/components/Button.svelte";
+    import Button from "$lib/components/Button/Button.svelte";
     import {goto} from "$app/navigation";
 
     function backToHome() {

@@ -1,7 +1,6 @@
 <script>
     import '../app.css';
     import {paintings} from "$lib/stores/paintings";
-    import FullscreenButton from "$lib/components/FullscreenButton.svelte";
 </script>
 
 <svelte:head>
@@ -21,6 +20,4 @@
 
 <div class="relative h-full">
     <slot/>
-
-    <FullscreenButton/>
 </div>
