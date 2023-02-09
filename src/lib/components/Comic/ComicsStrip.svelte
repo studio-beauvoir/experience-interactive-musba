@@ -1,5 +1,5 @@
 <script>
-    import ComicStrip from "$lib/components/ComicStrip.svelte";
+    import ComicStrip from "$lib/components/Comic/ComicStrip.svelte";
 
     export let suspects;
 </script>
