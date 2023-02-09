@@ -4,6 +4,7 @@
     import SecondaryButton from "$lib/components/Button/SecondaryButton.svelte";
     import ComicsStrip from "$lib/components/Comic/ComicsStrip.svelte";
     import Top3Section from "$lib/components/Result/Top3Section.svelte";
+    import SuspectsTimeline from "$lib/components/Suspect/SuspectsTimeline.svelte";
 
     export let laureates;
 
@@ -30,24 +31,20 @@
         <section class="flex flex-col gap-16">
             <SecondaryButton handleClick={backToAllParcours}>Retour aux parcours</SecondaryButton>
             <article>
-                <h2 class="text-h2">Le parcours</h2>
-                <section class="grid grid-cols-5 gap-4">
-                    <h1 class="col-span-2 text-drop-capital uppercase text-yellow">{showingParcours.letter}</h1>
-                    <section class="col-span-3 flex flex-col">
+                <h2 class="text-h2 text-yellow pb-4">Parcours</h2>
+                <section class="grid grid-cols-5 gap-4 items-end">
+                    <h1 class="col-span-2 font-display text-[12rem] leading-none uppercase text-yellow -mb-4">{showingParcours.letter}</h1>
+                    <section class="col-span-3 flex flex-col items-start gap-2">
                         <p class="text-p">Les accusés de ce parcours</p>
-                        <section class="w-full flex gap-2">
-                            {#each showingParcours.suspects as suspect}
-                                <div>
-                                    <img class="w-full" src="/images/figures/{suspect.id}.jpg"/>
-                                </div>
-                            {/each}
-                        </section>
+                        <SuspectsTimeline suspects={showingParcours.suspects} classList="w-auto" />
                     </section>
                 </section>
             </article>
 
-            <article>
-                <h2 class="text-h2 mb-4">La bande dessinée de ce parcours</h2>
+            <div class="bg-brown h-px -mx-6"></div>
+
+            <article class="flex flex-col gap-10">
+                <h2 class="text-h1 text-yellow">BD de ce parcours</h2>
                 <ComicsStrip suspects={showingParcours.suspects}/>
             </article>
         </section>

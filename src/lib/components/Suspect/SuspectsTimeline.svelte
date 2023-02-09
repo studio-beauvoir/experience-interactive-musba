@@ -4,9 +4,10 @@
 
     export let suspects;
     export let detailed = false;
+    export let classList = "";
 </script>
 
-<section class="pointer-events-none flex items-center w-full justify-center mb-8">
+<section class="pointer-events-none flex items-center w-full justify-center mb-8 {classList}">
     {#if detailed}
         <SuspectsTimelineSuspectDetailed suspect={suspects[0]}/>
     {:else}
