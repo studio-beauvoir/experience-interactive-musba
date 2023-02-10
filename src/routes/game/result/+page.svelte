@@ -59,19 +59,6 @@
         return trad[suspect.type];
     }
 
-    async function saveResultsToDatabase() {
-        await fetch('/api/stats', {
-            method: 'POST',
-            body: JSON.stringify({
-                selectedSuspects: $selectedSuspects.map(suspect => suspect.id)
-            }),
-            headers: {
-                'content-type': 'application/json'
-            }
-        })
-    }
-
-
     async function getStatsFromDatabase() {
         const data = await fetch('/api/stats', {
             method: 'GET',
@@ -84,11 +71,11 @@
 
         jsonData.sort((a, b) => a.total - b.total)
 
-        const lowestId = jsonData[0]._id.selectedSuspects.join('_');
-        const highestID = jsonData[jsonData.length - 1]._id.selectedSuspects.join('_');
+        const lowestId = jsonData[0]?._id?.selectedSuspects?.join('_');
+        const highestID = jsonData[jsonData.length - 1]?._id?.selectedSuspects?.join('_');
 
-        laureates.highest = $parcours[highestID];
-        laureates.lowest = $parcours[lowestId];
+        laureates.highest = $parcours[highestID] || '?';
+        laureates.lowest = $parcours[lowestId] || '?';
     }
 </script>
 
