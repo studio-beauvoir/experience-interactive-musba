@@ -116,18 +116,11 @@
         {/if}
 
         {#if isShowingIntroduction}
-            <PaintingIntroduction painting={painting} transitionDuration={transitionDuration}/>
+            <PaintingIntroduction handleClick={hideIntroduction} painting={painting}
+                                  transitionDuration={transitionDuration}/>
         {:else if isShowingFeedback}
-            <PaintingFeedback painting={painting} accusedSuspect={accusedSuspect}
+            <PaintingFeedback handleClick={dispatchSuspectAccused} painting={painting} accusedSuspect={accusedSuspect}
                               transitionDuration={transitionDuration}/>
-            <!-- {:else if inspectingSuspect}
-                <TextButton handleClick={cancelSuspectInspection}
-                            classList="absolute bottom-4 left-6">
-                    <span class="rounded-full decoration-rounded p-2 w-8 h-8 ">
-                        <ArrowLeft class="h-full w-full"/>
-                    </span>
-                    <span class="text-cta">Changer de suspect</span>
-                </TextButton> -->
         {/if}
     </section>
     {#if inspectingSuspect}

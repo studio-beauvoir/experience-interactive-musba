@@ -4,10 +4,12 @@
     export let painting;
     export let accusedSuspect;
     export let transitionDuration;
+    export let handleClick;
+
 </script>
 
-<article class="absolute inset-0 bg-semi-transparent flex flex-col gap-4 pt-12 justify-center items-center"
-         transition:fade={{ duration: transitionDuration }}>
+<button class="absolute inset-0 bg-semi-transparent flex flex-col gap-4 pt-12 justify-center items-center"
+        on:click={handleClick} transition:fade={{ duration: transitionDuration }}>
 
     <h2 class="text-h2 text-yellow">
         {painting.step}<sup>
@@ -35,4 +37,4 @@
     </section>
 
     <p class="text-p px-6 text-center">{accusedSuspect.comicTitle}</p>
-</article>
+</button>
