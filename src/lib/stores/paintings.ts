@@ -13,8 +13,8 @@ export const paintings = readable([
                 id: '1-3',
                 name: '3',
                 type: 'witness',
-                text: 'Heu.. .J’aurais bien eu besoin d’essuyer mon erreur avec la serviette après avoir été dérangé par l’archer.',
-                comicTitle: 'L’artiste surpris qui en cassa même ses ustensiles. Impensable ! mais pourtant vrai.',
+                text: 'Heu... J’aurais bien eu besoin d’essuyer mon erreur avec la serviette après avoir été dérangé par l’archer.',
+                comicTitle: 'L’artiste surpris qui en cassa même ses ustensiles. Impensable ! mais pourtant vrai.',
                 button: {
                     rightSide: false,
                     x: 25,
@@ -29,7 +29,7 @@ export const paintings = readable([
                 id: '1-2',
                 name: '2',
                 type: 'innocent',
-                text: 'Hein ? Je n’ai absolument rien à voir avec ça, mon chien est paniqué après avoir vu les deux autres chiens en face.',
+                text: 'Hein ? Je n’ai absolument rien à voir avec ça, mon chien est paniqué après avoir vu les deux autres chiens en face.',
                 comicTitle: 'Le monsieur et son tout petit mini minou chien tout choupi ♡',
                 button: {
                     rightSide: false,
@@ -45,7 +45,7 @@ export const paintings = readable([
                 id: '1-1',
                 name: '1',
                 type: 'accomplice',
-                text: 'Pfff.. .Elle m’énerve celle-là avec sa serviette... Ce n’est pas moi mais bon, ça ne lui ferait pas de mal...',
+                text: 'Pfff, elle m’énerve celle-là avec sa serviette... Ce n’est pas moi mais bon, ça ne lui ferait pas de mal...',
                 comicTitle: 'Le barbu à la chaise indiscrète.',
                 button: {
                     rightSide: true,
