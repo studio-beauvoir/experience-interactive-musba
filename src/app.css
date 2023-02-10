@@ -27,7 +27,7 @@
     }
 
     .text-h1 {
-        @apply font-display text-4xl font-normal
+        @apply text-4xl font-normal
     }
 
     .text-h2 {

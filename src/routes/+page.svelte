@@ -22,9 +22,8 @@
 
 <img alt=" " class="absolute h-full w-full z-0" src="/assets/triangle-svg.svg">
 <section class="relative z-10 flex flex-col items-center justify-center h-full">
-    <h2 class="text-yellow text-h2">Too well</h2>
+    <h2 class="text-yellow text-h1 pr-32">Too well</h2>
     <h1 class="text-yellow text-display">Stolen</h1>
-
     <section class="z-10 m-8 px-10 py-4">
         <img alt="" class="h-auto" src="/images/home-page-image.webp">
     </section>
