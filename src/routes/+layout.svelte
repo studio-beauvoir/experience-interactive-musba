@@ -1,10 +1,12 @@
 <script>
     import '../app.css';
     import {paintings} from "$lib/stores/paintings";
+    import {selectedSuspects} from "$lib/stores/selectedSuspects.ts";
 
     let audioGame = new Audio("/audio/Quantum_Jazz_-_Intro.mp3");
     let isAudioPlaying = false;
-    
+
+    selectedSuspects.load();
     audioGame.play();
 
     $: isPlaying = audioGame.paused;
