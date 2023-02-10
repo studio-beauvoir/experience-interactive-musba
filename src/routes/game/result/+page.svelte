@@ -1,4 +1,5 @@
 <script lang="ts">
+    import PrimaryButton from "$lib/components/Button/PrimaryButton.svelte";
     import {selectedSuspects} from "$lib/stores/selectedSuspects";
     import {parcours} from "$lib/stores/parcours";
     import BottomActions from "$lib/components/Result/BottomActions.svelte";
@@ -101,6 +102,10 @@
             <h2 class="text-soft-display mr-28">Mystère</h2>
             <h1 class="text-display">Résolu !</h1>
         </article>
+    </section>
+    <section class="flex w-full justify-center gap-6 px-6">
+        <PrimaryButton classList="w-full" handleClick={goToCredits} soundId={"validation"}>Crédits</PrimaryButton>
+        <PrimaryButton classList="w-full" handleClick={goBackToHome} soundId={"validation"}>Rejouer</PrimaryButton>
     </section>
 
     <Tabs on:tab-change={handleTabChange} tabIndexSelected={tabIndexSelected} tabs={tabs}/>

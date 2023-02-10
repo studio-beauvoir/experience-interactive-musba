@@ -1,6 +1,23 @@
 <script>
     import '../app.css';
     import {paintings} from "$lib/stores/paintings";
+
+    let audioGame = new Audio("/audio/Quantum_Jazz_-_Intro.mp3");
+    let isAudioPlaying = false;
+    
+    audioGame.play();
+
+    $: isPlaying = audioGame.paused;
+
+    function toggleMusic() {
+        if (!audioGame.paused) {
+            audioGame.pause();
+            isAudioPlaying = false;
+        } else {
+            audioGame.play();
+            isAudioPlaying = true;
+        }
+    }
 </script>
 
 <svelte:head>
@@ -20,4 +37,15 @@
 
 <div class="relative h-full">
     <slot/>
+
+    <section class="absolute top-4 right-4">
+        <button class="text-yellow bg-black border border-yellow rounded-full p-2"
+                on:click={toggleMusic}>
+            {#if isAudioPlaying}
+                <img class="h-5 w-5" src="/assets/sound.svg" alt="">
+            {:else}
+                <img class="h-5 w-5" src="/assets/noSound.svg" alt="">
+            {/if}
+        </button>
+    </section>
 </div>
