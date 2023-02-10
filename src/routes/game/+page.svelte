@@ -1,5 +1,6 @@
 <script lang="ts">
     import {selectedSuspects} from "$lib/stores/selectedSuspects";
+    import {parcoursDone} from "$lib/stores/parcoursDone";
     import {paintings} from "$lib/stores/paintings";
     import PaintingLevel from "$lib/components/Painting/PaintingLevel.svelte";
     import {goto} from "$app/navigation";
@@ -25,16 +26,21 @@
             return;
         }
 
+        saveParcoursDone();
         saveResultsToDatabase();
 
         goto('/game/end')
+    }
+
+    function saveParcoursDone() {
+        parcoursDone.add($selectedSuspects)
     }
 
     async function saveResultsToDatabase() {
         await fetch('/api/stats', {
             method: 'POST',
             body: JSON.stringify({
-                selectedSuspects: $selectedSuspects.map(suspect => suspect.id)
+                selectedSuspectsIds: $selectedSuspects.map(suspect => suspect.id)
             }),
             headers: {
                 'content-type': 'application/json'
