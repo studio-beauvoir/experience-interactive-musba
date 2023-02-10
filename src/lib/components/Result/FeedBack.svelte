@@ -25,6 +25,7 @@
 
     <SuspectsTimeline detailed={true} suspects={suspects}/>
 
-    <p class="text-p text-white text-center">Vous avez fait ces choix et réalisé la piste <span
-            class="uppercase ">{getParcoursFromSuspectsSelected()}</span></p>
+    <p class="text-p text-white text-center">Vous avez fait ces choix et réalisé le parcours <span
+            class="font-bold"><span
+            class="uppercase">"{getParcoursFromSuspectsSelected()}"</span> parmi 27 parcours</span></p>
 </div>
