@@ -6,7 +6,9 @@
 
     let painting = $selectedSuspects.length ? $selectedSuspects.length : 0;
 
-    checkGameEnd();
+    if (isGameEnded()) {
+        goto('/game/end')
+    }
 
     async function handleLevelEnd() {
         painting++;
@@ -14,10 +16,30 @@
         setTimeout(checkGameEnd, 600);
     }
 
+    function isGameEnded() {
+        return painting >= $paintings.length;
+    }
+
     function checkGameEnd() {
-        if (painting >= $paintings.length) {
-            goto('/game/end')
+        if (!isGameEnded()) {
+            return;
         }
+
+        saveResultsToDatabase();
+
+        goto('/game/end')
+    }
+
+    async function saveResultsToDatabase() {
+        await fetch('/api/stats', {
+            method: 'POST',
+            body: JSON.stringify({
+                selectedSuspects: $selectedSuspects.map(suspect => suspect.id)
+            }),
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
     }
 
 </script>
