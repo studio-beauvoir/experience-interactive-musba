@@ -19,11 +19,16 @@ export const paintings = readable([
                 button: {
                     rightSide: false,
                     x: 25,
-                    y: 60
+                    y: 61
                 },
-                face: {
+                zoom: {
                     x: 12,
                     y: 52
+                },
+                emotion: {
+                    x: 9,
+                    y: 52.5,
+                    width: 33,
                 },
             },
             {
@@ -35,11 +40,16 @@ export const paintings = readable([
                 button: {
                     rightSide: false,
                     x: 65,
-                    y: 60
+                    y: 61
                 },
-                face: {
+                zoom: {
                     x: 51,
                     y: 54
+                },
+                emotion: {
+                    x: 49.5,
+                    y: 53.5,
+                    width: 33,
                 },
             },
             {
@@ -50,12 +60,17 @@ export const paintings = readable([
                 comicTitle: 'Le barbu à la chaise indiscrète.',
                 button: {
                     rightSide: true,
-                    x: 73,
-                    y: 38
+                    x: 72,
+                    y: 39
                 },
-                face: {
+                zoom: {
                     x: 86,
                     y: 30
+                },
+                emotion: {
+                    x: 83,
+                    y: 29,
+                    width: 33,
                 },
             },
         ]
@@ -80,9 +95,14 @@ export const paintings = readable([
                     x: 13,
                     y: 35
                 },
-                face: {
+                zoom: {
                     x: 24,
                     y: 27
+                },
+                emotion: {
+                    x: 21.5,
+                    y: 29.5,
+                    width: 37,
                 },
             },
             {
@@ -96,9 +116,14 @@ export const paintings = readable([
                     x: 40,
                     y: 43
                 },
-                face: {
+                zoom: {
                     x: 51,
                     y: 35
+                },
+                emotion: {
+                    x: 52.5,
+                    y: 35.8,
+                    width: 37,
                 },
             },
             {
@@ -112,9 +137,14 @@ export const paintings = readable([
                     x: 86,
                     y: 30
                 },
-                face: {
+                zoom: {
                     x: 76,
                     y: 21
+                },
+                emotion: {
+                    x: 75.5,
+                    y: 22,
+                    width: 35,
                 },
             },
         ]
@@ -136,12 +166,17 @@ export const paintings = readable([
                 comicTitle: 'La pose douloureuse (Dupas prenait son temps...)',
                 button: {
                     rightSide: false,
-                    x: 36,
-                    y: 39
+                    x: 37,
+                    y: 40
                 },
-                face: {
+                zoom: {
                     x: 19,
                     y: 32
+                },
+                emotion: {
+                    x: 14,
+                    y: 29.2,
+                    width: 43,
                 },
             },
             {
@@ -152,12 +187,17 @@ export const paintings = readable([
                 comicTitle: 'Un chasseur sachant chasser sait chasser sans son reflet.',
                 button: {
                     rightSide: true,
-                    x: 44,
-                    y: 54
+                    x: 46,
+                    y: 56
                 },
-                face: {
+                zoom: {
                     x: 55,
                     y: 47.5
+                },
+                emotion: {
+                    x: 50,
+                    y: 42,
+                    width: 43,
                 },
             },
             {
@@ -168,12 +208,17 @@ export const paintings = readable([
                 comicTitle: 'La chèvre qui brise les murs, et même le 4ème.',
                 button: {
                     rightSide: false,
-                    x: 90,
-                    y: 50
+                    x: 89,
+                    y: 49
                 },
-                face: {
-                    x: 74.5,
-                    y: 42
+                zoom: {
+                    x: 76,
+                    y: 43
+                },
+                emotion: {
+                    x: 79.5,
+                    y: 43,
+                    width: 43,
                 },
             },
         ]

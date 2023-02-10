@@ -25,10 +25,10 @@
 
     const dispatch = createEventDispatcher();
 
-    $:inspectingSuspectStyle = inspectingSuspect ? `transform: scale(4) translate(${11 - inspectingSuspect.face.x}%, ${-10 + inspectingSuspect.face.y}%);` : ''
+    $:inspectingSuspectStyle = inspectingSuspect ? `transform: scale(4) translate(${11 - inspectingSuspect.zoom.x}%, ${-10 + inspectingSuspect.zoom.y}%);` : ''
 
     function resetLevel() {
-        isShowingIntroduction = true;
+        isShowingIntroduction = false;
         isShowingFeedback = false;
         inspectingSuspect = null;
     }
@@ -99,7 +99,9 @@
             {#if !isShowingIntroduction && !isShowingFeedback}
                 <div transition:fade={{ delay: transitionDuration*1.2, duration: transitionDuration }}>
                     {#each painting.suspects as suspect}
-                        <SuspectEmotion position={suspect.face} file="/lotties/{suspect.id}.json"/>
+                        <SuspectEmotion
+                                handleClick={()=>inspectingSuspect?cancelSuspectInspection():inspectSuspect(suspect)}
+                                {suspect}/>
                         {#if !inspectingSuspect}
                             <SuspectButton suspect={suspect} handleClick={()=>inspectSuspect(suspect)}/>
                         {/if}
