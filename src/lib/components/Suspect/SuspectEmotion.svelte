@@ -2,13 +2,14 @@
     import { LottiePlayer } from '@lottiefiles/svelte-lottie-player';
 
     export let position;
-    export let file
+    export let file;
+    export let handleClick;
 
     const widthInPercent = 28;
 
 </script>
 
-<div class="absolute translate-y-1/2 -translate-x-1/2 pointer-events-none" style="left: {position.x}%; bottom: {position.y}%;">
+<button on:click={handleClick} class="absolute translate-y-1/2 -translate-x-1/2" style="left: {position.x}%; bottom: {position.y}%;">
     <LottiePlayer
             src="{file}"
             autoplay="{true}"
@@ -20,4 +21,4 @@
             height="{document.body.offsetWidth*widthInPercent/100}"
             width="{document.body.offsetWidth*widthInPercent/100}"
     />
-</div>
+</button>

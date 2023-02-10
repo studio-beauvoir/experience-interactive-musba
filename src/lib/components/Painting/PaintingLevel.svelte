@@ -99,7 +99,8 @@
             {#if !isShowingIntroduction && !isShowingFeedback}
                 <div transition:fade={{ delay: transitionDuration*1.2, duration: transitionDuration }}>
                     {#each painting.suspects as suspect}
-                        <SuspectEmotion position={suspect.face} file="/lotties/{suspect.id}.json"/>
+                        <SuspectEmotion position={suspect.face} handleClick={()=>inspectSuspect(suspect)}
+                                        file="/lotties/{suspect.id}.json"/>
                         {#if !inspectingSuspect}
                             <SuspectButton suspect={suspect} handleClick={()=>inspectSuspect(suspect)}/>
                         {/if}
