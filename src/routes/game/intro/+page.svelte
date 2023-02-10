@@ -11,7 +11,7 @@
     <section class="relative flex-grow w-full overflow-hidden">
         <img alt="Sculpture vue de derrière nommée Femme nue au bord de l'eau"
              class="absolute w-full h-full object-cover"
-             src="/images/femme-nue-derriere.png">
+             src="/images/femme-nue-derriere.webp">
     </section>
 
     <section class="relative h-44 w-full p-6 border-t border-yellow">
