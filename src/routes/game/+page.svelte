@@ -4,17 +4,22 @@
     import PaintingLevel from "$lib/components/Painting/PaintingLevel.svelte";
     import {goto} from "$app/navigation";
 
-    let painting = 0;
+    let painting = $selectedSuspects.length ? $selectedSuspects.length : 0;
 
-    selectedSuspects.set([]);
+    checkGameEnd();
 
-    function handleLevelEnd(event) {
+    async function handleLevelEnd() {
         painting++;
 
+        setTimeout(checkGameEnd, 600);
+    }
+
+    function checkGameEnd() {
         if (painting >= $paintings.length) {
             goto('/game/end')
         }
     }
+
 </script>
 
 <section class="bg-black h-full text-white">

@@ -1,8 +1,11 @@
 <script>
     import PrimaryButton from "$lib/components/Button/PrimaryButton.svelte";
     import {goto} from "$app/navigation";
+    import {selectedSuspects} from "$lib/stores/selectedSuspects.ts";
 
-    function startInfos() {
+    function startGame() {
+        selectedSuspects.reset();
+
         goto('/game/infos')
     }
 
@@ -19,7 +22,7 @@
         <img alt="" class="h-auto" src="/images/home-page-image.webp">
     </div>
     <div class="flex flex-col gap-10">
-        <PrimaryButton handleClick={startInfos}>Jouer</PrimaryButton>
+        <PrimaryButton handleClick={startGame}>Jouer</PrimaryButton>
         <PrimaryButton handleClick={goToCredits}>Crédits</PrimaryButton>
     </div>
 </div>

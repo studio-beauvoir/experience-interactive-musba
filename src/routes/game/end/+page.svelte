@@ -1,6 +1,6 @@
 <script lang="ts">
     import {goto} from "$app/navigation";
-    import SuspectTimeline from '$lib/components/Suspect/SuspectsTimeline.svelte';
+    import SuspectsTimeline from '$lib/components/Suspect/SuspectsTimeline.svelte';
     import {selectedSuspects} from "$lib/stores/selectedSuspects";
     import PaintingIntroduction from "$lib/components/Painting/PaintingIntroduction.svelte";
     import DialogButton from "$lib/components/Button/DialogButton.svelte";
@@ -47,10 +47,11 @@
              src="/images/painting-end.png">
 
         {#if isShowingIntroduction}
-            <PaintingIntroduction painting={painting} transitionDuration={transitionDuration}/>
+            <PaintingIntroduction handleClick={hideIntroduction} painting={painting}
+                                  transitionDuration={transitionDuration}/>
         {:else}
             <div class="absolute z-10 w-full left-0 top-4">
-                <SuspectTimeline suspects={$selectedSuspects}/>
+                <SuspectsTimeline suspects={$selectedSuspects}/>
             </div>
         {/if}
     </section>

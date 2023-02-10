@@ -35,19 +35,16 @@
 
     function accuseSuspect() {
         audioPaintingButton();
-        
+
         accusedSuspect = {...inspectingSuspect};
 
-        selectedSuspects.update(function (s) {
-            s.push(accusedSuspect)
-            return s;
-        });
+        selectedSuspects.accuse(accusedSuspect);
 
         inspectingSuspect = null;
         isShowingFeedback = true;
     }
 
-    function getFeebackText() {
+    function getFeedbackText() {
         const text = {
             innocent: "Rien à voir, c'est un innocent !",
             witness: "Mh, presque, ce témoin a vu le complice.",
@@ -153,7 +150,7 @@
                 </article>
             {:else if isShowingFeedback}
                 <article class="flex flex-col gap-4 h-full">
-                    <p class="text-p mr-16">{getFeebackText()}</p>
+                    <p class="text-p mr-16">{getFeedbackText()}</p>
 
                     <DialogButton handleClick={dispatchSuspectAccused}>Tableau suivant</DialogButton>
                 </article>
