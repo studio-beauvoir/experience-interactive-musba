@@ -10,8 +10,6 @@
     selectedSuspects.load();
     parcoursDone.load();
 
-    audioGame.play();
-
     $: isPlaying = audioGame.paused;
 
     function toggleMusic() {
@@ -43,7 +41,7 @@
 <div class="relative h-full">
     <slot/>
 
-    <section class="absolute top-4 right-4">
+    <section class="absolute top-4 right-4 z-50">
         <button class="text-yellow bg-black border border-yellow rounded-full p-2"
                 on:click={toggleMusic}>
             {#if isAudioPlaying}
