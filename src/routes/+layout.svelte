@@ -2,7 +2,7 @@
     import '../app.css';
     import {paintings} from "$lib/stores/paintings";
 
-    let audioGame = new Audio("/audio/Quantum_Jazz_-_Intro.mp3");
+    let audioGame = new Audio("/audio/A-Dream-Vintage-Music.mp3");
     let isAudioPlaying = false;
     
     audioGame.play();
