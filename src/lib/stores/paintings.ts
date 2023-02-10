@@ -21,6 +21,10 @@ export const paintings = readable([
                     x: 25,
                     y: 60
                 },
+                zoom: {
+                    x: 12,
+                    y: 52
+                },
                 face: {
                     x: 12,
                     y: 52
@@ -37,6 +41,10 @@ export const paintings = readable([
                     x: 65,
                     y: 60
                 },
+                zoom: {
+                    x: 51,
+                    y: 54
+                },
                 face: {
                     x: 51,
                     y: 54
@@ -52,6 +60,10 @@ export const paintings = readable([
                     rightSide: true,
                     x: 73,
                     y: 38
+                },
+                zoom: {
+                    x: 86,
+                    y: 30
                 },
                 face: {
                     x: 86,
@@ -80,6 +92,10 @@ export const paintings = readable([
                     x: 13,
                     y: 35
                 },
+                zoom: {
+                    x: 24,
+                    y: 27
+                },
                 face: {
                     x: 24,
                     y: 27
@@ -96,6 +112,10 @@ export const paintings = readable([
                     x: 40,
                     y: 43
                 },
+                zoom: {
+                    x: 51,
+                    y: 35
+                },
                 face: {
                     x: 51,
                     y: 35
@@ -111,6 +131,10 @@ export const paintings = readable([
                     rightSide: false,
                     x: 86,
                     y: 30
+                },
+                zoom: {
+                    x: 76,
+                    y: 21
                 },
                 face: {
                     x: 76,
@@ -139,6 +163,10 @@ export const paintings = readable([
                     x: 36,
                     y: 39
                 },
+                zoom: {
+                    x: 19,
+                    y: 32
+                },
                 face: {
                     x: 19,
                     y: 32
@@ -155,6 +183,10 @@ export const paintings = readable([
                     x: 44,
                     y: 54
                 },
+                zoom: {
+                    x: 55,
+                    y: 47.5
+                },
                 face: {
                     x: 55,
                     y: 47.5
@@ -170,6 +202,10 @@ export const paintings = readable([
                     rightSide: false,
                     x: 90,
                     y: 50
+                },
+                zoom: {
+                    x: 74.5,
+                    y: 42
                 },
                 face: {
                     x: 74.5,
