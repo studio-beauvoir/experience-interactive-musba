@@ -32,9 +32,10 @@
 
     <article class="flex flex-col items-center py-16 px-6 gap-4">
         <h1 class="text-display">Collection</h1>
-        <PrimaryButton classList="w-full" handleClick={goBackToHome}>Retour au menu principal</PrimaryButton>
+        <PrimaryButton classList="w-full" handleClick={goBackToHome} soundId="reverse">Retour au menu principal
+        </PrimaryButton>
     </article>
-    
+
     <section class="px-6 pb-16">
         {#if showingParcours}
             <ParcoursDetails parcours={showingParcours} handleDetailsQuit={backToAllParcours}/>

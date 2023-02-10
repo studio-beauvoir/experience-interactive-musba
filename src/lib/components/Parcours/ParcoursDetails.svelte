@@ -8,7 +8,7 @@
 </script>
 
 <section class="flex flex-col gap-16">
-    <SecondaryButton handleClick={handleDetailsQuit}>Retour aux parcours</SecondaryButton>
+    <SecondaryButton handleClick={handleDetailsQuit} soundId="reverse">Retour aux parcours</SecondaryButton>
     <article>
         <h2 class="text-h2 text-yellow pb-4">Parcours</h2>
         <section class="grid grid-cols-5 gap-4 items-end">
