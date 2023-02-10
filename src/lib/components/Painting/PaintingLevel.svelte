@@ -28,7 +28,7 @@
     $:inspectingSuspectStyle = inspectingSuspect ? `transform: scale(4) translate(${11 - inspectingSuspect.zoom.x}%, ${-10 + inspectingSuspect.zoom.y}%);` : ''
 
     function resetLevel() {
-        isShowingIntroduction = false;
+        isShowingIntroduction = true;
         isShowingFeedback = false;
         inspectingSuspect = null;
     }
