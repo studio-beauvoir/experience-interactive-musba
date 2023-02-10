@@ -1,6 +1,7 @@
 <script>
     import {parcours} from "$lib/stores/parcours";
     import SuspectsTimeline from "$lib/components/Suspect/SuspectsTimeline.svelte";
+    import {ArrowDown} from "radix-icons-svelte";
 
     export let suspects;
 
@@ -27,4 +28,7 @@
 
     <p class="text-p text-white text-center">Vous avez fait ces choix et réalisé la piste <span
             class="uppercase ">{getParcoursFromSuspectsSelected()}</span></p>
+    <div class="w-full flex justify-center">
+        <ArrowDown class="h-7 w-7"/>
+    </div>
 </div>
