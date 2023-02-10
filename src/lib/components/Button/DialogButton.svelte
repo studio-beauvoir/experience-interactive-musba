@@ -2,7 +2,7 @@
     import {ArrowRight} from "radix-icons-svelte";
 
     export let handleClick;
-    export let classList;
+    export let classList = "";
 </script>
 
 <button class="flex mt-auto ml-auto flex-row align-center items-center gap-3 text-white {classList}"
