@@ -4,8 +4,7 @@
     export let suspect;
     export let handleClick;
 
-    const widthInPercent = 28;
-
+    $:widthInPercent = suspect.emotion.width;
     $: size = document.body.offsetWidth*widthInPercent/100;
     $: gifStyle = `height: ${size}px; width: ${size}px`;
 </script>
