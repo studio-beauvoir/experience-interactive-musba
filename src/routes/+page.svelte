@@ -2,27 +2,38 @@
     import PrimaryButton from "$lib/components/Button/PrimaryButton.svelte";
     import {goto} from "$app/navigation";
     import {selectedSuspects} from "$lib/stores/selectedSuspects.ts";
+    import {parcoursDone} from "$lib/stores/parcoursDone.ts";
+    import SecondaryButton from "$lib/components/Button/SecondaryButton.svelte";
 
     function startGame() {
         selectedSuspects.reset();
-        
+
         goto('/game/infos')
     }
 
     function goToCredits() {
         goto('/credits')
     }
+
+    function goToCollection() {
+        goto('/collection')
+    }
 </script>
 
-<div class="flex flex-col items-center justify-center h-full bg-black">
-    <img alt=" " class="absolute h-full w-full z-0" src="/assets/triangle-svg.svg">
-    <h1 class="text-yellow text-h2 z-10">Too well</h1>
-    <h1 class="text-yellow text-display z-10">Stolen</h1>
-    <div class="z-10 m-8 px-10 py-4">
+<img alt=" " class="absolute h-full w-full z-0" src="/assets/triangle-svg.svg">
+<section class="relative z-10 flex flex-col items-center justify-center h-full">
+    <h2 class="text-yellow text-h2">Too well</h2>
+    <h1 class="text-yellow text-display">Stolen</h1>
+
+    <section class="z-10 m-8 px-10 py-4">
         <img alt="" class="h-auto" src="/images/home-page-image.webp">
-    </div>
-    <div class="flex flex-col gap-10">
-        <PrimaryButton handleClick={startGame}>Jouer</PrimaryButton>
-        <PrimaryButton handleClick={goToCredits}>Crédits</PrimaryButton>
-    </div>
-</div>
+    </section>
+
+    <section class="flex flex-col gap-4 w-full px-6">
+        <PrimaryButton classList="w-full" handleClick={startGame}>Commencer l'expérience</PrimaryButton>
+        <SecondaryButton classList="w-full" handleClick={goToCredits}>Crédits</SecondaryButton>
+        {#if $parcoursDone.length}
+            <SecondaryButton classList="w-full" handleClick={goToCollection}>Collection</SecondaryButton>
+        {/if}
+    </section>
+</section>
