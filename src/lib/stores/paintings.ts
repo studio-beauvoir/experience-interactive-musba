@@ -15,7 +15,7 @@ export const paintings = readable([
                 name: '3',
                 type: 'witness',
                 text: 'Heu... J’aurais bien eu besoin d’essuyer mon erreur avec la serviette après avoir été dérangé par l’archer.',
-                comicTitle: 'L’artiste surpris qui en cassa même ses ustensiles. Impensable ! mais pourtant vrai.',
+                comicTitle: 'L’artiste incompris qui comprend qu’il est dérangé.',
                 button: {
                     rightSide: false,
                     x: 25,
