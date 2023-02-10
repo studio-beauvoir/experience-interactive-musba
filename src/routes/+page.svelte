@@ -4,10 +4,8 @@
     import {selectedSuspects} from "$lib/stores/selectedSuspects.ts";
 
     function startGame() {
-        if ($selectedSuspects.length) {
-            goto('/game');
-            return;
-        }
+        selectedSuspects.reset();
+
         goto('/game/infos')
     }
 

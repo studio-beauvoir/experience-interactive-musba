@@ -1,6 +1,6 @@
 import {writable} from 'svelte/store';
 
-const LS_KEY = 'tws-selected-suspects';
+const LS_KEY = 'tws-selected-suspects-v1';
 
 function saveToLocalStorage(suspects) {
     localStorage.setItem(LS_KEY, JSON.stringify(suspects));
