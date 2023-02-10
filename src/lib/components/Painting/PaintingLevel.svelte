@@ -35,13 +35,10 @@
 
     function accuseSuspect() {
         audioPaintingButton();
-        
+
         accusedSuspect = {...inspectingSuspect};
 
-        selectedSuspects.update(function (s) {
-            s.push(accusedSuspect)
-            return s;
-        });
+        selectedSuspects.accuse(accusedSuspect);
 
         inspectingSuspect = null;
         isShowingFeedback = true;

@@ -4,9 +4,8 @@
     import PaintingLevel from "$lib/components/Painting/PaintingLevel.svelte";
     import {goto} from "$app/navigation";
 
-    let painting = 0;
+    let painting = $selectedSuspects.length;
 
-    selectedSuspects.set([]);
 
     function handleLevelEnd(event) {
         painting++;
