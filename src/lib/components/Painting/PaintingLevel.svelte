@@ -136,7 +136,7 @@
                  src="/images/figures/statue.jpg" alt="Figure au bord de l'eau">
             {#if isShowingIntroduction}
                 <article class="flex flex-col gap-4 h-full">
-                    <p class="text-p mr-16">Il me semble l’avoir vue partir par là&nbsp;!</p>
+                    <p class="text-p mr-16">{painting.introDialog}</p>
 
                     <DialogButton handleClick={hideIntroduction}>Inspecter le tableau</DialogButton>
                 </article>
