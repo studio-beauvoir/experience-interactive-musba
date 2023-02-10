@@ -8,8 +8,8 @@
 
     const accompliceCountSentences = {
         3: "Bravo ! Vous avez trouvé la serviette ainsi que les trois complices ! L’affaire est officiellement classée !",
-        2: "Vous avez trouvé la serviette mais seulement avec un seul des trois complices.",
-        1: "Vous avez trouvé la serviette mais seulement avec deux des trois complices.",
+        2: "Vous avez trouvé la serviette mais seulement avec deux des trois complices.",
+        1: "Vous avez trouvé la serviette mais seulement avec un seul des trois complices.",
         0: "Dommage, vous avez trouvé la serviette sans aucun des trois complices. On ignore comment elle a été volée..."
     };
 
