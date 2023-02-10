@@ -4,9 +4,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes triangleRotate {
+    0% {
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+    100% {
+        transform: rotateX(0) rotateY(0) rotateZ(360deg);
+    }
+}
+
 @layer components {
     .text-drop-capital {
-        @apply font-display text-9xl
+        @apply font-display text-8xl
     }
 
     .text-display {
@@ -18,7 +27,7 @@
     }
 
     .text-h1 {
-        @apply font-display text-4xl font-normal
+        @apply text-4xl font-normal
     }
 
     .text-h2 {
@@ -34,13 +43,16 @@
     }
 
     .text-label {
-        @apply text-base font-light italic
+        @apply text-sm font-light italic
+    }
+
+    .text-label-2 {
+        @apply text-base font-light italic uppercase
     }
 
     .decoration {
         @apply relative;
     }
-
 
     .decoration::after {
         content: "";
@@ -69,5 +81,9 @@
     .decoration-rounded::before {
         content: "";
         @apply rounded-full block absolute inset-0 border border-brown transition-transform translate-x-px translate-y-px
+    }
+
+    .animation-triangle {
+        animation: triangleRotate 10s infinite linear;
     }
 }

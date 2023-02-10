@@ -1,122 +1,71 @@
 <script lang="ts">
     import {selectedSuspects} from "$lib/stores/selectedSuspects";
     import {parcours} from "$lib/stores/parcours";
-    import BottomActions from "$lib/components/Result/BottomActions.svelte";
-    import PathTab from "$lib/components/Result/PathTab.svelte";
+    import PrimaryButton from "$lib/components/Button/PrimaryButton.svelte";
+    import PathTab from "$lib/components/Result/Tabs/PathTab.svelte";
+    import ParcoursTab from "$lib/components/Result/Tabs/ParcoursTab.svelte";
     import Tabs from "$lib/components/Result/Tabs.svelte";
-    import Top3Tab from "$lib/components/Result/Top3Tab.svelte";
-    import ParcoursTab from "$lib/components/Result/ParcoursTab.svelte";
     import {goto} from "$app/navigation";
+    import type {PageData} from './$types';
+
+    export let data: PageData;
 
     if (!$selectedSuspects.length) {
         goto('/');
     }
 
+    let laureates = {
+        win: '&',
+        highest: $parcours[data.highestID] || '?',
+        lowest: $parcours[data.lowestId] || '?'
+    }
+
+
     const tabs = [
+        {
+            id: 'path',
+            label: 'Votre piste'
+        },
         {
             id: 'parcours',
             label: 'Parcours'
         },
-        {
-            id: 'path',
-            label: 'Piste'
-        },
-        {
-            id: 'top3',
-            label: 'Top 3'
-        },
     ];
 
-    let laureates = {
-        win: '&',
-        highest: '?',
-        lowest: '?'
-    }
-
-    let tabIndexSelected = 1;
-
-    // saveResultsToDatabase()
-    getStatsFromDatabase();
+    let tabIndexSelected = 0;
 
     function handleTabChange(event) {
         tabIndexSelected = tabs.findIndex(tab => tab.id === event.detail.tab.id);
     }
 
-    function getParcoursFromSuspectsSelected() {
-        const parcoursId = $selectedSuspects.map(suspect => suspect.id).join('_');
-        return $parcours[parcoursId];
-    }
-
-    function getTraducedSuspectType(suspect) {
-        const trad = {
-            innocent: "Innocent",
-            witness: "Témoin",
-            accomplice: "Complice"
-        }
-
-        return trad[suspect.type];
-    }
-
-    async function saveResultsToDatabase() {
-        await fetch('/api/stats', {
-            method: 'POST',
-            body: JSON.stringify({
-                selectedSuspects: $selectedSuspects.map(suspect => suspect.id)
-            }),
-            headers: {
-                'content-type': 'application/json'
-            }
-        })
-    }
-
-
-    async function getStatsFromDatabase() {
-        const data = await fetch('/api/stats', {
-            method: 'GET',
-            headers: {
-                'content-type': 'application/json'
-            }
-        })
-
-        const jsonData = await data.json();
-
-        jsonData.sort((a, b) => a.total - b.total)
-
-        const lowestId = jsonData[0]._id.selectedSuspects.join('_');
-        const highestID = jsonData[jsonData.length - 1]._id.selectedSuspects.join('_');
-
-        laureates.highest = $parcours[highestID];
-        laureates.lowest = $parcours[lowestId];
+    function goBackToHome() {
+        goto('/')
     }
 </script>
 
 <section class="z-0 relative min-h-full bg-black text-yellow">
 
-    <section class="sticky z-10 top-0 w-full bg-black">
+    <section>
         <img alt="" class="absolute -z-10 top-0 right-0" src="/assets/lines-svg.svg">
 
-        <article class="flex flex-col pt-12 px-6 items-center">
+        <article class="flex flex-col pt-12 pb-8 px-6 items-center">
             <h2 class="text-soft-display mr-28">Mystère</h2>
-            <h1 class="text-display">Résolu !</h1>
+            <h1 class="text-display">Résolu !</h1>
         </article>
-
-        <div class="relative w-full pt-24">
-            <Tabs on:tab-change={handleTabChange} tabIndexSelected={tabIndexSelected} tabs={tabs}/>
-        </div>
     </section>
 
-    <section class="relative pt-28 pb-16 flex flex-col gap-16 items-center justify-center">
-        <img alt="" class="absolute -z-10 top-30 right-0" src="/assets/triangle-solo-1.svg">
+    <Tabs on:tab-change={handleTabChange} tabIndexSelected={tabIndexSelected} tabs={tabs}/>
 
+    <section class="relative pt-16 pb-16 flex flex-col gap-16 items-center justify-center">
         {#if tabs[tabIndexSelected].id === 'path'}
             <PathTab/>
-        {:else if tabs[tabIndexSelected].id === 'top3'}
-            <Top3Tab laureates={laureates}/>
         {:else if tabs[tabIndexSelected].id === 'parcours'}
-            <ParcoursTab/>
+            <ParcoursTab laureates={laureates}/>
         {/if}
 
-        <BottomActions/>
+        <section class="flex w-full justify-center gap-6 px-6">
+            <PrimaryButton classList="w-full" handleClick={goBackToHome}>Retour au menu principal</PrimaryButton>
+        </section>
     </section>
 
 </section>

@@ -4,13 +4,13 @@ import {stats} from "$db/collections/stats";
 
 export const POST = (async ({ request }) => {
     const jsonData = await request.json();
-    console.log(jsonData);
-    if(!jsonData.selectedSuspects || !jsonData.selectedSuspects?.length) {
+
+    if(jsonData?.selectedSuspectsIds?.length !== 3) {
         return json(false)
     }
 
     stats.insertOne({
-        selectedSuspects: jsonData.selectedSuspects
+        selectedSuspects: jsonData.selectedSuspectsIds
     })
 
     return json(true);

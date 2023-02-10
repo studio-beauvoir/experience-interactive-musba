@@ -1,8 +1,26 @@
 <script>
     import '../app.css';
-    import {ExitFullScreen, Move} from "radix-icons-svelte";
-    import {isFullscreen, toggleFullScreen} from "$lib/stores/fullscreen";
     import {paintings} from "$lib/stores/paintings";
+    import {selectedSuspects} from "$lib/stores/selectedSuspects.ts";
+    import {parcoursDone} from "$lib/stores/parcoursDone.ts";
+
+    let audioGame = new Audio("/audio/A-Dream-Vintage-Music.mp3");
+    let isAudioPlaying = false;
+
+    selectedSuspects.load();
+    parcoursDone.load();
+
+    $: isPlaying = audioGame.paused;
+
+    function toggleMusic() {
+        if (!audioGame.paused) {
+            audioGame.pause();
+            isAudioPlaying = false;
+        } else {
+            audioGame.play();
+            isAudioPlaying = true;
+        }
+    }
 </script>
 
 <svelte:head>
@@ -16,20 +34,20 @@
     {/each}
     <link href="/comics/start.png" rel="prefetch"/>
     <link href="/comics/end.png" rel="prefetch"/>
-    <link href="/images/femme-nue-derriere.png" rel="prefetch"/>
-    <link href="/images/painting-end.png" rel="prefetch"/>
+    <link href="/images/femme-nue-derriere.webp" rel="prefetch"/>
+    <link href="/images/painting-end.webp" rel="prefetch"/>
 </svelte:head>
 
 <div class="relative h-full">
     <slot/>
 
-    <section class="fixed top-4 right-4">
+    <section class="absolute top-4 right-4 z-50">
         <button class="text-yellow bg-black border border-yellow rounded-full p-2"
-                on:click={toggleFullScreen}>
-            {#if $isFullscreen}
-                <ExitFullScreen class="h-5 w-5"/>
+                on:click={toggleMusic}>
+            {#if isAudioPlaying}
+                <img class="h-5 w-5" src="/assets/sound.svg" alt="">
             {:else}
-                <Move class="h-5 w-5 rotate-45"/>
+                <img class="h-5 w-5" src="/assets/noSound.svg" alt="">
             {/if}
         </button>
     </section>
