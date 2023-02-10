@@ -3,7 +3,7 @@
     import {goto} from "$app/navigation";
 
     function startIntro() {
-        goto('intro')
+        goto('/game/intro')
     }
 </script>
 
@@ -21,5 +21,5 @@
         Fiez vous à ses intuitions ainsi qu’aux <span class="font-bold">répliques et émotions</span> des différents
         suspects de la salle...
     </p>
-    <PrimaryButton classList="w-full" handleClick={startIntro}>Commencer l'enquête</PrimaryButton>
+    <PrimaryButton classList="w-full" handleClick={startIntro} soundId={"validation"}>Commencer l'enquête</PrimaryButton>
 </section>

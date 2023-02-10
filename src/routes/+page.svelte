@@ -20,6 +20,6 @@
     </div>
     <div class="flex flex-col gap-10">
         <PrimaryButton handleClick={startInfos}>Jouer</PrimaryButton>
-        <PrimaryButton handleClick={goToCredits}>Crédits</PrimaryButton>
+        <PrimaryButton handleClick={goToCredits} soundId={"reverse"}>Crédits</PrimaryButton>
     </div>
 </div>
