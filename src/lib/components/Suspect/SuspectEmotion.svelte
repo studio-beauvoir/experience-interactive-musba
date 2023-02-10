@@ -1,7 +1,6 @@
 <script lang="ts">
     import { LottiePlayer } from '@lottiefiles/svelte-lottie-player';
 
-    export let position;
     export let suspect;
     export let handleClick;
 
@@ -11,7 +10,7 @@
     $: gifStyle = `height: ${size}px; width: ${size}px`;
 </script>
 
-<button on:click={handleClick} class="absolute translate-y-1/2 -translate-x-1/2" style="left: {position.x}%; bottom: {position.y}%;">
+<button on:click={handleClick} class="absolute translate-y-1/2 -translate-x-1/2" style="left: {suspect.emotion.x}%; bottom: {suspect.emotion.y}%;">
     <img src="/emotions/{suspect.id}.gif" class="max-w-none" style={gifStyle}/>
 <!--    <LottiePlayer-->
 <!--            src="/lotties/{suspect.id}.json"-->

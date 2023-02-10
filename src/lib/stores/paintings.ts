@@ -25,7 +25,7 @@ export const paintings = readable([
                     x: 12,
                     y: 52
                 },
-                face: {
+                emotion: {
                     x: 12,
                     y: 52
                 },
@@ -45,7 +45,7 @@ export const paintings = readable([
                     x: 51,
                     y: 54
                 },
-                face: {
+                emotion: {
                     x: 51,
                     y: 54
                 },
@@ -65,7 +65,7 @@ export const paintings = readable([
                     x: 86,
                     y: 30
                 },
-                face: {
+                emotion: {
                     x: 86,
                     y: 30
                 },
@@ -96,7 +96,7 @@ export const paintings = readable([
                     x: 24,
                     y: 27
                 },
-                face: {
+                emotion: {
                     x: 24,
                     y: 27
                 },
@@ -116,7 +116,7 @@ export const paintings = readable([
                     x: 51,
                     y: 35
                 },
-                face: {
+                emotion: {
                     x: 51,
                     y: 35
                 },
@@ -136,7 +136,7 @@ export const paintings = readable([
                     x: 76,
                     y: 21
                 },
-                face: {
+                emotion: {
                     x: 76,
                     y: 21
                 },
@@ -167,7 +167,7 @@ export const paintings = readable([
                     x: 19,
                     y: 32
                 },
-                face: {
+                emotion: {
                     x: 19,
                     y: 32
                 },
@@ -187,7 +187,7 @@ export const paintings = readable([
                     x: 55,
                     y: 47.5
                 },
-                face: {
+                emotion: {
                     x: 55,
                     y: 47.5
                 },
@@ -207,7 +207,7 @@ export const paintings = readable([
                     x: 74.5,
                     y: 42
                 },
-                face: {
+                emotion: {
                     x: 74.5,
                     y: 42
                 },
