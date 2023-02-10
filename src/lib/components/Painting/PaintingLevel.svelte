@@ -34,6 +34,8 @@
     }
 
     function accuseSuspect() {
+        audioPaintingButton();
+        
         accusedSuspect = {...inspectingSuspect};
 
         selectedSuspects.update(function (s) {
@@ -72,7 +74,6 @@
     }
 
     function dispatchSuspectAccused() {
-        audioPaintingButton();
         dispatch('level-end');
 
         resetLevel();
