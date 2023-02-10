@@ -4,7 +4,7 @@
     import PaintingLevel from "$lib/components/Painting/PaintingLevel.svelte";
     import {goto} from "$app/navigation";
 
-    let painting = $selectedSuspects.length ? parseInt($selectedSuspects.length) : 0;
+    let painting = $selectedSuspects.length ? $selectedSuspects.length : 0;
 
     checkGameEnd();
 
