@@ -17,7 +17,9 @@ function loadFromLocalStorage() {
 }
 
 function createSelectedSuspects() {
-    const {subscribe, set, update} = writable([]);
+    const defaultData: any[] = [];
+
+    const {subscribe, set, update} = writable(defaultData);
 
     return {
         subscribe,
@@ -26,7 +28,10 @@ function createSelectedSuspects() {
             saveToLocalStorage(selectedSuspectsList);
             return selectedSuspectsList;
         }),
-        reset: () => set([]),
+        reset: () => {
+            set(defaultData)
+            saveToLocalStorage(defaultData)
+        },
         load: () => set(loadFromLocalStorage()),
     };
 }

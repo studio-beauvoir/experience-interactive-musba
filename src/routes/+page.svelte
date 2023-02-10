@@ -5,7 +5,7 @@
 
     function startGame() {
         selectedSuspects.reset();
-
+        
         goto('/game/infos')
     }
 
