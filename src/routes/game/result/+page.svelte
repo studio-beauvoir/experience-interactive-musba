@@ -7,15 +7,8 @@
     import Tabs from "$lib/components/Result/Tabs.svelte";
     import {goto} from "$app/navigation";
     import type {PageData} from './$types';
-    import {paintings} from "$lib/stores/paintings";
 
     export let data: PageData;
-
-    selectedSuspects.set([
-        $paintings[0].suspects[0],
-        $paintings[1].suspects[0],
-        $paintings[2].suspects[0],
-    ])
 
     if (!$selectedSuspects.length) {
         goto('/');
