@@ -5,6 +5,11 @@
     import PaintingIntroduction from "$lib/components/Painting/PaintingIntroduction.svelte";
     import DialogButton from "$lib/components/Button/DialogButton.svelte";
     import PrimaryButton from "$lib/components/Button/PrimaryButton.svelte";
+    import {paintings} from "$lib/stores/paintings";
+
+    if ($selectedSuspects.length !== $paintings.length) {
+        goto('/game');
+    }
 
     let dialogsIndex = 0;
 
