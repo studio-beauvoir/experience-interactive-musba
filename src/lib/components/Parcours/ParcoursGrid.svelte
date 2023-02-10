@@ -8,7 +8,7 @@
 
 <section class="flex flex-col gap-16 justify-between w-full">
     <section class="flex flex-col gap-4">
-        <h2 class="text-h1 text-yellow">Découvrez tout !</h2>
+        <h2 class="text-h1 text-yellow">Découvrez tout !</h2>
 
         <p class="text-p text-white">
             Voici tous les parcours existants de l’expérience interactive Too Well Stolen.

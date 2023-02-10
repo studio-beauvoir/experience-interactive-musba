@@ -21,7 +21,7 @@
 
         <article class="flex flex-col h-full">
             <p class="text-p text-white flex-grow mr-16">
-                Une personne malveillante vient de voler ma serviette... Il me semble avoir vu 3 complices en tout !
+                Une personne malveillante vient de voler ma serviette... Il me semble avoir vu 3 complices en tout !
             </p>
 
             <DialogButton handleClick={startGame}>Continuer</DialogButton>

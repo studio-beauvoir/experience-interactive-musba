@@ -57,7 +57,7 @@
 
         <article class="flex flex-col pt-12 pb-8 px-6 items-center">
             <h2 class="text-soft-display mr-28">Mystère</h2>
-            <h1 class="text-display">Résolu !</h1>
+            <h1 class="text-display">Résolu !</h1>
         </article>
     </section>
 

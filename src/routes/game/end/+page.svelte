@@ -38,10 +38,10 @@
     }
 
     const dialogs = [
-        "Oh non ! Vous m’avez retrouvée ! Et bien oui, c’est moi qui ai volé la serviette !",
-        "Mes complices ne m’ont même pas couverte ! Pfff, ils n’ont aucune compassion pour moi...",
-        "Et puis c’est de sa faute à elle aussi, à me tourner le dos constamment et à se trémousser au beau milieu de la salle !",
-        "Qu’elle la garde sa serviette de gourgandine ! Je n’en ai plus besoin de toute façon !"
+        "Oh non ! Vous m’avez retrouvée ! Et bien oui, c’est moi qui ai volé la serviette !",
+        "Mes complices ne m’ont même pas couverte ! Pfff, ils n’ont aucune compassion pour moi...",
+        "Et puis c’est de sa faute à elle aussi, à me tourner le dos constamment et à se trémousser au beau milieu de la salle !",
+        "Qu’elle la garde sa serviette de gourgandine ! Je n’en ai plus besoin de toute façon !"
     ]
 </script>
 
@@ -78,7 +78,7 @@
                  src="/images/figures/statue.jpg">
 
             <article class="flex flex-col gap-4 h-full">
-                <p class="text-p mr-16">Merci de votre aide inspecteur, j'ai retrouvé ma serviette grâce à vous !</p>
+                <p class="text-p mr-16">Merci de votre aide inspecteur, j'ai retrouvé ma serviette grâce à vous !</p>
 
                 <PrimaryButton handleClick={goToResult}>Fin de l'enquête</PrimaryButton>
             </article>

@@ -15,7 +15,7 @@
         {painting.step}<sup>
         {#if painting.step}ère{:else}ème{/if}
     </sup>
-        étape complétée !
+        étape complétée !
     </h2>
 
     <section class="w-full flex gap-6 items-center">
