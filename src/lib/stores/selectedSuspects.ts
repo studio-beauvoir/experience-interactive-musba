@@ -23,6 +23,7 @@ function createSelectedSuspects() {
 
     return {
         subscribe,
+        set,
         accuse: accusedSuspect => update(function (selectedSuspectsList) {
             selectedSuspectsList.push(accusedSuspect)
             saveToLocalStorage(selectedSuspectsList);
