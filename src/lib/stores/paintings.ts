@@ -7,7 +7,7 @@ export const paintings = readable([
         date: '1943',
         author: 'Willem VAN HASSELT ',
         image: '/images/painting-1.webp',
-        introDialog: 'J’ai cru voir le 1er complice partir en direction de ce tableau... Je vous en prie, enquêtez pour retrouver ma serviette !',
+        introDialog: 'Je crois que le 1er complice est dans ce tableau... Je vous en prie, enquêtez et retrouvez ma serviette !',
         statueDialog: 'Je me demande qui c’est... Vous auriez une idée ?',
         suspects: [
             {
@@ -67,7 +67,7 @@ export const paintings = readable([
         author: 'Jean DUPAS',
         image: '/images/painting-2.webp',
         introDialog: 'J’ai cru voir le 2ème complice partir en direction de ce tableau !',
-        statueDialog: 'Le prochain complice devrait être ici. Une idée de qui ça pourrait être ?',
+        statueDialog: 'Le prochain complice devrait être ici. Une idée de qui cela pourrait être ?',
         suspects: [
             {
                 id: '2-1',
