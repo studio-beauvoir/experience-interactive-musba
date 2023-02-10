@@ -78,7 +78,7 @@
                  src="/images/figures/statue.jpg">
 
             <article class="flex flex-col gap-4 h-full">
-                <p class="text-p mr-16">Merci de votre aide inspecteur, j'ai retrouvé ma serviette grâce à vous !</p>
+                <p class="text-p mr-16">Merci de votre aide inspecteur, j'ai retrouvé ma serviette grâce à vous&nbsp;!</p>
 
                 <PrimaryButton handleClick={goToResult}>Fin de l'enquête</PrimaryButton>
             </article>

@@ -9,7 +9,7 @@
 
 <img alt=" " class="absolute w-full" src="/assets/triangle-svg.svg">
 <section class="relative flex flex-col items-center justify-center h-full overflow-hidden px-6">
-    <p class="text-yellow text-h2">Votre</p>
+    <p class="text-yellow text-h1 pr-40">Votre</p>
     <h1 class="text-yellow text-display">Mission</h1>
     <p class="text-p text-white pt-16 pb-4">
         La <span class="font-bold">figure au bord de l’eau</span> vient de se faire dérober sa serviette de bain
