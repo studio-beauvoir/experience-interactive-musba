@@ -2,16 +2,15 @@
     import { LottiePlayer } from '@lottiefiles/svelte-lottie-player';
 
     export let position;
-    export let file;
+    export let suspect;
     export let handleClick;
 
     const widthInPercent = 28;
-
 </script>
 
 <button on:click={handleClick} class="absolute translate-y-1/2 -translate-x-1/2" style="left: {position.x}%; bottom: {position.y}%;">
     <LottiePlayer
-            src="{file}"
+            src="/lotties/{suspect.id}.json"
             autoplay="{true}"
             loop="{true}"
             controls="{false}"
