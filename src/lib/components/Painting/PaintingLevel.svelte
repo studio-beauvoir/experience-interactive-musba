@@ -99,9 +99,9 @@
             {#if !isShowingIntroduction && !isShowingFeedback}
                 <div transition:fade={{ delay: transitionDuration*1.2, duration: transitionDuration }}>
                     {#each painting.suspects as suspect}
-                        <SuspectEmotion
-                                handleClick={()=>inspectingSuspect?cancelSuspectInspection():inspectSuspect(suspect)}
-                                {suspect}/>
+                        {#if !inspectingSuspect || inspectingSuspect === suspect}
+                            <SuspectEmotion {suspect}/>
+                        {/if}
                         {#if !inspectingSuspect}
                             <SuspectButton suspect={suspect} handleClick={()=>inspectSuspect(suspect)}/>
                         {/if}
@@ -109,6 +109,10 @@
                 </div>
             {/if}
         </section>
+        {#if inspectingSuspect}
+            <button on:click={cancelSuspectInspection} class="absolute h-full w-full"></button>
+        {/if}
+
         {#if !isShowingIntroduction && $selectedSuspects.length}
             <div class="absolute z-10 w-full left-0 top-4">
                 <SuspectsTimeline suspects="{$selectedSuspects}"/>

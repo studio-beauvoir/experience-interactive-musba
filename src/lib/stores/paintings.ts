@@ -165,8 +165,8 @@ export const paintings = readable([
                 text: 'Quoi ? Une serviette ? Non merci, j’ai ma tunique. La personne là-bas m’a l’air d’avoir froid.',
                 comicTitle: 'La pose douloureuse (Dupas prenait son temps...)',
                 button: {
-                    rightSide: false,
-                    x: 37,
+                    rightSide: true,
+                    x: 12,
                     y: 40
                 },
                 zoom: {
@@ -191,7 +191,7 @@ export const paintings = readable([
                     y: 56
                 },
                 zoom: {
-                    x: 55,
+                    x: 56,
                     y: 47.5
                 },
                 emotion: {
@@ -212,7 +212,7 @@ export const paintings = readable([
                     y: 49
                 },
                 zoom: {
-                    x: 76,
+                    x: 78,
                     y: 43
                 },
                 emotion: {
