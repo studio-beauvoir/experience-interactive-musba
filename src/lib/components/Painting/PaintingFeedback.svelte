@@ -26,7 +26,7 @@
         </section>
 
         <section class="text-center">
-            <img src="/comics/{accusedSuspect.id}.png">
+            <img alt="Suspect {accusedSuspect.id}" src="/comics/{accusedSuspect.id}.png">
         </section>
 
         <section class="flex flex-col gap-2 w-32">
