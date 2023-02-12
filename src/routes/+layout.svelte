@@ -4,7 +4,7 @@
     import {selectedSuspects} from "$lib/stores/selectedSuspects.ts";
     import {parcoursDone} from "$lib/stores/parcoursDone.ts";
 
-    let audioGame = new Audio("/audio/A-Dream-Vintage-Music.mp3");
+    let audioGame = new Audio("/audio/a-dream-vintage-music.mp3");
     let isAudioPlaying = false;
 
     selectedSuspects.load();
@@ -21,6 +21,11 @@
             isAudioPlaying = true;
         }
     }
+
+    audioGame.addEventListener('ended', function () {
+        this.currentTime = 0;
+        this.play();
+    }, false);
 </script>
 
 <svelte:head>
