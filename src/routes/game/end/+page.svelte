@@ -48,10 +48,10 @@
 <section class="flex flex-col items-center justify-center h-full bg-black overflow-hidden">
     <section class="relative flex-grow w-full overflow-hidden">
         <picture>
-            <source srcset="/images/painting-end.webp" type="image/webp">
+            <source srcset="/images/painting-end-min.webp" type="image/webp">
             <img alt="Sculpture vue de derrière nommée Femme nue au bord de l'eau"
                  class="absolute w-full h-full object-cover"
-                 src="/images/painting-end.png">
+                 src="/images/painting-end-min.png">
         </picture>
 
         {#if isShowingIntroduction}

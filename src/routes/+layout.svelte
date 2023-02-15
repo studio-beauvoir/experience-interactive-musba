@@ -40,12 +40,12 @@
     {/each}
     <link href="/comics/start.png" rel="prefetch"/>
     <link href="/comics/end.png" rel="prefetch"/>
-    
+
     <link href="/images/femme-nue-derriere.webp" rel="prefetch"/>
     <link href="/images/femme-nue-derriere.png" rel="prefetch"/>
 
-    <link href="/images/painting-end.webp" rel="prefetch"/>
-    <link href="/images/painting-end.png" rel="prefetch"/>
+    <link href="/images/painting-end-min.webp" rel="prefetch"/>
+    <link href="/images/painting-end-min.png" rel="prefetch"/>
 </svelte:head>
 
 <div class="relative h-full">
