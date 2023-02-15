@@ -1,9 +1,9 @@
 export type SuspectId = string;
-
+export type SuspectType = 'witness' | 'innocent' | 'accomplice';
 export type Suspect = {
     id: SuspectId;
     name: string;
-    type: 'witness' | 'innocent' | 'accomplice';
+    type: SuspectType;
     text: string;
     comicTitle: string;
     button: { rightSide: boolean, x: number, y: number };
