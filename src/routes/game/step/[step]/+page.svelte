@@ -45,7 +45,11 @@
         await fetch('/api/stats', {
             method: 'POST',
             body: JSON.stringify({
-                selectedSuspectsIds: $selectedSuspects.map(suspect => suspect.id)
+                selectedSuspectsIds: [
+                    $selectedSuspects[1].id,
+                    $selectedSuspects[2].id,
+                    $selectedSuspects[3].id
+                ]
             }),
             headers: {
                 'content-type': 'application/json'

@@ -1,6 +1,6 @@
 import {writable} from 'svelte/store';
 import type {ParcoursDoneList} from "$lib/types/parcours";
-import type {SelectedSuspects, SelectedSuspectsIds, Suspect} from "$lib/types/suspect";
+import type {SelectedSuspects} from "$lib/types/suspect";
 
 const LS_KEY = 'tws-parcours-done-v1';
 
@@ -28,17 +28,14 @@ function createParcoursDone() {
     return {
         subscribe,
         add: (selectedSuspects: SelectedSuspects) => update(function (parcoursDoneList: ParcoursDoneList) {
-            const selectedSuspectsIds: SelectedSuspectsIds = {};
-
-            Object.entries(selectedSuspects).forEach((value: [string, Suspect]) => {
-                const [step, suspect] = value;
-                selectedSuspectsIds[parseInt(step)] = suspect.id
-            });
-
-            parcoursDoneList.push(selectedSuspectsIds);
+            parcoursDoneList.push([
+                selectedSuspects[1].id,
+                selectedSuspects[2].id,
+                selectedSuspects[3].id,
+            ].join('_'));
 
             saveToLocalStorage(parcoursDoneList);
-            
+
             return parcoursDoneList;
         }),
         reset: () => {

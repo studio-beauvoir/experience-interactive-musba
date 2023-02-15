@@ -7,8 +7,8 @@
     import PrimaryButton from "$lib/components/Button/PrimaryButton.svelte";
     import {paintings} from "$lib/stores/paintings";
 
-    if ($selectedSuspects.length !== $paintings.length) {
-        goto('/game');
+    if (Object.keys($selectedSuspects).length !== $paintings.length) {
+        goto('/');
     }
 
     let dialogsIndex = 0;

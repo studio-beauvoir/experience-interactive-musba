@@ -11,9 +11,11 @@ export type Suspect = {
     emotion: { x: number, y: number, width: number };
 }
 
-export type SelectedSuspects = {
+export type Suspects = {
     [step: number]: Suspect
 }
+
+export type SelectedSuspects = Suspects
 
 export type SelectedSuspectsIds = {
     [step: number]: SuspectId

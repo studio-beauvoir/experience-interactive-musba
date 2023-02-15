@@ -12,21 +12,22 @@
     import SuspectsTimeline from "$lib/components/Suspect/SuspectsTimeline.svelte";
     import DialogButton from "$lib/components/Button/DialogButton.svelte";
     import PaintingDialog from "$lib/components/Painting/PaintingDialog.svelte";
+    import type {Painting} from "$lib/types/painting";
+    import type {Suspect, SuspectType} from "$lib/types/suspect";
 
-    export let painting;
+    export let painting: Painting;
 
+    const dispatch = createEventDispatcher();
     const transitionDuration = 500;
 
     let isShowingIntroduction: boolean;
     let isShowingFeedback: boolean;
-    let inspectingSuspect: object | null;
-    let accusedSuspect: object | null;
+    let inspectingSuspect: Suspect | null;
+    let accusedSuspect: Suspect | null;
+
+    $:inspectingSuspectStyle = inspectingSuspect ? `transform: scale(4) translate(${11 - inspectingSuspect.zoom.x}%, ${-10 + inspectingSuspect.zoom.y}%);` : '';
 
     resetLevel();
-
-    const dispatch = createEventDispatcher();
-
-    $:inspectingSuspectStyle = inspectingSuspect ? `transform: scale(4) translate(${11 - inspectingSuspect.zoom.x}%, ${-10 + inspectingSuspect.zoom.y}%);` : ''
 
     function resetLevel() {
         isShowingIntroduction = true;
@@ -35,30 +36,22 @@
     }
 
     function accuseSuspect() {
-        audioPaintingButton();
-
         accusedSuspect = {...inspectingSuspect};
 
-        selectedSuspects.accuse(accusedSuspect);
+        selectedSuspects.accuse(painting.step, accusedSuspect);
 
         inspectingSuspect = null;
         isShowingFeedback = true;
     }
 
     function getFeedbackText() {
-        const text = {
+        const text: { [type: SuspectType]: string } = {
             innocent: "Rien à voir, c'est un innocent !",
             witness: "Mh, presque, ce témoin a vu le complice.",
             accomplice: "Bien joué, c'est un complice !",
         }
 
         return text[accusedSuspect.type];
-    }
-
-    let audioPainting = new Audio("/audio/soundEffect/FeedBack-Fin-de-tableau.mp3");
-
-    function audioPaintingButton() {
-        audioPainting.play();
     }
 
     function dispatchSuspectAccused() {
@@ -90,6 +83,7 @@
                      class="relative bottom-0 h-auto w-full object-bottom"
                      src="{painting.image}.png">
             </picture>
+
             {#if !isShowingIntroduction && !isShowingFeedback}
                 <div transition:fade={{ delay: transitionDuration*1.2, duration: transitionDuration }}>
                     {#each painting.suspects as suspect}
@@ -107,7 +101,7 @@
             <button on:click={cancelSuspectInspection} class="absolute h-full w-full"></button>
         {/if}
 
-        {#if !isShowingIntroduction && $selectedSuspects.length}
+        {#if !isShowingIntroduction && Object.keys($selectedSuspects).length}
             <div class="absolute z-10 w-full left-0 top-4">
                 <SuspectsTimeline suspects="{$selectedSuspects}"/>
             </div>

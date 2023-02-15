@@ -1,5 +1,3 @@
-import type {SelectedSuspectsIds} from "./suspect";
-
 export type ParcoursLetter =
     'a'
     | 'b'
@@ -29,5 +27,5 @@ export type ParcoursLetter =
     | 'z'
     | '&';
 
-export type Parcours = SelectedSuspectsIds;
+export type Parcours = string;
 export type ParcoursDoneList = Parcours[];
