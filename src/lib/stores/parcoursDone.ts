@@ -1,36 +1,49 @@
 import {writable} from 'svelte/store';
+import type {ParcoursDoneList} from "$lib/types/parcours";
+import type {SelectedSuspects, SelectedSuspectsIds, Suspect} from "$lib/types/suspect";
 
 const LS_KEY = 'tws-parcours-done-v1';
 
-function saveToLocalStorage(parcours) {
-    localStorage.setItem(LS_KEY, JSON.stringify(parcours));
+function getBaseValue(): ParcoursDoneList {
+    return [];
 }
 
-function loadFromLocalStorage() {
-    const parcours = localStorage.getItem(LS_KEY);
+function saveToLocalStorage(parcoursDoneList: ParcoursDoneList): void {
+    localStorage.setItem(LS_KEY, JSON.stringify(parcoursDoneList));
+}
 
-    if (!parcours) {
-        return [];
+function loadFromLocalStorage(): ParcoursDoneList {
+    const item = localStorage.getItem(LS_KEY);
+
+    if (!item) {
+        return getBaseValue();
     }
 
-    return JSON.parse(parcours);
+    return JSON.parse(item);
 }
 
 function createParcoursDone() {
-    const defaultData: any[] = [];
-
-    const {subscribe, set, update} = writable(defaultData);
+    const {subscribe, set, update} = writable(getBaseValue());
 
     return {
         subscribe,
-        add: selectedSuspects => update(function (parcoursDoneList) {
-            parcoursDoneList.push(selectedSuspects.map(suspect => suspect.id).join('_'))
+        add: (selectedSuspects: SelectedSuspects) => update(function (parcoursDoneList: ParcoursDoneList) {
+            const selectedSuspectsIds: SelectedSuspectsIds = {};
+
+            Object.entries(selectedSuspects).forEach((value: [string, Suspect]) => {
+                const [step, suspect] = value;
+                selectedSuspectsIds[parseInt(step)] = suspect.id
+            });
+
+            parcoursDoneList.push(selectedSuspectsIds);
+
             saveToLocalStorage(parcoursDoneList);
+            
             return parcoursDoneList;
         }),
         reset: () => {
-            set(defaultData)
-            saveToLocalStorage(defaultData)
+            saveToLocalStorage(getBaseValue())
+            set(loadFromLocalStorage())
         },
         load: () => set(loadFromLocalStorage()),
     };
