@@ -11,21 +11,23 @@
     import {Reset} from "radix-icons-svelte";
     import SuspectsTimeline from "$lib/components/Suspect/SuspectsTimeline.svelte";
     import DialogButton from "$lib/components/Button/DialogButton.svelte";
+    import PaintingDialog from "$lib/components/Painting/PaintingDialog.svelte";
+    import type {Painting} from "$lib/types/painting";
+    import type {Suspect, SuspectType} from "$lib/types/suspect";
 
-    export let painting;
+    export let painting: Painting;
 
+    const dispatch = createEventDispatcher();
     const transitionDuration = 500;
 
     let isShowingIntroduction: boolean;
     let isShowingFeedback: boolean;
-    let inspectingSuspect: object | null;
-    let accusedSuspect: object | null;
+    let inspectingSuspect: Suspect | null;
+    let accusedSuspect: Suspect | null;
+
+    $:inspectingSuspectStyle = inspectingSuspect ? `transform: scale(4) translate(${11 - inspectingSuspect.zoom.x}%, ${-10 + inspectingSuspect.zoom.y}%);` : '';
 
     resetLevel();
-
-    const dispatch = createEventDispatcher();
-
-    $:inspectingSuspectStyle = inspectingSuspect ? `transform: scale(4) translate(${11 - inspectingSuspect.zoom.x}%, ${-10 + inspectingSuspect.zoom.y}%);` : ''
 
     function resetLevel() {
         isShowingIntroduction = true;
@@ -34,40 +36,22 @@
     }
 
     function accuseSuspect() {
-        audioPaintingButton();
-
         accusedSuspect = {...inspectingSuspect};
 
-        selectedSuspects.accuse(accusedSuspect);
+        selectedSuspects.accuse(painting.step, accusedSuspect);
 
         inspectingSuspect = null;
         isShowingFeedback = true;
     }
 
     function getFeedbackText() {
-        const text = {
+        const text: { [type: SuspectType]: string } = {
             innocent: "Rien à voir, c'est un innocent !",
             witness: "Mh, presque, ce témoin a vu le complice.",
             accomplice: "Bien joué, c'est un complice !",
         }
 
         return text[accusedSuspect.type];
-    }
-
-    let audioValidation = new Audio("/audio/soundEffect/Button-Click-Validation.mp3");
-    let audioReverse = new Audio("/audio/soundEffect/Button-Click-Reverse.mp3");
-    let audioPainting = new Audio("/audio/soundEffect/FeedBack-Fin-de-tableau.mp3");
-
-    function audioValidationButton() {
-        audioValidation.play();
-    }
-
-    function audioReverseButton() {
-        audioReverse.play();
-    }
-
-    function audioPaintingButton() {
-        audioPainting.play();
     }
 
     function dispatchSuspectAccused() {
@@ -93,9 +77,13 @@
     <section class="relative w-full flex-grow overflow-hidden">
         <section class="absolute bottom-0 h-min w-full origin-bottom-left"
                  style="{inspectingSuspectStyle}">
-            <img alt="{painting.name}" class="relative bottom-0 h-auto w-full object-bottom "
-                 src="{painting.image}"
-            >
+            <picture>
+                <source srcset="{painting.image}.webp" type="image/webp">
+                <img alt=" "
+                     class="relative bottom-0 h-auto w-full object-bottom"
+                     src="{painting.image}.png">
+            </picture>
+
             {#if !isShowingIntroduction && !isShowingFeedback}
                 <div transition:fade={{ delay: transitionDuration*1.2, duration: transitionDuration }}>
                     {#each painting.suspects as suspect}
@@ -113,7 +101,7 @@
             <button on:click={cancelSuspectInspection} class="absolute h-full w-full"></button>
         {/if}
 
-        {#if !isShowingIntroduction && $selectedSuspects.length}
+        {#if !isShowingIntroduction && Object.keys($selectedSuspects).length}
             <div class="absolute z-10 w-full left-0 top-4">
                 <SuspectsTimeline suspects="{$selectedSuspects}"/>
             </div>
@@ -128,44 +116,32 @@
         {/if}
     </section>
     {#if inspectingSuspect}
-        <section class="relative h-56 w-full p-6 border-t border-yellow">
-            <img class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
-                 src="/images/figures/{inspectingSuspect.id}.jpg" alt=" ">
-            <article class="flex flex-col justify-between h-full">
-                <p class="mr-16">{inspectingSuspect.text}</p>
-                <div class="flex w-full justify-around">
-                    <TextButton handleClick={cancelSuspectInspection}
-                                classList="bottom-4 left-6">
+        <PaintingDialog tall={true} figure={inspectingSuspect.id}>
+            <p class="mr-16">{inspectingSuspect.text}</p>
+            <div class="flex w-full justify-around">
+                <TextButton handleClick={cancelSuspectInspection}
+                            classList="bottom-4 left-6">
                         <span class="rounded-full decoration-rounded p-2 w-10 h-10 ">
                             <Reset class="h-full w-full"/>
                         </span>
-                    </TextButton>
-                    <PrimaryButton handleClick={accuseSuspect}>Accuser ce suspect</PrimaryButton>
-                </div>
-            </article>
-        </section>
+                </TextButton>
+                <PrimaryButton handleClick={accuseSuspect} soundId="audioPainting" percyId="inspect-painting">Accuser ce
+                    suspect
+                </PrimaryButton>
+            </div>
+        </PaintingDialog>
     {:else}
-        <section class="relative h-40 w-full p-6 border-t border-yellow">
-            <img class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
-                 src="/images/figures/statue.jpg" alt="Figure au bord de l'eau">
+        <PaintingDialog figure="statue">
             {#if isShowingIntroduction}
-                <article class="flex flex-col gap-4 h-full">
-                    <p class="text-p mr-16">{painting.introDialog}</p>
-
-                    <DialogButton handleClick={hideIntroduction}>Inspecter le tableau</DialogButton>
-                </article>
+                <p class="text-p mr-16">{painting.introDialog}</p>
+                <DialogButton handleClick={hideIntroduction}>Inspecter le tableau</DialogButton>
             {:else if isShowingFeedback}
-                <article class="flex flex-col gap-4 h-full">
-                    <p class="text-p mr-16">{getFeedbackText()}</p>
-
-                    <DialogButton handleClick={dispatchSuspectAccused}>Tableau suivant</DialogButton>
-                </article>
+                <p class="text-p mr-16">{getFeedbackText()}</p>
+                <DialogButton handleClick={dispatchSuspectAccused}>Tableau suivant</DialogButton>
             {:else}
-                <article class="flex flex-col gap-4 h-full">
-                    <p class="text-p mr-16">{painting.statueDialog}</p>
-                    <p class="text-label text-yellow">Interrogez un suspect en cliquant dessus.</p>
-                </article>
+                <p class="text-p mr-16">{painting.statueDialog}</p>
+                <p class="text-label text-yellow">Interrogez un suspect en cliquant dessus.</p>
             {/if}
-        </section>
+        </PaintingDialog>
     {/if}
 </section>

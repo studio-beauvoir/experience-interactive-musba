@@ -16,28 +16,30 @@
     <h1 class="text-yellow text-display mb-6">Crédits</h1>
     <section class="flex flex-col items-center text-center text-h2 gap-4">
         <div class="gap-4">
-            <p><a class="underline" href="https://arthaudproust.fr" target="_blank">Arthaud Proust
+            <p><a class="underline" href="https://arthaudproust.fr" rel="noreferrer" target="_blank">Arthaud Proust
             </a></p>
             <p class="text-label text-yellow">Développement</p>
         </div>
         <div>
-            <p><a class="underline" href="https://www.linkedin.com/in/jason-nago-59824a182/" target="_blank">
+            <p><a class="underline" href="https://www.linkedin.com/in/jason-nago-59824a182/" rel="noreferrer"
+                  target="_blank">
                 Jason Nago</a></p>
             <p class="text-label text-yellow">UI/UX Design - Game Design - Motion Design</p>
         </div>
         <div>
             <p><a class="underline" href="https://www.linkedin.com/in/le%C3%AFly-coquard-misono-83a0b4223/"
-                  target="_blank">Leïly Coquard-Misono</a></p>
+                  rel="noreferrer" target="_blank">Leïly Coquard-Misono</a></p>
             <p class="text-label text-yellow">DA - UI/UX Design - Illustrations - Animations</p>
         </div>
         <div>
-            <p><a class="underline" href="https://maximelust.fr/" target="_blank">Maxime
+            <p><a class="underline" href="https://maximelust.fr/" rel="noreferrer" target="_blank">Maxime
                 Lust
             </a></p>
             <p class="text-label text-yellow">Développement</p>
         </div>
         <div>
-            <p><a class="underline" href="https://www.linkedin.com/in/quentin-wegera-a11443224/" target="_blank">
+            <p><a class="underline" href="https://www.linkedin.com/in/quentin-wegera-a11443224/" rel="noreferrer"
+                  target="_blank">
                 Quentin Wegera</a></p>
             <p class="text-label text-yellow">UX Design - Rédaction - Print</p>
         </div>

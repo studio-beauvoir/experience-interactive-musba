@@ -14,6 +14,12 @@
 }
 
 @layer components {
+    /*@formatter:off*/
+    .h-app {
+        height: 100vh;
+        height: 100svh;
+    }
+     /*@formatter:on*/
     .text-drop-capital {
         @apply font-display text-8xl
     }

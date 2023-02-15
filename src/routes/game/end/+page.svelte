@@ -7,8 +7,8 @@
     import PrimaryButton from "$lib/components/Button/PrimaryButton.svelte";
     import {paintings} from "$lib/stores/paintings";
 
-    if ($selectedSuspects.length !== $paintings.length) {
-        goto('/game');
+    if (Object.keys($selectedSuspects).length !== $paintings.length) {
+        goto('/');
     }
 
     let dialogsIndex = 0;
@@ -47,9 +47,12 @@
 
 <section class="flex flex-col items-center justify-center h-full bg-black overflow-hidden">
     <section class="relative flex-grow w-full overflow-hidden">
-        <img alt="Sculpture vue de derrière nommée Femme nue au bord de l'eau"
-             class="absolute w-full h-full object-cover"
-             src="/images/painting-end.png">
+        <picture>
+            <source srcset="/images/painting-end-min.webp" type="image/webp">
+            <img alt="Sculpture vue de derrière nommée Femme nue au bord de l'eau"
+                 class="absolute w-full h-full object-cover"
+                 src="/images/painting-end-min.png">
+        </picture>
 
         {#if isShowingIntroduction}
             <PaintingIntroduction handleClick={hideIntroduction} painting={painting}
@@ -78,7 +81,8 @@
                  src="/images/figures/statue.jpg">
 
             <article class="flex flex-col gap-4 h-full">
-                <p class="text-p mr-16">Merci de votre aide inspecteur, j'ai retrouvé ma serviette grâce à vous&nbsp;!</p>
+                <p class="text-p mr-16">Merci de votre aide inspecteur, j'ai retrouvé ma serviette grâce à
+                    vous&nbsp;!</p>
 
                 <PrimaryButton handleClick={goToResult}>Fin de l'enquête</PrimaryButton>
             </article>
