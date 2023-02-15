@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
     import {parcours} from "$lib/stores/parcours";
     import SuspectsTimeline from "$lib/components/Suspect/SuspectsTimeline.svelte";
     import {ArrowDown} from "radix-icons-svelte";
+    import type {Suspects} from "$lib/types/suspect";
 
-    export let suspects;
+    export let suspects: Suspects;
 
-    $: accompliceFoundCount = suspects.filter(suspect => suspect.type === 'accomplice').length
+    $: accompliceFoundCount = Object.values(suspects).filter(suspect => suspect.type === 'accomplice').length
 
     const accompliceCountSentences = {
         3: "Bravo ! Vous avez trouvé la serviette ainsi que les trois complices ! L’affaire est officiellement classée !",
@@ -15,7 +16,7 @@
     };
 
     function getParcoursFromSuspectsSelected() {
-        const parcoursId = suspects.map(suspect => suspect.id).join('_');
+        const parcoursId = Object.values(suspects).map(suspect => suspect.id).join('_');
         return $parcours[parcoursId];
     }
 </script>
@@ -27,8 +28,8 @@
     <SuspectsTimeline detailed={true} suspects={suspects}/>
 
     <p class="text-p text-white text-center">Vous avez fait ces choix et réalisé le parcours <span
-        class="font-bold"><span
-        class="uppercase">"{getParcoursFromSuspectsSelected()}"</span> parmi 27 parcours</span></p>
+            class="font-bold"><span
+            class="uppercase">"{getParcoursFromSuspectsSelected()}"</span> parmi 27 parcours</span></p>
     <div class="w-full flex justify-center">
         <ArrowDown class="h-7 w-7"/>
     </div>

@@ -1,6 +1,7 @@
 import {readable} from "svelte/store";
+import type {Painting} from "$lib/types/painting";
 
-export const paintings = readable([
+const paintingsList: Painting[] = [
     {
         step: 1,
         name: 'Hommage à Vuillard',
@@ -223,4 +224,5 @@ export const paintings = readable([
             },
         ]
     },
-]);
+];
+export const paintings = readable(paintingsList);

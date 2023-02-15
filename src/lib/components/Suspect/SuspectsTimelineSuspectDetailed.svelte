@@ -1,8 +1,10 @@
-<script>
-    export let suspect;
+<script lang="ts">
+    import type {Suspect, SuspectType} from "$lib/types/suspect";
 
-    function getTraducedSuspectType(suspect) {
-        const trad = {
+    export let suspect: Suspect;
+
+    function getTraducedSuspectType(suspect): string {
+        const trad: { [type: SuspectType]: string } = {
             innocent: "Innocent",
             witness: "Témoin",
             accomplice: "Complice"
