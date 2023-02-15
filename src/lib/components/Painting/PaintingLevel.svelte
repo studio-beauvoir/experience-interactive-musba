@@ -152,7 +152,8 @@
                 <article class="flex flex-col gap-4 h-full">
                     <p class="text-p mr-16">{painting.introDialog}</p>
 
-                    <DialogButton handleClick={hideIntroduction}>Inspecter le tableau</DialogButton>
+                    <DialogButton handleClick={hideIntroduction} percyId="inspect-painting">Inspecter le tableau
+                    </DialogButton>
                 </article>
             {:else if isShowingFeedback}
                 <article class="flex flex-col gap-4 h-full">

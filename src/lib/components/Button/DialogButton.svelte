@@ -3,9 +3,11 @@
 
     export let handleClick;
     export let classList = "";
+    export let percyId = "";
 </script>
 
 <button class="flex mt-auto ml-auto flex-row align-center items-center gap-3 text-white {classList}"
+        data-percy={percyId}
         on:click={handleClick}>
     <span class="text-label-2 text-yellow">
         <slot></slot>
