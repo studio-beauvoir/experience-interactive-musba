@@ -3,15 +3,18 @@
     import DialogButton from "$lib/components/Button/DialogButton.svelte";
 
     function startGame() {
-        goto('/game')
+        goto('/game/step/1')
     }
 </script>
 
 <section class="flex flex-col items-center justify-center h-full bg-black overflow-hidden">
     <section class="relative flex-grow w-full overflow-hidden">
-        <img alt="Sculpture vue de derrière nommée Femme nue au bord de l'eau"
-             class="absolute w-full h-full object-cover"
-             src="/images/femme-nue-derriere.webp">
+        <picture>
+            <source srcset="/images/femme-nue-derriere.webp" type="image/webp">
+            <img alt="Sculpture vue de derrière nommée Femme nue au bord de l'eau"
+                 class="absolute w-full h-full object-cover"
+                 src="/images/femme-nue-derriere.png">
+        </picture>
     </section>
 
     <section class="relative h-44 w-full p-6 border-t border-yellow">

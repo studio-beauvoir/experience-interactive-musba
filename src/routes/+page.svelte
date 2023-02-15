@@ -25,7 +25,10 @@
     <h2 class="text-yellow text-h1 pr-32">Too well</h2>
     <h1 class="text-yellow text-display">Stolen</h1>
     <section class="z-10 m-8 px-10 py-4">
-        <img alt="" class="h-auto" src="/images/home-page-image-min.webp">
+        <picture>
+            <source srcset="/images/home-page-image-min.webp" type="image/webp">
+            <img alt="" class="h-auto" src="/images/home-page-image-min.png">
+        </picture>
     </section>
 
     <section class="flex flex-col gap-4 w-full px-6">

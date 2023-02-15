@@ -1,5 +1,7 @@
 <script lang="ts">
-    export let suspect;
+    import type {Suspect} from "$lib/types/suspect";
+
+    export let suspect: Suspect;
     export let handleClick;
 
     $: buttonStyle = `left: ${suspect.button.x}%; bottom: ${suspect.button.y}%;`;

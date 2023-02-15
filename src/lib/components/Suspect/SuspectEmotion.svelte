@@ -1,8 +1,9 @@
 <script lang="ts">
+    import type {Suspect} from "$lib/types/suspect";
 
-    export let suspect;
+    export let suspect: Suspect;
 
-    $:widthInPercent = suspect.emotion.width;
+    $: widthInPercent = suspect.emotion.width;
     $: size = document.body.offsetWidth * widthInPercent / 100;
     $: gifStyle = `height: ${size}px; width: ${size}px`;
     $: emotionStyle = `left: ${suspect.emotion.x}%; bottom: ${suspect.emotion.y}%;`;

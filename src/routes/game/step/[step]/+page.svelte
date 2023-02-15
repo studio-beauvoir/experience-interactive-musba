@@ -4,24 +4,29 @@
     import {paintings} from "$lib/stores/paintings";
     import PaintingLevel from "$lib/components/Painting/PaintingLevel.svelte";
     import {goto} from "$app/navigation";
+    import {page} from '$app/stores';
 
-    let painting = $selectedSuspects.length ? $selectedSuspects.length : 0;
+    $: step = parseInt($page.params.step);
+    $: painting = $paintings.find(painting => painting.step == step);
 
     if (isGameEnded()) {
         goto('/game/end')
     }
 
-    async function handleLevelEnd() {
-        painting++;
+    function handleStepEnd() {
+        if (isGameEnded()) {
+            handleGameEnded();
+            return;
+        }
 
-        setTimeout(checkGameEnd, 600);
+        goto('/game/step/' + (step + 1));
     }
 
     function isGameEnded() {
-        return painting >= $paintings.length;
+        return step >= $paintings.length;
     }
 
-    function checkGameEnd() {
+    function handleGameEnded() {
         if (!isGameEnded()) {
             return;
         }
@@ -40,7 +45,11 @@
         await fetch('/api/stats', {
             method: 'POST',
             body: JSON.stringify({
-                selectedSuspectsIds: $selectedSuspects.map(suspect => suspect.id)
+                selectedSuspectsIds: [
+                    $selectedSuspects[1].id,
+                    $selectedSuspects[2].id,
+                    $selectedSuspects[3].id
+                ]
             }),
             headers: {
                 'content-type': 'application/json'
@@ -51,7 +60,7 @@
 </script>
 
 <section class="bg-black h-full text-white">
-    {#if painting < $paintings.length}
-        <PaintingLevel on:level-end={handleLevelEnd} painting={$paintings[painting]}/>
+    {#if painting}
+        <PaintingLevel on:level-end={handleStepEnd} {painting}/>
     {/if}
 </section>
