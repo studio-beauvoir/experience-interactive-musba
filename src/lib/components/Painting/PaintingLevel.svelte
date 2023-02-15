@@ -125,7 +125,9 @@
                             <Reset class="h-full w-full"/>
                         </span>
                 </TextButton>
-                <PrimaryButton handleClick={accuseSuspect} soundId="audioPainting">Accuser ce suspect</PrimaryButton>
+                <PrimaryButton handleClick={accuseSuspect} soundId="audioPainting" percyId="inspect-painting">Accuser ce
+                    suspect
+                </PrimaryButton>
             </div>
         </PaintingDialog>
     {:else}

@@ -1,0 +1,11 @@
+- name: Homepage
+  url: http://localhost:5173/
+- name: Game infos
+  url: http://localhost:5173/game/infos
+- name: Game intro
+  url: http://localhost:5173/game/intro
+- name: Ingame
+  url: http://localhost:5173/game/step/1
+- name: Ingame inspection painting
+  url: http://localhost:5173/game/step/1
+  execute: "document.querySelector('[data-percy=\"inspect-painting\"]').click()"
