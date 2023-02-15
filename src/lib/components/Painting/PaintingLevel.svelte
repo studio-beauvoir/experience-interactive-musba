@@ -93,9 +93,12 @@
     <section class="relative w-full flex-grow overflow-hidden">
         <section class="absolute bottom-0 h-min w-full origin-bottom-left"
                  style="{inspectingSuspectStyle}">
-            <img alt="{painting.name}" class="relative bottom-0 h-auto w-full object-bottom "
-                 src="{painting.image}"
-            >
+            <picture>
+                <source srcset="{painting.image}.webp" type="image/webp">
+                <img alt=" "
+                     class="relative bottom-0 h-auto w-full object-bottom"
+                     src="{painting.image}.png">
+            </picture>
             {#if !isShowingIntroduction && !isShowingFeedback}
                 <div transition:fade={{ delay: transitionDuration*1.2, duration: transitionDuration }}>
                     {#each painting.suspects as suspect}
