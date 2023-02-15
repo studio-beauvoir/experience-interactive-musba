@@ -17,7 +17,11 @@
         showingParcours = {
             id: parcoursId,
             letter: $parcours[parcoursId],
-            suspects: $paintings.map((painting, index) => painting.suspects.find(suspect => suspect.id === suspectsIds[index]))
+            suspects: {
+                1: $paintings[0].suspects.find(suspect => suspect.id === suspectsIds[0]),
+                2: $paintings[1].suspects.find(suspect => suspect.id === suspectsIds[1]),
+                3: $paintings[2].suspects.find(suspect => suspect.id === suspectsIds[2]),
+            }
         }
         document.documentElement.scrollTo(0, 0);
     }
