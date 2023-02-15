@@ -6,7 +6,7 @@ export const paintings = readable([
         name: 'Hommage à Vuillard',
         date: '1943',
         author: 'Willem VAN HASSELT ',
-        image: '/images/painting-1.webp',
+        image: '/images/painting-1',
         introDialog: 'Je crois que le 1er complice est dans ce tableau... Je vous en prie, enquêtez et retrouvez ma serviette !',
         statueDialog: 'Le premier complice est ici... Parmi ces trois vieux hommes !',
         suspects: [
@@ -80,7 +80,7 @@ export const paintings = readable([
         name: 'L\'archer',
         date: '1917',
         author: 'Jean DUPAS',
-        image: '/images/painting-2.webp',
+        image: '/images/painting-2',
         introDialog: 'J’ai cru voir le 2ème complice partir en direction de ce tableau !',
         statueDialog: 'Mmmhhh, le deuxième complice est sûrement dans un tableau près de celui-ci...Peut être en face ?',
         suspects: [
@@ -154,7 +154,7 @@ export const paintings = readable([
         name: 'La gloire de Bordeaux',
         date: '1937',
         author: 'Jean DUPAS',
-        image: '/images/painting-3.webp',
+        image: '/images/painting-3',
         introDialog: 'J’ai cru voir le 3ème complice partir en direction de ce tableau !',
         statueDialog: 'On progresse ! Il faut que l’on pense à regarder plus loin que le bout de notre nez, même au dessus...',
         suspects: [
