@@ -18,7 +18,7 @@
         consacrée au <span class="font-bold">cubisme et au retour à l’ordre</span>.
     </p>
     <p class="text-p text-white pb-16">
-        Fiez vous à ses intuitions ainsi qu’aux <span class="font-bold">répliques et émotions</span> des différents
+        Fiez-vous à ses intuitions ainsi qu’aux <span class="font-bold">répliques et émotions</span> des différents
         suspects de la salle...
     </p>
     <PrimaryButton classList="w-full" handleClick={startIntro} soundId={"validation"}>Commencer l'enquête</PrimaryButton>
