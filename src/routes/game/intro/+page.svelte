@@ -3,7 +3,7 @@
     import DialogButton from "$lib/components/Button/DialogButton.svelte";
 
     function startGame() {
-        goto('/game')
+        goto('/game/step/1')
     }
 </script>
 
