@@ -11,6 +11,7 @@
     import {Reset} from "radix-icons-svelte";
     import SuspectsTimeline from "$lib/components/Suspect/SuspectsTimeline.svelte";
     import DialogButton from "$lib/components/Button/DialogButton.svelte";
+    import PaintingDialog from "$lib/components/Painting/PaintingDialog.svelte";
 
     export let painting;
 
@@ -121,44 +122,30 @@
         {/if}
     </section>
     {#if inspectingSuspect}
-        <section class="relative h-56 w-full p-6 border-t border-yellow">
-            <img class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
-                 src="/images/figures/{inspectingSuspect.id}.jpg" alt=" ">
-            <article class="flex flex-col justify-between h-full">
-                <p class="mr-16">{inspectingSuspect.text}</p>
-                <div class="flex w-full justify-around">
-                    <TextButton handleClick={cancelSuspectInspection}
-                                classList="bottom-4 left-6">
+        <PaintingDialog tall={true} figure={inspectingSuspect.id}>
+            <p class="mr-16">{inspectingSuspect.text}</p>
+            <div class="flex w-full justify-around">
+                <TextButton handleClick={cancelSuspectInspection}
+                            classList="bottom-4 left-6">
                         <span class="rounded-full decoration-rounded p-2 w-10 h-10 ">
                             <Reset class="h-full w-full"/>
                         </span>
-                    </TextButton>
-                    <PrimaryButton handleClick={accuseSuspect}>Accuser ce suspect</PrimaryButton>
-                </div>
-            </article>
-        </section>
+                </TextButton>
+                <PrimaryButton handleClick={accuseSuspect}>Accuser ce suspect</PrimaryButton>
+            </div>
+        </PaintingDialog>
     {:else}
-        <section class="relative h-40 w-full p-6 border-t border-yellow">
-            <img class="absolute right-6 top-0 h-14 w-14 -translate-y-1/2 border-2 border-yellow rounded-full"
-                 src="/images/figures/statue.jpg" alt="Figure au bord de l'eau">
+        <PaintingDialog figure="statue">
             {#if isShowingIntroduction}
-                <article class="flex flex-col gap-4 h-full">
-                    <p class="text-p mr-16">{painting.introDialog}</p>
-
-                    <DialogButton handleClick={hideIntroduction}>Inspecter le tableau</DialogButton>
-                </article>
+                <p class="text-p mr-16">{painting.introDialog}</p>
+                <DialogButton handleClick={hideIntroduction}>Inspecter le tableau</DialogButton>
             {:else if isShowingFeedback}
-                <article class="flex flex-col gap-4 h-full">
-                    <p class="text-p mr-16">{getFeedbackText()}</p>
-
-                    <DialogButton handleClick={dispatchSuspectAccused}>Tableau suivant</DialogButton>
-                </article>
+                <p class="text-p mr-16">{getFeedbackText()}</p>
+                <DialogButton handleClick={dispatchSuspectAccused}>Tableau suivant</DialogButton>
             {:else}
-                <article class="flex flex-col gap-4 h-full">
-                    <p class="text-p mr-16">{painting.statueDialog}</p>
-                    <p class="text-label text-yellow">Interrogez un suspect en cliquant dessus.</p>
-                </article>
+                <p class="text-p mr-16">{painting.statueDialog}</p>
+                <p class="text-label text-yellow">Interrogez un suspect en cliquant dessus.</p>
             {/if}
-        </section>
+        </PaintingDialog>
     {/if}
 </section>
