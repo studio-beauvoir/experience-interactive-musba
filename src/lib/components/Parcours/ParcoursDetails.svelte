@@ -24,6 +24,8 @@
 
     <article class="flex flex-col gap-10">
         <h2 class="text-h1 text-yellow">BD de ce parcours</h2>
-        <ComicsStrip suspects={parcours.suspects}/>
+        <section class="-mx-6">
+            <ComicsStrip suspects={parcours.suspects}/>
+        </section>
     </article>
 </section>
