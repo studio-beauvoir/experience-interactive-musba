@@ -12,9 +12,10 @@
         on:click={handleClick} transition:fade={{ duration: transitionDuration }}>
 
     <h2 class="text-h2 text-yellow">
-        {painting.step}<sup>
-        {#if painting.step}ère{:else}ème{/if}
-    </sup>
+        {painting.step}
+        <sup>
+            {#if painting.step === 1}ère{:else}ème{/if}
+        </sup>
         étape complétée !
     </h2>
 

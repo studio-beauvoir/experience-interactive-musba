@@ -47,7 +47,7 @@
     function getFeedbackText() {
         const text: { [type: SuspectType]: string } = {
             innocent: "Rien à voir, c'est un innocent !",
-            witness: "Mh, presque, ce témoin a vu le complice.",
+            witness: "Hum, presque, ce témoin a vu le complice.",
             accomplice: "Bien joué, c'est un complice !",
         }
 
