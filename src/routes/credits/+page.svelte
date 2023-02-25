@@ -1,6 +1,7 @@
 <script lang="ts">
     import PrimaryButton from "$lib/components/Button/PrimaryButton.svelte";
     import {goto} from "$app/navigation";
+    import {ExternalLink} from "radix-icons-svelte";
 
     function backToHome() {
         goto('/')
@@ -16,31 +17,46 @@
     <h1 class="text-yellow text-display mb-6">Crédits</h1>
     <section class="flex flex-col items-center text-center text-h2 gap-4">
         <div class="gap-4">
-            <p><a class="underline" href="https://arthaudproust.fr" rel="noreferrer" target="_blank">Arthaud Proust
+            <p><a class="underline underline-offset-2 decoration-1" href="https://arthaudproust.fr" rel="noreferrer"
+                  target="_blank">
+                Arthaud Proust
+                <ExternalLink class="inline"/>
             </a></p>
             <p class="text-label text-yellow">Développement</p>
         </div>
         <div>
-            <p><a class="underline" href="https://www.linkedin.com/in/jason-nago-59824a182/" rel="noreferrer"
+            <p><a class="underline underline-offset-2 decoration-1"
+                  href="https://www.linkedin.com/in/jason-nago-59824a182/" rel="noreferrer"
                   target="_blank">
-                Jason Nago</a></p>
+                Jason Nago
+                <ExternalLink class="inline"/>
+            </a></p>
             <p class="text-label text-yellow">UI/UX Design - Game Design - Motion Design</p>
         </div>
         <div>
-            <p><a class="underline" href="https://www.linkedin.com/in/le%C3%AFly-coquard-misono-83a0b4223/"
-                  rel="noreferrer" target="_blank">Leïly Coquard-Misono</a></p>
+            <p><a class="underline underline-offset-2 decoration-1"
+                  href="https://www.linkedin.com/in/le%C3%AFly-coquard-misono-83a0b4223/"
+                  rel="noreferrer" target="_blank">
+                Leïly Coquard-Misono
+                <ExternalLink class="inline"/>
+            </a></p>
             <p class="text-label text-yellow">DA - UI/UX Design - Illustrations - Animations</p>
         </div>
         <div>
-            <p><a class="underline" href="https://maximelust.fr/" rel="noreferrer" target="_blank">Maxime
-                Lust
+            <p><a class="underline underline-offset-2 decoration-1" href="https://maximelust.fr/" rel="noreferrer"
+                  target="_blank">
+                Maxime Lust
+                <ExternalLink class="inline"/>
             </a></p>
             <p class="text-label text-yellow">Développement</p>
         </div>
         <div>
-            <p><a class="underline" href="https://www.linkedin.com/in/quentin-wegera-a11443224/" rel="noreferrer"
+            <p><a class="underline underline-offset-2 decoration-1"
+                  href="https://www.linkedin.com/in/quentin-wegera-a11443224/" rel="noreferrer"
                   target="_blank">
-                Quentin Wegera</a></p>
+                Quentin Wegera
+                <ExternalLink class="inline"/>
+            </a></p>
             <p class="text-label text-yellow">UX Design - Rédaction - Print</p>
         </div>
     </section>

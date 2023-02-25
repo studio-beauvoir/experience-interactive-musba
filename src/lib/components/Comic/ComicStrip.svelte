@@ -2,7 +2,7 @@
     export let filename;
     export let title
 </script>
-<article class="flex flex-col gap-2 items-center">
+<article class="flex flex-col gap-2 w-full items-center">
     <img alt=" "
          class="aspect-square"
          src="/comics/{filename}.png">

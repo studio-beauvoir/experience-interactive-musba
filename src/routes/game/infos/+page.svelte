@@ -12,7 +12,8 @@
     <p class="text-yellow text-h1 pr-40">Votre</p>
     <h1 class="text-yellow text-display">Mission</h1>
     <p class="text-p text-white pt-16 pb-4">
-        La <span class="font-bold">figure au bord de l’eau</span> vient de se faire dérober sa serviette de bain
+        <span class="font-bold italic">La Figure au bord de l’eau</span> de Joseph Rivière vient de se faire dérober sa
+        serviette de bain
         favorite.
         <br/>Encore sous le choc, elle vous attend au fond de l’<span class="font-bold">aile nord</span>, dans sa salle
         consacrée au <span class="font-bold">cubisme et au retour à l’ordre</span>.
@@ -21,5 +22,6 @@
         Fiez-vous à ses intuitions ainsi qu’aux <span class="font-bold">répliques et émotions</span> des différents
         suspects de la salle...
     </p>
-    <PrimaryButton classList="w-full" handleClick={startIntro} soundId={"validation"}>Commencer l'enquête</PrimaryButton>
+    <PrimaryButton classList="w-full" handleClick={startIntro} soundId={"validation"}>Commencer l'enquête
+    </PrimaryButton>
 </section>

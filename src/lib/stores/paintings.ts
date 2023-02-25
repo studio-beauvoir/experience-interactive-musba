@@ -83,7 +83,7 @@ const paintingsList: Painting[] = [
         author: 'Jean DUPAS',
         image: '/images/painting-2',
         introDialog: 'J’ai cru voir le 2ème complice partir en direction de ce tableau !',
-        statueDialog: 'Mmmhhh, le deuxième complice est sûrement dans un tableau près de celui-ci...Peut être en face ?',
+        statueDialog: 'Hum, le deuxième complice est sûrement dans un tableau près de celui-ci...Peut être en face ?',
         suspects: [
             {
                 id: '2-1',
@@ -131,7 +131,7 @@ const paintingsList: Painting[] = [
                 id: '2-3',
                 name: '3',
                 type: 'innocent',
-                text: 'Wouaf. je n’ai rien vu. Je n’ai d’yeux que pour mon maître moi. Il est beau mon maître hein. ',
+                text: 'Wouaf. Je n’ai rien vu. Je n’ai d’yeux que pour mon maître moi. Il est beau mon maître hein. ',
                 comicTitle: 'Le canidé ciblé.',
                 button: {
                     rightSide: false,
