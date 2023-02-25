@@ -12,7 +12,7 @@
     <img alt="" class="absolute z-0 top-0 right-0" src="/assets/lines-svg.svg">
     <h1 class="text-yellow text-display mb-6">Sources</h1>
     <section class="flex flex-col items-center text-center gap-4">
-        <h2 class="text-yellow text-h2">Oeuvres</h2>
+        <h2 class="text-yellow text-h2">Œuvres</h2>
         <a class="text-p underline underline-offset-2 decoration-1"
            href="https://musba-bordeaux.opacweb.fr/fr/notice/bx-e-1868-figure-au-bord-de-l-eau-pour-la-piscine-municipale-d-albi-687fbf51-4a95-4f84-ad06-d476f090de2b"
            rel="noreferrer"
