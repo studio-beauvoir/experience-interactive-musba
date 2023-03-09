@@ -163,7 +163,7 @@ const paintingsList: Painting[] = [
                 id: '3-3',
                 name: '3',
                 type: 'witness',
-                text: 'Quoi ? Une serviette ? Non merci, j’ai ma tunique. La personne là-bas m’a l’air d’avoir froid.',
+                text: 'Quoi ? Une serviette ? Non merci, j’ai ma tunique. Par contre, je vois vers votre gauche une dame s\'essuyer avec ...',
                 comicTitle: 'La pose douloureuse (Dupas prenait son temps...)',
                 button: {
                     rightSide: true,
@@ -184,7 +184,7 @@ const paintingsList: Painting[] = [
                 id: '3-2',
                 name: '2',
                 type: 'innocent',
-                text: 'Hehe ! Écoute moi bien, les guerriers ne portent pas de serviettes, mais des toges, IDIOT, va regarder là-bas si j’y suis.',
+                text: 'Hehe ! Écoute moi bien, les guerriers ne portent pas de serviettes, mais des toges. À ta place, j\'irai plutôt accuser quelqu\'un avec une VRAIE serviette.',
                 comicTitle: 'Un chasseur sachant chasser sait chasser sans son reflet.',
                 button: {
                     rightSide: true,
