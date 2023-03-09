@@ -4,11 +4,23 @@
     export let handleClick;
     export let classList = "";
     export let percyId = "";
+    export let soundId = 'validation';
+
+    const sounds = {
+        validation: new Audio("/audio/soundEffect/Button-Click-Validation.mp3"),
+        reverse: new Audio("/audio/soundEffect/Button-Click-Reverse.mp3"),
+        audioPainting: new Audio("/audio/soundEffect/FeedBack-Fin-de-tableau.mp3")
+    }
+
+    function onClick() {
+        handleClick();
+        sounds[soundId].play();
+    }
 </script>
 
 <button class="flex mt-auto ml-auto flex-row align-center items-center gap-3 text-white {classList}"
         data-percy={percyId}
-        on:click={handleClick}>
+        on:click={onClick}>
     <span class="text-label-2 text-yellow">
         <slot></slot>
     </span>
