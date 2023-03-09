@@ -19,6 +19,11 @@
 
     const dispatch = createEventDispatcher();
     const transitionDuration = 500;
+    const soundsHmm = [
+        new Audio("/audio/soundEffect/hmm1.mp3"),
+        new Audio("/audio/soundEffect/hmm2.mp3"),
+        new Audio("/audio/soundEffect/hmm3.mp3"),
+    ];
 
     let isShowingIntroduction: boolean;
     let isShowingFeedback: boolean;
@@ -64,7 +69,12 @@
         isShowingIntroduction = false;
     }
 
+    function getRandomHmm() {
+        return soundsHmm[Math.floor(Math.random() * soundsHmm.length)]
+    }
+
     function inspectSuspect(suspect) {
+        getRandomHmm().play();
         inspectingSuspect = suspect
     }
 
