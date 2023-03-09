@@ -38,9 +38,10 @@
     }
 
     const dialogs = [
-        "Oh non ! Vous m’avez retrouvée ! Et bien oui, c’est moi qui ai volé la serviette !",
-        "Mes complices ne m’ont même pas couverte ! Pfff, ils n’ont aucune compassion pour moi...",
-        "Et puis c’est de sa faute à elle aussi, à me tourner le dos constamment et à se trémousser au beau milieu de la salle !",
+        "Cette serviette ? C'est... c'est... Oh et puis zut alors !",
+        "Et bien oui, c’est moi qui ai volé la serviette !",
+        "Ça ne me sert à rien de mentir, je parie que mes complices ne m'ont même pas couverte...",
+        "Et puis c’est de sa faute à elle là aussi, à me tourner le dos constamment et à se trémousser au beau milieu de la salle !",
         "Qu’elle la garde sa serviette de gourgandine ! Je n’en ai plus besoin de toute façon !"
     ]
 </script>
