@@ -24,7 +24,6 @@
         new Audio("/audio/soundEffect/hmm2.mp3"),
         new Audio("/audio/soundEffect/hmm3.mp3"),
     ];
-    const soundReverse = new Audio("/audio/soundEffect/Button-Click-Reverse.mp3");
 
 
     let isShowingIntroduction: boolean;
@@ -81,7 +80,6 @@
     }
 
     function cancelSuspectInspection() {
-        soundReverse.play();
         inspectingSuspect = null;
     }
 </script>
