@@ -24,10 +24,10 @@
 <section class="relative z-10 flex flex-col items-center justify-center h-full">
     <h2 class="text-yellow text-h1 pr-32">Too well</h2>
     <h1 class="text-yellow text-display">Stolen</h1>
-    <section class="z-10 m-8 px-10 py-4">
+    <section class="z-10 m-8 px-10 mt-4">
         <picture>
-            <source srcset="/images/home-page-image-min.webp" type="image/webp">
-            <img alt="" class="h-auto" src="/images/home-page-image-min.png">
+            <source srcset="/assets/towel-stolen.webp" type="image/webp">
+            <img alt="" class="h-64" src="/assets/towel-stolen.png">
         </picture>
     </section>
 
