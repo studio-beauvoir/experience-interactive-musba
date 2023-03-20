@@ -107,7 +107,17 @@
                     {/each}
                 </div>
             {/if}
+
+            {#if isShowingIntroduction}
+                <PaintingIntroduction handleClick={hideIntroduction} painting={painting}
+                                      transitionDuration={transitionDuration}/>
+            {:else if isShowingFeedback}
+                <PaintingFeedback handleClick={dispatchSuspectAccused} painting={painting}
+                                  accusedSuspect={accusedSuspect}
+                                  transitionDuration={transitionDuration}/>
+            {/if}
         </section>
+        
         {#if inspectingSuspect}
             <button on:click={cancelSuspectInspection} class="absolute h-full w-full"></button>
         {/if}
@@ -118,13 +128,6 @@
             </div>
         {/if}
 
-        {#if isShowingIntroduction}
-            <PaintingIntroduction handleClick={hideIntroduction} painting={painting}
-                                  transitionDuration={transitionDuration}/>
-        {:else if isShowingFeedback}
-            <PaintingFeedback handleClick={dispatchSuspectAccused} painting={painting} accusedSuspect={accusedSuspect}
-                              transitionDuration={transitionDuration}/>
-        {/if}
     </section>
     {#if inspectingSuspect}
         <PaintingDialog tall={true} figure={inspectingSuspect.id}>
