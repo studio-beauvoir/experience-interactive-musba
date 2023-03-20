@@ -11,7 +11,13 @@
 <section class="relative flex flex-col items-center justify-center h-full overflow-hidden px-6">
     <p class="text-yellow text-h1 pr-40">Votre</p>
     <h1 class="text-yellow text-display">Mission</h1>
-    <p class="text-p text-white pt-16 pb-4">
+    <picture>
+        <source srcset="/images/femme-nue-detouree.webp" type="image/webp">
+        <img alt="Sculpture vue de derrière nommée Femme nue au bord de l'eau"
+             class="w-2/3 mt-16 mx-auto"
+             src="/images/femme-nue-detouree.png">
+    </picture>
+    <p class="text-p text-white pt-2 pb-4">
         <span class="font-bold italic">La Figure au bord de l’eau</span> de Joseph Rivière vient de se faire dérober sa
         serviette de bain
         favorite.
