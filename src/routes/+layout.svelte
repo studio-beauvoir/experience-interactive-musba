@@ -3,6 +3,8 @@
     import {paintings} from "$lib/stores/paintings";
     import {selectedSuspects} from "$lib/stores/selectedSuspects.ts";
     import {parcoursDone} from "$lib/stores/parcoursDone.ts";
+    import * as Sentry from "@sentry/svelte";
+    import {BrowserTracing} from "@sentry/tracing";
 
     let audioGame = new Audio("/audio/a-dream-vintage-music.mp3");
     let isAudioPlaying = false;
@@ -26,6 +28,16 @@
         this.currentTime = 0;
         this.play();
     }, false);
+
+    Sentry.init({
+        dsn: "https://754e4fba21574bab9ead78a769ba1013@o4504878242660352.ingest.sentry.io/4504878244036608",
+        integrations: [new BrowserTracing()],
+
+        // Set tracesSampleRate to 1.0 to capture 100%
+        // of transactions for performance monitoring.
+        // We recommend adjusting this value in production
+        tracesSampleRate: 1.0,
+    });
 </script>
 
 <svelte:head>
